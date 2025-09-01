@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hilda May Events – Premier Event Planning & Design</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    .wrap{max-width:1200px;margin-inline:auto}
+    .copy p{margin-top:0.9rem}
+  </style>
+</head>
+<body class="bg-white text-neutral-900">
+  <header class="border-b sticky top-0 bg-white/85 backdrop-blur z-40">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <strong>Hilda May Events</strong>
+      <nav class="hidden md:flex gap-5 text-sm">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap px-4 py-14">
+    <h1 class="text-4xl font-bold">Premier Event Planning & Design</h1>
+    <p class="mt-4 text-lg text-neutral-700">At Hilda May, we transform your grandest visions into magnificent, unforgettable realities.</p>
+    <div class="mt-6">
+      <a href="#contact" class="inline-block rounded-full bg-black text-white px-5 py-3">Schedule Your Consultation</a>
+    </div>
+  </section>
+
+  <section id="about" class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-3xl font-semibold">About</h2>
+      <p>Our comprehensive services ensure every detail is meticulously curated.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-3xl font-semibold">Services</h2>
+      <p>Full-service planning • Design & Styling • Global Logistics • Vendor Curation</p>
+    </div>
+  </section>
+
+  <section id="pricing" class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-3xl font-semibold">Pricing</h2>
+      <p>Day-of from $3,500 • Partial from $12,000 • Full-Service from $25,000</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-3xl font-semibold">Contact</h2>
+      <p>Email: <a class="text-blue-600" href="mailto:info@hildamay.com">info@hildamay.com</a></p>
+      <p>Phone: <a class="text-blue-600" href="tel:+16472206104">+1 (647) 220 6104</a></p>
+    </div>
+  </section>
+
+  <footer class="border-t">
+    <div class="wrap px-4 py-8 text-sm text-neutral-600">
+      © <span id="y"></span> Hilda May Events
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
