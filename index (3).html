@@ -1,158 +1,683 @@
+<!-- ==========================
+FILE: index.html
+Purpose: High-performance, accessible, SEO-optimized homepage
+Notes: Replace image paths with your actual assets in /images
+=========================== -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hilda May Events – Premier Event Planning & Design</title>
-  <meta name="description" content="Hilda May transforms grand visions into magnificent, unforgettable realities—weddings, galas, corporate events." />
+  <title>Exquisite Catering & Event Design — Hilda May Events</title>
+  <meta name="description" content="Luxury catering and event planning for weddings, corporate events, and private celebrations. Bespoke menus, refined design, and precise execution." />
+
+  <!-- Canonical + robots -->
+  <link rel="canonical" href="https://www.hildamay.com/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>HM</text></svg>">
+
+  <!-- Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hilda May Events — Exquisite Catering & Event Design" />
+  <meta property="og:description" content="Bespoke menus. Refined design. Flawless execution for weddings, corporate, and private events." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hilda May Events",
+    "url": "https://www.hildamay.com/",
+    "logo": "https://www.hildamay.com/logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+1-647-220-6104",
+      "contactType": "customer service",
+      "areaServed": "CA, US"
+    }],
+    "sameAs": [
+      "https://www.instagram.com/HildaMay_Events",
+      "https://www.pinterest.com/HildaMayDesign"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Performance: preload hero -->
+  <link rel="preload" as="image" href="/images/hero@2x.webp" imagesrcset="/images/hero.webp 1x, /images/hero@2x.webp 2x" imagesizes="(min-width:1024px) 50vw, 100vw" />
   <style>
     html{scroll-behavior:smooth}
     .wrap{max-width:1200px;margin-inline:auto}
-    .copy p{margin-top:0.9rem}
-    .copy h3{margin-top:1.25rem;font-weight:700}
-    .copy ul{list-style:disc;margin-left:1.25rem}
+    .copy p{margin-top:.9rem}
+    .copy h3{margin-top:1rem;font-weight:700}
   </style>
 </head>
-<body class="text-neutral-900 bg-white">
-
-  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-neutral-200">
+<body class="bg-white text-neutral-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
     <div class="wrap px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Hilda May Events" class="h-8 w-auto" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'HM',className:'inline-flex h-8 w-8 items-center justify-center rounded-full bg-black text-white font-semibold'}))">
+      <a href="/index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
         <span class="font-semibold tracking-wide">Hilda May Events</span>
-      </div>
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#signature" class="hover:underline">Signature</a>
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#pricing" class="hover:underline">Investment</a>
-        <a href="#portfolio" class="hover:underline">Portfolio</a>
-        <a href="#testimonials" class="hover:underline">Testimonials</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="/catering.html">Catering</a>
+        <a href="/events.html">Event Planning</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/testimonials.html">Testimonials</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/contact.html" class="font-semibold">Book</a>
       </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm" role="menu" aria-label="Mobile">
+        <a role="menuitem" href="/catering.html">Catering</a>
+        <a role="menuitem" href="/events.html">Event Planning</a>
+        <a role="menuitem" href="/gallery.html">Gallery</a>
+        <a role="menuitem" href="/testimonials.html">Testimonials</a>
+        <a role="menuitem" href="/about.html">About</a>
+        <a role="menuitem" href="/faq.html">FAQ</a>
+        <a role="menuitem" href="/contact.html">Contact</a>
+      </div>
     </div>
   </header>
 
-  <section id="home" class="wrap px-4 py-14 lg:py-20">
-    <div class="grid lg:grid-cols-2 gap-10 items-center">
+  <!-- Hero -->
+  <section class="relative">
+    <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">Premier Event Planning & Design</p>
-        <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Hilda May’s</h1>
-        <p class="mt-4 text-lg text-neutral-700">At Hilda May, we transform your grandest visions into magnificent, unforgettable realities. From intimate private parties and exquisite weddings to large-scale corporate galas and milestone celebrations, we specialize in crafting unparalleled event experiences for discerning clients.</p>
+        <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">Exquisite Catering & Event Design</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">Transforming visions into unforgettable realities</h1>
+        <p class="mt-4 text-lg text-neutral-700">Weddings, corporate galas, and private celebrations—bespoke menus, refined aesthetics, and precise execution.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#contact" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Schedule Your Consultation</a>
-          <a href="#signature" class="inline-flex items-center rounded-full border px-5 py-3">Our Signature</a>
+          <a href="/contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Book Your Event</a>
+          <a href="/gallery.html" class="inline-flex items-center rounded-full border px-5 py-3">View Gallery</a>
         </div>
+        <p class="mt-3 text-sm text-neutral-500">Based in Toronto • Serving North America • Select destinations</p>
       </div>
       <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
-        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=1600&auto=format&fit=crop" alt="">
+        <picture>
+          <source type="image/avif" srcset="/images/hero.avif" />
+          <source type="image/webp" srcset="/images/hero.webp" />
+          <img class="w-full h-full object-cover" src="/images/hero.jpg" width="1600" height="1067" decoding="async" alt="Signature catering presentation with plated dishes and floral accents" />
+        </picture>
       </div>
     </div>
   </section>
 
-  <section id="about" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Premier Event Planning & Design</h2>
-      <p>Our comprehensive services ensure every detail is meticulously curated, from stunning floral designs and bespoke culinary experiences to seamless coordination and expert vendor management. We guide you through a stress-free planning journey, ensuring your event perfectly reflects your unique style and vision.</p>
-      <p>With a passion for innovative design and an unwavering commitment to perfection, Hilda May delivers celebrations that are not just planned, but flawlessly executed and cherished for a lifetime. Let us create an exceptional event that truly surpasses all expectations.</p>
+  <!-- Value pillars -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3 class="text-lg font-semibold">Catering</h3>
+        <p class="text-sm text-neutral-700 mt-2">Seasonal, chef-driven menus. Plated, stations, or elevated buffets. Dietary accommodations handled with care.</p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3 class="text-lg font-semibold">Event Design</h3>
+        <p class="text-sm text-neutral-700 mt-2">Concept, styling, florals, lighting, and production. Timeless aesthetics with modern refinement.</p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3 class="text-lg font-semibold">Corporate & Destination</h3>
+        <p class="text-sm text-neutral-700 mt-2">Multi-day programs and logistics with vetted vendor partners and white-glove service.</p>
+      </div>
     </div>
   </section>
 
-  <section id="signature">
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Our Signature: Unforgettable Experiences</h2>
-      <p>At Hilda May, we don't just plan events; we craft unforgettable experiences. We transform your vision, whether for a corporate event, milestone celebration, private party, gala, or wedding, into a sophisticated and personalized reality. Each occasion is a seamless fusion of meticulous coordination and inspired design, creating cherished moments that last a lifetime.</p>
-      <p>Our unique approach begins with truly understanding your desires and objectives. We listen intently to your goals, brand narrative, or the subtle elements defining your occasion. This intimate understanding forms the foundation of your celebration, transforming your vision into an immersive experience for you and your guests.</p>
-      <p>Every detail, from grand design statements to subtle sensory nuances, is thoughtfully curated and flawlessly executed to create an atmosphere of unparalleled luxury and emotional resonance. Imagine bespoke installations, a culinary journey tailored to your concept, or entertainment that perfectly captures your gathering's essence. Our commitment to perfection ensures every element is not just beautiful, but deeply meaningful, overseen by expert event coordination.</p>
-      <p>With unparalleled access to exclusive global venues and a meticulously curated network of premier vendors, we bring any ambitious vision to life. From world-renowned chefs and master florists to visionary photographers and captivating entertainers, our vendor booking services connect you with the industry's best. This ensures we orchestrate celebrations that are true masterpieces of visual splendor and heartfelt memories, seamlessly delivered from concept to grand finale.</p>
-    </div>
-  </section>
-
+  <!-- Partnership strip (optional note) -->
   <section>
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Design Philosophy: Crafting Your Dream</h2>
-      <p>Our design ethos at Hilda May is simple: your event should be an authentic reflection of your unique vision and personal style. We reject cookie-cutter approaches, embracing a bespoke creative process. It starts with understanding your aspirations and elevating them beyond imagination. Every element, from grand gestures to subtle details, is thoughtfully curated to ensure your celebration is unique and deeply meaningful.</p>
-      <h3>Personalized Narrative</h3>
-      <p>We immerse ourselves in your story, exploring your experiences, preferences, and aspirations through in-depth consultations. Our aim is to create an event that truly represents your journey, weaving elements of your history, memories, and future objectives into every design choice.</p>
-      <h3>Refined Aesthetics</h3>
-      <p>Drawing from classical design principles and embracing contemporary innovation, we create environments that are both timeless and modern. Our designs balance opulent details with profound intentionality, ensuring luxury that feels sophisticated, never excessive.</p>
-      <h3>Sensory Excellence</h3>
-      <p>We orchestrate a complete sensory experience: from stunning visual décor and lighting, to the rich textures of fabrics and floral arrangements. We carefully curate aromatic atmospheres, develop bespoke soundscapes, and collaborate with culinary artists to present exquisite flavors.</p>
-      <p>Our dedication to this design philosophy transforms spaces into captivating narratives, turning your dreams into a tangible, breathtaking reality.</p>
+    <div class="wrap px-4 py-10">
+      <div class="rounded-xl ring-1 ring-neutral-200 p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm md:text-base">Strategic culinary partnerships expand menu range and sourcing for premium ingredients.</p>
+        <a href="/catering.html" class="inline-flex items-center rounded-full border px-5 py-2">Explore Menus</a>
+      </div>
     </div>
   </section>
 
-  <section id="services" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Event Services: From Vision to Flawless Execution</h2>
-      <h3>Coordination & Vendor Curation</h3>
-      <p>Comprehensive management from concept to completion: vendor selection, budget administration, timelines, and seamless on‑site coordination.</p>
-      <h3>Design & Aesthetic Styling</h3>
-      <p>Bespoke florals, lighting, custom furniture, tabletop design, and impactful installations—unified by a cohesive visual language.</p>
-      <h3>Global Event Logistics</h3>
-      <p>Multi‑day events worldwide, cultural nuance, travel and venue sourcing, and elite vendor relationships for a smooth execution.</p>
-      <p><strong>Exclusive Service:</strong> We accept a limited number of events annually to provide true white‑glove attention.</p>
+  <!-- Mini gallery -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">Signature Dishes & Moments</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/canapes.jpg" width="1200" height="800" alt="Assorted canapés on slate trays" />
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/buffet.jpg" width="1200" height="800" alt="Seasonal buffet spread with carving station" />
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/entree.jpg" width="1200" height="800" alt="Plated entrée with herb-crusted beef tenderloin" />
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/dessert.jpg" width="1200" height="800" alt="Dessert course with seasonal fruit" />
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/hors.jpg" width="1200" height="800" alt="Passed hors d’oeuvres" />
+        <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" decoding="async" src="/images/reception.jpg" width="1200" height="800" alt="Reception setup with floral centerpieces" />
+      </div>
+      <div class="mt-6">
+        <a href="/gallery.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">See Full Gallery</a>
+      </div>
     </div>
   </section>
 
+  <!-- Testimonials preview -->
   <section>
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Investment in Excellence: Services & Pricing</h2>
-      <p><strong>Essential (Day‑of Coordination)</strong> — from $3,500</p>
-      <p><strong>Premium (Partial Planning)</strong> — from $12,000</p>
-      <p><strong>Luxury (Full‑Service Planning)</strong> — from $25,000</p>
-      <p><strong>À la carte:</strong> Venue Sourcing ($2,500) • Design Consultation ($1,500) • Vendor Management ($3,000–$8,000) • Floral ($5,000–$15,000) • Guest Mgmt ($2,000–$6,000) • Travel & Accommodation (Custom)</p>
-      <p class="text-neutral-600">All pricing tailored to scope, guest count, location, and requirements.</p>
-    </div>
-  </section>
-
-  <section id="portfolio" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Our Portfolio: Crafting Unforgettable Moments</h2>
-      <h3>The “Summit Echo” Grand Celebration</h3>
-      <p><em>Enbridge Centre, Edmonton — 5000+ attendees.</em> A technologically advanced, visually stunning program with precise, multi‑zone service.</p>
-      <h3>The “Luminary Summit” Gala</h3>
-      <p><em>Grand Ballroom, NYC — 500+ leaders.</em> Projection‑mapped architecture, holographic name tags, and a future‑forward dessert bar.</p>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.05rem] leading-7">
-      <h2 class="text-3xl md:text-4xl font-semibold">Testimonials</h2>
-      <p>“Best decision we made—every detail perfect.” — Alexandra &amp; James</p>
-      <p>“Creative vision + flawless execution.” — Michael &amp; David</p>
-      <p>“We could truly relax.” — Sophia &amp; Thomas</p>
-      <p>“Magical and meticulously coordinated.” — Sarah &amp; John</p>
-    </div>
-  </section>
-
-  <section id="contact" class="bg-neutral-900 text-white">
-    <div class="wrap px-4 py-14 lg:py-20">
-      <h2 class="text-3xl md:text-4xl font-semibold">Contact Us</h2>
-      <p class="mt-3 text-neutral-200">Schedule a complimentary consultation to discuss your vision and timeline.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="mailto:info@hildamay.com" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-5 py-3">Email: info@hildamay.com</a>
-        <a href="tel:+16472206104" class="inline-flex items-center rounded-full ring-1 ring-white/40 px-5 py-3">Phone: +1 (647) 220 6104</a>
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">What Clients Say</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+        <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-5">
+          <p>“Amazing. Six nights straight—bartending, drinks, and furniture rentals. Seamless.”</p>
+          <footer class="mt-3 text-neutral-600">— Sarah L. · Nov 24, 2024</footer>
+        </blockquote>
+        <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-5">
+          <p>“Friendly, accommodating, and professional. Food was versatile and delicious.”</p>
+          <footer class="mt-3 text-neutral-600">— Genevieve · Oct 5, 2024</footer>
+        </blockquote>
+        <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-5">
+          <p>“Our taco event exceeded expectations—fresh, flavorful, effortless.”</p>
+          <footer class="mt-3 text-neutral-600">— Sheema F. · Sep 30, 2024</footer>
+        </blockquote>
       </div>
-      <div class="mt-6 copy text-neutral-200">
-        <p><strong>Instagram:</strong> @HildaMay_Events &nbsp; • &nbsp; <strong>Pinterest:</strong> HildaMayDesign</p>
-        <p><strong>Studios:</strong> New York • London • Paris — by appointment only.</p>
+      <div class="mt-6">
+        <a href="/testimonials.html" class="inline-flex items-center rounded-full border px-5 py-3">Read More</a>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="bg-neutral-900 text-white">
+    <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Ready to plan something unforgettable?</h2>
+        <p class="text-neutral-300 mt-1">Share your date, guest count, and vision.</p>
+      </div>
+      <a href="/contact.html" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="border-t border-neutral-200">
-    <div class="wrap px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-neutral-600">
+    <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-neutral-600">
       <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="#pricing" class="hover:underline">Investment</a>
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </div>
+      <p><a class="hover:underline" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="hover:underline" href="tel:+16472206104">+1 (647) 220 6104</a></p>
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+    const y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const mnav = document.getElementById('mnav');
+    if (btn && mnav) {
+      btn.addEventListener('click', () => {
+        mnav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', mnav.classList.contains('hidden') ? 'false' : 'true');
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: catering.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catering — Hilda May Events</title>
+  <meta name="description" content="Chef-driven menus for weddings, corporate events, and private dining. Seasonal ingredients and precise service." />
+  <link rel="canonical" href="https://www.hildamay.com/catering.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Catering — Hilda May Events" />
+  <meta property="og:description" content="Chef-driven menus. Plated, stations, or elevated buffets. Dietary accommodations handled with care." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/catering.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html" class="font-semibold" aria-current="page">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Catering</h1>
+  <p class="mt-3 text-neutral-700">Seasonal, chef-driven menus tailored to your event—plated service, chef stations, or elevated buffets. Inclusive planning for vegan, vegetarian, gluten-free, halal, kosher-style, and allergies.</p>
+</section>
+
+<section class="bg-neutral-50">
+  <div class="wrap px-4 py-14 grid md:grid-cols-3 gap-6 copy">
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Hors d’Oeuvres</h3>
+      <ul class="list-disc ml-5 text-sm">
+        <li>Tuna tartare cones, sesame & lime</li>
+        <li>Whipped goat cheese, fig & pistachio crostini</li>
+        <li>Smoked salmon blinis, crème fraîche, dill</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Mains</h3>
+      <ul class="list-disc ml-5 text-sm">
+        <li>Herb-crusted beef tenderloin, red wine jus</li>
+        <li>Seared sea bass, fennel & citrus</li>
+        <li>Wild mushroom risotto, parmesan crisp</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Stations & Buffets</h3>
+      <ul class="list-disc ml-5 text-sm">
+        <li>Live taco bar with house salsas</li>
+        <li>Mediterranean mezze & carving station</li>
+        <li>Seafood raw bar (market price)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap px-4 py-14">
+  <h2 class="text-2xl md:text-3xl font-semibold">How We Work</h2>
+  <div class="mt-6 grid md:grid-cols-4 gap-6 text-sm">
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-5"><h3>1) Discovery</h3><p>Goals, guest count, dietary needs, budget.</p></div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-5"><h3>2) Tasting</h3><p>Sample dishes and refine your menu.</p></div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-5"><h3>3) Final Menu</h3><p>Lock flavors, service style, rentals.</p></div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-5"><h3>4) Event Day</h3><p>On-site culinary team & service staff.</p></div>
+  </div>
+</section>
+
+<section class="bg-neutral-900 text-white">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div><h2 class="text-2xl md:text-3xl font-semibold">Ready to design your menu?</h2><p class="text-neutral-300 mt-1">Tell us your date, location, and vision.</p></div>
+    <a href="/contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList.toggle('hidden');b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true')});</script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: events.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Planning & Design — Hilda May Events</title>
+  <meta name="description" content="Full-service planning, vendor management, timelines, styling, florals, rentals, and production with continental coverage." />
+  <link rel="canonical" href="https://www.hildamay.com/events.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Event Planning & Design — Hilda May Events" />
+  <meta property="og:description" content="Planning, design, and production for weddings, corporate programs, and private celebrations." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/events.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html">Catering</a><a href="/events.html" class="font-semibold" aria-current="page">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/catering.html">Catering</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14 copy">
+  <h1 class="text-3xl md:text-4xl font-semibold">Event Planning & Design</h1>
+  <p>We manage concept, design, logistics, and on-site execution for weddings, corporate programs, and private celebrations. White-glove, end-to-end.</p>
+  <div class="mt-8 grid md:grid-cols-3 gap-6">
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Planning</h3>
+      <ul class="list-disc ml-5 text-sm"><li>Full & Partial Planning</li><li>Budget & Timeline Ownership</li><li>Vendor Curation & Management</li></ul>
+    </div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Design</h3>
+      <ul class="list-disc ml-5 text-sm"><li>Styling & Floral Direction</li><li>Lighting & Scenic</li><li>Custom Fabrication</li></ul>
+    </div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <h3>Production</h3>
+      <ul class="list-disc ml-5 text-sm"><li>Technical & Run-of-Show</li><li>Staffing & Rentals</li><li>On-site Direction</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-neutral-50">
+  <div class="wrap px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Packages</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6"><h3 class="text-xl font-semibold">Essential</h3><p class="text-neutral-600">Day-of Coordination</p><p class="mt-3 text-3xl font-semibold">$3,500+</p><ul class="list-disc ml-5 mt-3"><li>Final timeline & vendor orchestration</li><li>On-site management</li></ul></div>
+      <div class="rounded-2xl ring-2 ring-black p-6"><h3 class="text-xl font-semibold">Premium</h3><p class="text-neutral-600">Partial Planning</p><p class="mt-3 text-3xl font-semibold">$12,000+</p><ul class="list-disc ml-5 mt-3"><li>Vendor curation</li><li>Design refinements & logistics</li></ul></div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6"><h3 class="text-xl font-semibold">Luxury</h3><p class="text-neutral-600">Full-Service Planning</p><p class="mt-3 text-3xl font-semibold">$25,000+</p><ul class="list-disc ml-5 mt-3"><li>Concept → Grand finale</li><li>White-glove planning & production</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap px-4 py-14">
+  <h2 class="text-2xl md:text-3xl font-semibold">Case Snapshots</h2>
+  <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6"><h3>“Summit Echo” Corporate Celebration</h3><p><strong>Challenge:</strong> 5,000+ attendees, complex staging.<br><strong>Approach:</strong> Zoned service, synchronized showcall.<br><strong>Outcome:</strong> Flawless service and stunning visuals.</p></div>
+    <div class="rounded-2xl ring-1 ring-neutral-200 p-6"><h3>“Luminary Summit” Gala</h3><p><strong>Challenge:</strong> Tech-forward + classic elegance.<br><strong>Approach:</strong> Projection mapping, holographic details.<br><strong>Outcome:</strong> Immersive experience.</p></div>
+  </div>
+</section>
+
+<section class="bg-neutral-900 text-white">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div><h2 class="text-2xl md:text-3xl font-semibold">Let’s craft your experience</h2><p class="text-neutral-300 mt-1">From concept to curtain call.</p></div>
+    <a href="/contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Request Proposal</a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList.toggle('hidden');b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true')});</script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: gallery.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Hilda May Events</title>
+  <meta name="description" content="A curated view of our food and event design." />
+  <link rel="canonical" href="https://www.hildamay.com/gallery.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Gallery — Hilda May Events" />
+  <meta property="og:description" content="Recent dishes and event moments." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/gallery.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html" class="font-semibold" aria-current="page">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div><div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Gallery</h1>
+  <p class="mt-2 text-neutral-700">A selection of recent dishes and event moments.</p>
+  <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Replace with your images in /images; ensure unique alts -->
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/canapes.jpg" width="1200" height="800" alt="Assorted canapés on slate trays" />
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/buffet.jpg" width="1200" height="800" alt="Buffet station with seasonal dishes" />
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/entree.jpg" width="1200" height="800" alt="Entrée with seared sea bass and citrus" />
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/dessert.jpg" width="1200" height="800" alt="Dessert trio with chocolate and berries" />
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/reception.jpg" width="1200" height="800" alt="Reception hall with floral centerpieces" />
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="/images/plating.jpg" width="1200" height="800" alt="Chef plating garnishes" />
+  </div>
+</section>
+
+<section class="bg-neutral-900 text-white">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div><h2 class="text-2xl md:text-3xl font-semibold">Like what you see?</h2><p class="text-neutral-300 mt-1">Let’s tailor a menu and design to your occasion.</p></div>
+    <a href="/contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList.toggle('hidden');b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true')});</script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: testimonials.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonials — Hilda May Events</title>
+  <meta name="description" content="Client reviews of our catering and event planning." />
+  <link rel="canonical" href="https://www.hildamay.com/testimonials.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Testimonials — Hilda May Events" />
+  <meta property="og:description" content="Client reviews of our catering and event planning." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/testimonials.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html" class="font-semibold" aria-current="page">Testimonials</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div><div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/about.html">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Testimonials</h1>
+  <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">Josimar and team were amazing. They provided bartending, drinks, and furniture rentals for an athlete lounge setup for six nights straight—seamless execution.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Sarah Lopes</strong> · Nov 24, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">Staff is friendly and accommodating. Professional and clean service. Food was excellent and versatile.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Genevieve</strong> · Oct 5, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">From arrival to breakdown, outstanding. Prompt, perfectly seasoned dishes, and gracious hospitality—our guests were thrilled.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>JA</strong> · Oct 5, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">We hired the team for a taco event at our company. Fresh ingredients, delicious salsas, and options for everyone. Employees are still raving.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Sheema Farrukh</strong> · Sep 30, 2024 · Gunnebo Canada</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="bg-neutral-900 text-white">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div><h2 class="text-2xl md:text-3xl font-semibold">Your story could be next</h2><p class="text-neutral-300 mt-1">Let’s create something guests talk about for years.</p></div>
+    <a href="/contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Book Your Event</a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList.toggle('hidden');b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true')});</script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: about.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Hilda May Events</title>
+  <meta name="description" content="Our story, team, and design philosophy. Based in Toronto with North American coverage and select destinations." />
+  <link rel="canonical" href="https://www.hildamay.com/about.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="About — Hilda May Events" />
+  <meta property="og:description" content="Our story, team, and design philosophy." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/about.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html" class="font-semibold" aria-current="page">About</a><a href="/faq.html">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div><div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/faq.html">FAQ</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14 copy">
+  <h1 class="text-3xl md:text-4xl font-semibold">About Hilda May</h1>
+  <p>Founded after 15+ years in events, our studio blends creative vision with precise logistics to deliver immersive experiences that feel both timeless and modern.</p>
+  <p>Our team draws from interior design, hospitality, and fine arts—ensuring strong aesthetics, impeccable service, and memorable atmospheres.</p>
+</section>
+
+<section class="wrap px-4 py-14">
+  <h2 class="text-2xl md:text-3xl font-semibold">Coverage</h2>
+  <p class="mt-2 text-neutral-700">Toronto-based. Serving North America. Select destination programs.</p>
+</section>
+
+<section class="bg-neutral-900 text-white">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div><h2 class="text-2xl md:text-3xl font-semibold">Let’s work together</h2><p class="text-neutral-300 mt-1">Share your vision—we’ll bring it to life.</p></div>
+    <a href="/contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList.toggle('hidden');b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true')});</script>
+</body>
+</html>
+
+
+<!-- ==========================
+FILE: faq.html
+=========================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Hilda May Events</title>
+  <meta name="description" content="Booking window, tastings, dietary needs, staffing, rentals, travel fees, and more." />
+  <link rel="canonical" href="https://www.hildamay.com/faq.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="FAQ — Hilda May Events" />
+  <meta property="og:description" content="Common questions answered about catering and planning." />
+  <meta property="og:image" content="https://www.hildamay.com/og.jpg" />
+  <meta property="og:url" content="https://www.hildamay.com/faq.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
+</head>
+<body class="bg-white text-neutral-900">
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="/index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/faq.html" class="font-semibold" aria-current="page">FAQ</a><a href="/contact.html">Book</a>
+    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div><div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="/catering.html">Catering</a><a href="/events.html">Event Planning</a><a href="/gallery.html">Gallery</a><a href="/testimonials.html">Testimonials</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+</header>
+
+<section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Frequently Asked Questions</h1>
+  <div class="mt-6 space-y-3">
+    <details class="rounded-xl ring-1 ring-neutral-200 p-4"><summary class="font-medium cursor-pointer">How far in advance should we book?</summary><p class="mt-2 text-neutral-700">We recommend 9–12 months; earlier for destination and peak dates.</p></details>
+    <details class="rounded-xl ring-1 ring-neutral-200 p-4"><summary class="font-medium cursor-pointer">Do you accommodate dietary needs?</summary><p class="mt-2 text-neutral-700">Yes—vegan, vegetarian, gluten-free, halal, kosher-style, allergies. We craft inclusive menus.</p></details>
+    <details class="rounded-xl ring-1 ring-neutral-200 p-4"><summary class="font-medium cursor-pointer">Do you travel?</summary><p class="mt-2 text-neutral-700">Yes. We regularly work across North America with trusted partners.</p></details>
+    <details class="rounded-xl ring-1 ring-neutral-200 p-4"><summary class="font-medium cursor-pointer">What’s included in planning?</summary><p class="mt-2 text-neutral-700">Vendor curation, timelines, styling, production, and on-site direction.</p></details>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');b&&m&&b.addEventListener('click',()=>{m.classList)
+  <section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Tell us about your event</h1>
+  <p class="mt-2 text-neutral-700">We typically reply within 24 business hours.</p>
+
+  <!-- Netlify form -->
+  <form name="inquiry" method="POST" data-netlify="true" action="/thanks.html" netlify-honeypot="bot-field" class="mt-8 grid md:grid-cols-2 gap-4">
+    <input type="hidden" name="form-name" value="inquiry">
+    <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
+
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Full Name</span>
+      <input required name="name" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="Alex Morgan">
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Email</span>
+      <input required type="email" name="email" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="you@example.com">
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Phone</span>
+      <input name="phone" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="+1 (___) ___-____">
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Event Date</span>
+      <input name="date" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="May 2026">
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Location / Venue</span>
+      <input name="location" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="Venue / City">
+    </label>
+    <label class="flex flex-col gap-1">
+      <span class="text-sm">Guest Count</span>
+      <input name="guests" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="~150">
+    </label>
+    <label class="flex flex-col gap-1 md:col-span-2">
+      <span class="text-sm">Budget Range</span>
+      <input name="budget" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="$15k–$40k">
+    </label>
+    <label class="flex flex-col gap-1 md:col-span-2">
+      <span class="text-sm">Your Vision</span>
+      <textarea name="message" rows="6" class="rounded-md px-3 py-2 ring-1 ring-neutral-300" placeholder="Tell us about the atmosphere, palette, and priorities."></textarea>
+    </label>
+    <div class="md:col-span-2">
+      <button class="rounded-full bg-black text-white px-6 py-3 font-semibold">Send Inquiry</button>
+    </div>
+  </form>
+
+  <div class="mt-8 text-sm text-neutral-600">
+    <p><strong>Email:</strong> <a class="underline" href="mailto:info@hildamay.com">info@hildamay.com</a> ·
+       <strong>Phone:</strong> <a class="underline" href="tel:+16472206104">+1 (647) 220 6104</a></p>
+    <p class="mt-1"><strong>Instagram:</strong> 
+      <a href="https://www.instagram.com/HildaMay_Events" target="_blank" rel="noopener">@HildaMay_Events</a> · 
+      <strong>Pinterest:</strong> 
+      <a href="https://www.pinterest.com/HildaMayDesign" target="_blank" rel="noopener">HildaMayDesign</a>
+    </p>
+  </div>
+</section>
+
+<footer class="border-t border-neutral-200">
+  <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
+</footer>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+  const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
+  b&&m&&b.addEventListener('click',()=>{
+    m.classList.toggle('hidden');
+    b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true');
+  });
+</script>
 </body>
 </html>
