@@ -1,25 +1,87 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Testimonials — Hilda May Events</title>
-<meta name="description" content="Client reviews of our catering and event planning.">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>.wrap{max-width:1200px;margin-inline:auto}</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonials — Hilda May Events</title>
+  <meta name="description" content="Client reviews of our catering and event planning." />
+  <link rel="canonical" href="testimonials.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Testimonials — Hilda May Events" />
+  <meta property="og:description" content="See what our clients say about our catering and event design." />
+  <meta property="og:image" content="og.jpg" />
+  <meta property="og:url" content="testimonials.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
 </head>
 <body class="bg-white text-neutral-900">
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="catering.html">Catering</a><a href="events.html">Event Planning</a><a href="gallery.html">Gallery</a><a href="testimonials.html" class="font-semibold">Testimonials</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Book</a>
-    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm">Menu</button>
-  </div>
-</header>
-<section class="wrap px-4 py-14">
-  <h1 class="text-3xl md:text-4xl font-semibold">Testimonials</h1>
-  <p class="mt-2 text-neutral-700">See what our clients say about us.</p>
-</section>
-<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body></html>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="catering.html">Catering</a>
+        <a href="events.html">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html" class="font-semibold" aria-current="page">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Book</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm" role="menu" aria-label="Mobile">
+        <a href="catering.html">Catering</a>
+        <a href="events.html">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html" aria-current="page">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="wrap px-4 py-14">
+    <h1 class="text-3xl md:text-4xl font-semibold">Testimonials</h1>
+    <p class="mt-2 text-neutral-700">Our clients’ words speak to our commitment, service, and detail.</p>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="wrap px-4 pb-14 grid md:grid-cols-2 gap-6 text-sm">
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">Josimar and the Red Table Catering team were amazing! They provided bartending, drinks and furniture rentals for an athlete lounge set up for six nights straight—seamless execution.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Sarah Lopes</strong> · Nov 24, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">Staff is friendly and very accommodating. Professional and clean service. Food is amazing—the Chef is very versatile!</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Genevieve</strong> · Oct 5, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">From arrival to breakdown, outstanding. Prompt, perfectly seasoned dishes, and gracious hospitality—our guests were thrilled.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>JA</strong> · Oct 5, 2024</footer>
+    </blockquote>
+    <blockquote class="rounded-2xl ring-1 ring-neutral-200 p-6">
+      <div class="text-yellow-500" aria-hidden="true">★★★★★</div>
+      <p class="mt-3">We hired Red Table Catering for a taco event at our company, and they exceeded all expectations! Fresh ingredients, delicious homemade salsas, and options for everyone. Our employees are still raving about the food.</p>
+      <footer class="mt-3 text-neutral-600">— <strong>Sheema Farrukh</strong> · Sep 30, 2024 · Gunnebo Canada</footer>
+    </blockquote>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-neutral-900 text-white">
+    <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Your story could be next</h2>
+        <p class="text-neutral-300 mt-1">Let’s create something guests talk about for years.</p>
+      </div>
+      <a href="contact.html" class="rounded-full bg-white text-neutral
