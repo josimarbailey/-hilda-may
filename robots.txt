@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.hildamay.com/sitemap.xml
