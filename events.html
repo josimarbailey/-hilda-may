@@ -1,25 +1,179 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Event Planning — Hilda May Events</title>
-<meta name="description" content="Planning, vendor management, styling, florals, rentals, and production with global capability.">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>.wrap{max-width:1200px;margin-inline:auto}</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Planning & Design — Hilda May Events</title>
+  <meta name="description" content="Full‑service planning, vendor management, timelines, styling, florals, rentals, and production with global capability." />
+  <link rel="canonical" href="events.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Event Planning & Design — Hilda May Events" />
+  <meta property="og:description" content="White‑glove event planning and design services. From concept to production, we manage every detail." />
+  <meta property="og:image" content="og.jpg" />
+  <meta property="og:url" content="events.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
 </head>
 <body class="bg-white text-neutral-900">
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="catering.html">Catering</a><a href="events.html" class="font-semibold">Event Planning</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Book</a>
-    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm">Menu</button>
-  </div><div id="mnav" class="md:hidden hidden border-t border-neutral-200 px-4 py-3 grid grid-cols-2 gap-3 text-sm"><a href="catering.html">Catering</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-</header>
-<section class="wrap px-4 py-14">
-  <h1 class="text-3xl md:text-4xl font-semibold">Event Planning & Design</h1>
-  <p class="mt-3 text-neutral-700">We manage concept, design, logistics, and on-site execution for weddings, corporate programs, and private celebrations.</p>
-</section>
-<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body></html>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="catering.html">Catering</a>
+        <a href="events.html" class="font-semibold" aria-current="page">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Book</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm" role="menu" aria-label="Mobile">
+        <a href="catering.html">Catering</a>
+        <a href="events.html" aria-current="page">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">White‑Glove Planning</p>
+        <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Event Planning & Design</h1>
+        <p class="mt-4 text-lg text-neutral-700">We manage concept, design, logistics, and on‑site execution for weddings, corporate programs, and private celebrations worldwide.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Request Proposal</a>
+          <a href="#packages" class="inline-flex items-center rounded-full border px-5 py-3">View Packages</a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+        <picture>
+          <source type="image/avif" srcset="images/hero-events.avif" />
+          <source type="image/webp" srcset="images/hero-events.webp" />
+          <img class="w-full h-full object-cover" src="images/hero-events.jpg" width="1600" height="1067" decoding="async" alt="Elegant event setup with florals and candlelight" />
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="wrap px-4 py-14 copy">
+    <h2 class="text-2xl md:text-3xl font-semibold">Services</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3>Planning</h3>
+        <ul class="list-disc ml-5 text-sm">
+          <li>Full & partial planning</li>
+          <li>Budget & timeline ownership</li>
+          <li>Vendor curation & management</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3>Design</h3>
+        <ul class="list-disc ml-5 text-sm">
+          <li>Styling & floral direction</li>
+          <li>Lighting & scenic design</li>
+          <li>Custom fabrication</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3>Production</h3>
+        <ul class="list-disc ml-5 text-sm">
+          <li>Run‑of‑show & technical direction</li>
+          <li>Staffing & rentals</li>
+          <li>On‑site execution</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="bg-neutral-50" id="packages">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Packages</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3 class="text-xl font-semibold">Essential</h3>
+          <p class="text-neutral-600">Day‑of Coordination</p>
+          <p class="mt-3 text-3xl font-semibold">$3,500+</p>
+          <ul class="list-disc ml-5 mt-3">
+            <li>Final timeline & vendor orchestration</li>
+            <li>On‑site management</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-2 ring-black p-6">
+          <h3 class="text-xl font-semibold">Premium</h3>
+          <p class="text-neutral-600">Partial Planning</p>
+          <p class="mt-3 text-3xl font-semibold">$12,000+</p>
+          <ul class="list-disc ml-5 mt-3">
+            <li>Vendor curation</li>
+            <li>Design refinements & logistics</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3 class="text-xl font-semibold">Luxury</h3>
+          <p class="text-neutral-600">Full‑Service Planning</p>
+          <p class="mt-3 text-3xl font-semibold">$25,000+</p>
+          <ul class="list-disc ml-5 mt-3">
+            <li>Concept → grand finale</li>
+            <li>White‑glove planning & production</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Snapshots -->
+  <section class="wrap px-4 py-14 copy">
+    <h2 class="text-2xl md:text-3xl font-semibold">Case Snapshots</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3>“Summit Echo” Corporate Celebration</h3>
+        <p><strong>Challenge:</strong> 5,000+ attendees, complex staging.<br><strong>Approach:</strong> Zoned service, synchronized run‑of‑show.<br><strong>Outcome:</strong> Flawless service and stunning visuals.</p>
+      </div>
+      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+        <h3>“Luminary Summit” Gala</h3>
+        <p><strong>Challenge:</strong> Tech‑forward + classic elegance.<br><strong>Approach:</strong> Projection mapping, holographic details.<br><strong>Outcome:</strong> Immersive, future‑forward experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-neutral-900 text-white">
+    <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold">Let’s craft your experience</h2>
+        <p class="text-neutral-300 mt-1">From concept to curtain call.</p>
+      </div>
+      <a href="contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Request Proposal</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200">
+    <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
+    b&&m&&b.addEventListener('click',()=>{
+      m.classList.toggle('hidden');
+      b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true');
+    });
+  </script>
+</body>
+</html>
