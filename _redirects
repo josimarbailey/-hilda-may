@@ -1,5 +1,0 @@
-# Force all routes to index.html (prevents Netlify 404 on deep links)
-/*    /index.html   200
-
-# Optional: if this same site has both apex and www attached, force one primary (change to your choice)
-# https://hildamay.com/*   https://www.hildamay.com/:splat   301!
