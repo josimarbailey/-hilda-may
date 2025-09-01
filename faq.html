@@ -1,25 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FAQ — Hilda May Events</title>
-<meta name="description" content="Booking, tastings, dietary needs, rentals, travel fees, and more.">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>.wrap{max-width:1200px;margin-inline:auto}</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Hilda May Events</title>
+  <meta name="description" content="Booking windows, tastings, dietary needs, staffing, rentals, travel fees, and more." />
+  <link rel="canonical" href="faq.html" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="FAQ — Hilda May Events" />
+  <meta property="og:description" content="Frequently asked questions about our catering and event planning." />
+  <meta property="og:image" content="og.jpg" />
+  <meta property="og:url" content="faq.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
 </head>
 <body class="bg-white text-neutral-900">
-<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3"><span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span><span class="font-semibold">Hilda May Events</span></a>
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="catering.html">Catering</a><a href="events.html">Event Planning</a><a href="gallery.html">Gallery</a><a href="testimonials.html">Testimonials</a><a href="about.html">About</a><a href="faq.html" class="font-semibold">FAQ</a><a href="contact.html">Book</a>
-    </nav><button id="menuBtn" class="md:hidden border px-3 py-2 text-sm">Menu</button>
-  </div>
-</header>
-<section class="wrap px-4 py-14">
-  <h1 class="text-3xl md:text-4xl font-semibold">Frequently Asked Questions</h1>
-  <p class="mt-2 text-neutral-700">Answers to the most common questions about our services.</p>
-</section>
-<footer class="border-t border-neutral-200"><div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body></html>
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="catering.html">Catering</a>
+        <a href="events.html">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html" class="font-semibold" aria-current="page">FAQ</a>
+        <a href="contact.html">Book</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm" role="menu" aria-label="Mobile">
+        <a href="catering.html">Catering</a>
+        <a href="events.html">Event Planning</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="about.html">About</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="wrap px-4 py-14">
+    <h1 class="text-3xl md:text-4xl font-semibold">Frequently Asked Questions</h1>
+    <p class="mt-2 text-neutral-700">Answers to common questions about our services and process.</p>
+  </section>
+
+  <!-- FAQ Items -->
+  <section class="wrap px-4 pb-14">
+    <div class="space-y-3">
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">How far in advance should we book?</summary>
+        <p class="mt-2 text-neutral-700">We recommend 9–12 months for weddings and peak dates. For corporate and private events, 3–6 months is typically sufficient.</p>
+      </details>
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">Do you accommodate dietary needs?</summary>
+        <p class="mt-2 text-neutral-700">Yes. We provide vegan, vegetarian, gluten-free, halal, kosher-style, and allergy-sensitive options. Menus are crafted to be inclusive while maintaining flavor and presentation.</p>
+      </details>
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">Do you travel?</summary>
+        <p class="mt-2 text-neutral-700">Yes. We regularly work across North America and Europe with trusted vendor partners. Destination events are quoted individually to cover travel and logistics.</p>
+      </details>
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">What’s included in planning?</summary>
+        <p class="mt-2 text-neutral-700">Vendor curation, timelines, styling, production, staffing, and on-site direction. We manage every detail from start to finish.</p>
+      </details>
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">Do you handle rentals?</summary>
+        <p class="mt-2 text-neutral-700">Yes. We source and manage rentals for tabletop, linens, furniture, kitchen equipment, and specialty décor.</p>
+      </details>
+      <details class="rounded-xl ring-1 ring-neutral-200 p-4">
+        <summary class="font-medium cursor-pointer">What are your minimums?</summary>
+        <p class="mt-2 text-neutral-700">On-site events: $3,500 weekday and $5,500 weekend. Drop-off menus start at $1,200.</p>
+      </details>
+    </div>
+  </sec
