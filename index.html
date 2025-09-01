@@ -4,68 +4,247 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hilda May Events – Premier Event Planning & Design</title>
+  <meta name="description" content="Hilda May transforms grand visions into magnificent, unforgettable realities—weddings, galas, corporate events." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html{scroll-behavior:smooth}
     .wrap{max-width:1200px;margin-inline:auto}
     .copy p{margin-top:0.9rem}
+    .copy h3{margin-top:1.25rem;font-weight:700}
+    .copy ul{list-style:disc;margin-left:1.25rem}
   </style>
 </head>
 <body class="bg-white text-neutral-900">
-  <header class="border-b sticky top-0 bg-white/85 backdrop-blur z-40">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
     <div class="wrap px-4 py-3 flex items-center justify-between">
-      <strong>Hilda May Events</strong>
-      <nav class="hidden md:flex gap-5 text-sm">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+      <a href="#home" class="flex items-center gap-3">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#signature" class="hover:underline">Signature</a>
+        <a href="#design" class="hover:underline">Design</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#pricing" class="hover:underline">Investment</a>
+        <a href="#portfolio" class="hover:underline">Portfolio</a>
+        <a href="#testimonials" class="hover:underline">Testimonials</a>
+        <a href="#contact" class="hover:underline">Contact</a>
       </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm">Menu</button>
+    </div>
+    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a href="#about">About</a><a href="#signature">Signature</a>
+        <a href="#design">Design</a><a href="#services">Services</a>
+        <a href="#pricing">Investment</a><a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+      </div>
     </div>
   </header>
 
-  <section class="wrap px-4 py-14">
-    <h1 class="text-4xl font-bold">Premier Event Planning & Design</h1>
-    <p class="mt-4 text-lg text-neutral-700">At Hilda May, we transform your grandest visions into magnificent, unforgettable realities.</p>
-    <div class="mt-6">
-      <a href="#contact" class="inline-block rounded-full bg-black text-white px-5 py-3">Schedule Your Consultation</a>
+  <!-- Hero -->
+  <section id="home" class="wrap px-4 py-14 lg:py-20">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">Premier Event Planning & Design</p>
+        <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">Transforming visions into magnificent realities</h1>
+        <p class="mt-4 text-lg text-neutral-700">
+          From intimate private parties and exquisite weddings to large-scale corporate galas and milestone celebrations, we craft unparalleled event experiences for discerning clients.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#contact" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Schedule Your Consultation</a>
+          <a href="#portfolio" class="inline-flex items-center rounded-full border px-5 py-3">View Portfolio</a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop" alt="Elegant event setting">
+      </div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 copy">
-      <h2 class="text-3xl font-semibold">About</h2>
-      <p>Our comprehensive services ensure every detail is meticulously curated.</p>
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Premier Event Planning & Design</h2>
+      <p>At Hilda May, we transform your grandest visions into magnificent, unforgettable realities. From intimate private parties and exquisite weddings to large-scale corporate galas and milestone celebrations, we specialize in crafting unparalleled event experiences for discerning clients.</p>
+      <p>Our comprehensive services ensure every detail is meticulously curated, from stunning floral designs and bespoke culinary experiences to seamless coordination and expert vendor management. We guide you through a stress-free planning journey, ensuring your event perfectly reflects your unique style and vision.</p>
+      <p>With a passion for innovative design and an unwavering commitment to perfection, Hilda May delivers celebrations that are not just planned, but flawlessly executed and cherished for a lifetime.</p>
     </div>
   </section>
 
+  <!-- Signature -->
+  <section id="signature">
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Our Signature: Unforgettable Experiences</h2>
+      <p>We craft unforgettable experiences—corporate events, milestone celebrations, private parties, galas, and weddings—into sophisticated, personal realities. Each occasion fuses meticulous coordination with inspired design, creating cherished moments that last a lifetime.</p>
+      <p>Our unique approach begins with truly understanding your desires and objectives. We listen intently to your goals, brand narrative, or the subtle elements defining your occasion. This intimate understanding forms the foundation of your celebration, transforming your vision into an immersive experience for you and your guests.</p>
+      <p>Every detail—bespoke installations, a culinary journey tailored to your concept, or entertainment that perfectly captures your gathering’s essence—is meaningful and flawlessly executed under expert coordination.</p>
+      <p>With unparalleled access to exclusive global venues and a meticulously curated network of premier vendors—from world-renowned chefs and master florists to visionary photographers and captivating entertainers—we bring any ambitious vision to life.</p>
+    </div>
+  </section>
+
+  <!-- Design Philosophy -->
+  <section id="design" class="bg-neutral-50">
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Design Philosophy: Crafting Your Dream</h2>
+      <p>Your event should be an authentic reflection of your unique vision and personal style. We reject cookie-cutter approaches, embracing a bespoke creative process that elevates your aspirations beyond imagination.</p>
+      <h3>Personalized Narrative</h3>
+      <p>We immerse ourselves in your story, exploring your experiences, preferences, and aspirations through in-depth consultations. Our aim is to create an event that truly represents your journey, weaving elements of your history, memories, and future objectives into every design choice.</p>
+      <h3>Refined Aesthetics</h3>
+      <p>Drawing from classical design principles and embracing contemporary innovation, we create environments that are both timeless and modern. Our designs balance opulent details with profound intentionality, ensuring luxury that feels sophisticated, never excessive.</p>
+      <h3>Sensory Excellence</h3>
+      <p>We orchestrate a complete sensory experience: stunning visual décor and lighting, rich textures of fabrics and florals, aromatic atmospheres, bespoke soundscapes, and culinary artistry—an immersive celebration that leaves an indelible impression.</p>
+      <p>Our dedication transforms spaces into captivating narratives, turning your dreams into tangible, breathtaking reality.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
   <section id="services">
-    <div class="wrap px-4 py-14 copy">
-      <h2 class="text-3xl font-semibold">Services</h2>
-      <p>Full-service planning • Design & Styling • Global Logistics • Vendor Curation</p>
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Event Services: From Vision to Flawless Execution</h2>
+      <h3>Coordination & Vendor Curation</h3>
+      <p>Comprehensive management from concept to completion: expert vendor selection, budget administration, meticulous timeline creation, and seamless on-site coordination. We act as your primary point of contact, managing communications and proactively solving problems, so you can enjoy the planning journey.</p>
+      <h3>Design & Aesthetic Styling</h3>
+      <p>We conceptualize and execute your event’s aesthetic, incorporating bespoke florals, dynamic lighting, custom furniture, unique tabletop designs, and impactful installations. Our process includes mood boards, renderings, and material samples to align on a cohesive vision.</p>
+      <h3>Global Event Logistics</h3>
+      <p>We coordinate multi-day events worldwide, managing complex logistics, guest experiences, cultural considerations, and local partnerships—from remote islands to historic European venues—with precision and grace.</p>
+      <p><strong>Exclusive Service:</strong> We accept a limited number of events annually to provide our signature white-glove attention.</p>
     </div>
   </section>
 
-  <section id="pricing" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 copy">
-      <h2 class="text-3xl font-semibold">Pricing</h2>
-      <p>Day-of from $3,500 • Partial from $12,000 • Full-Service from $25,000</p>
+  <!-- Comprehensive Services -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Elevating Every Detail: Our Comprehensive Services</h2>
+      <h3>Strategic Planning & Management</h3>
+      <ul>
+        <li><strong>Full-Service Planning:</strong> Concept development, vendor procurement, logistics, on-site management.</li>
+        <li><strong>Partial Planning:</strong> Targeted expert guidance to refine and perfect existing plans.</li>
+        <li><strong>Day-of Coordination:</strong> Final details, vendor orchestration, timeline oversight for a seamless day.</li>
+        <li><strong>Venue Sourcing & Selection</strong> • <strong>Vendor Management & Booking</strong> • <strong>Budget Management</strong> • <strong>Guest Management</strong> • <strong>Post-Event Services</strong></li>
+      </ul>
+      <h3>Artistic Design & Operational Excellence</h3>
+      <ul>
+        <li><strong>Styling & Design Consultation</strong> • <strong>Floral Design & Installation</strong> • <strong>Custom Installations</strong> • <strong>Lighting Design</strong></li>
+        <li><strong>Rentals Coordination</strong> • <strong>Catering Coordination</strong> • <strong>Entertainment Booking</strong></li>
+        <li><strong>Photography & Videography</strong> • <strong>Travel & Accommodation Management</strong> • <strong>Timeline Creation</strong></li>
+      </ul>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="wrap px-4 py-14 copy">
-      <h2 class="text-3xl font-semibold">Contact</h2>
-      <p>Email: <a class="text-blue-600" href="mailto:info@hildamay.com">info@hildamay.com</a></p>
-      <p>Phone: <a class="text-blue-600" href="tel:+16472206104">+1 (647) 220 6104</a></p>
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="wrap px-4 py-14 lg:py-20">
+      <h2 class="text-3xl md:text-4xl font-semibold">Investment in Excellence: Services & Pricing</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3 class="text-xl font-semibold">Essential</h3>
+          <p class="text-neutral-600">Day-of Coordination</p>
+          <p class="mt-4 text-3xl font-semibold">$3,500+</p>
+          <ul class="mt-4 list-disc ml-5 text-sm text-neutral-700">
+            <li>Final timeline & vendor orchestration</li>
+            <li>On-site management & troubleshooting</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-2 ring-black p-6">
+          <h3 class="text-xl font-semibold">Premium</h3>
+          <p class="text-neutral-600">Partial Planning</p>
+          <p class="mt-4 text-3xl font-semibold">$12,000+</p>
+          <ul class="mt-4 list-disc ml-5 text-sm text-neutral-700">
+            <li>Vendor curation for complex elements</li>
+            <li>Design refinements & logistics support</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3 class="text-xl font-semibold">Luxury</h3>
+          <p class="text-neutral-600">Full-Service Planning</p>
+          <p class="mt-4 text-3xl font-semibold">$25,000+</p>
+          <ul class="mt-4 list-disc ml-5 text-sm text-neutral-700">
+            <li>Concept to grand finale</li>
+            <li>White-glove planning & design</li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy mt-6 text-neutral-600">À la carte: Venue Sourcing ($2,500) • Design Consultation ($1,500) • Vendor Management ($3,000–$8,000) • Floral ($5,000–$15,000) • Guest Mgmt ($2,000–$6,000) • Travel & Accommodation (Custom). All pricing tailored to scope, guest count, location, and requirements.</p>
     </div>
   </section>
 
-  <footer class="border-t">
-    <div class="wrap px-4 py-8 text-sm text-neutral-600">
-      © <span id="y"></span> Hilda May Events
+  <!-- Portfolio -->
+  <section id="portfolio" class="bg-neutral-50">
+    <div class="wrap px-4 py-14 lg:py-20">
+      <h2 class="text-3xl md:text-4xl font-semibold">Our Portfolio: Crafting Unforgettable Moments</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <figure class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+          <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop" alt="Grand celebration">
+          <figcaption class="p-4 text-sm">
+            <strong>“Summit Echo” Grand Celebration</strong><br>
+            <em>Enbridge Centre, Edmonton — 5000+ corporate attendees.</em> A technologically advanced, visually stunning program with precise, multi-zone service.
+          </figcaption>
+        </figure>
+        <figure class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+          <img class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?q=80&w=1600&auto=format&fit=crop" alt="Gala evening">
+          <figcaption class="p-4 text-sm">
+            <strong>“Luminary Summit” Gala</strong><br>
+            <em>Grand Ballroom, New York City — 500+ industry leaders.</em> Projection-mapped architecture, holographic name tags, and a future-forward dessert bar.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">Testimonials: Client Success Stories</h2>
+      <p>“Choosing Hilda May was our best decision. They transformed our vague ideas into a breathtaking reality, exceeding all expectations. Every detail was perfect.” — <em>Alexandra &amp; James</em></p>
+      <p>“The team listened and created a celebration uniquely ‘us’ while surprising us with unimaginable elements. Our guests still say it was the most beautiful event they’ve attended.” — <em>Michael &amp; David</em></p>
+      <p>“As a detail-oriented person, I was amazed by their grace under pressure and logistics mastery. We could truly relax and enjoy the day.” — <em>Sophia &amp; Thomas</em></p>
+      <p>“Magical, meticulously coordinated, and artistically directed—we were able to immerse ourselves in pure joy.” — <em>Sarah &amp; John</em></p>
+    </div>
+  </section>
+
+  <!-- About HM -->
+  <section>
+    <div class="wrap px-4 py-14 lg:py-20 copy text-[1.06rem] leading-7">
+      <h2 class="text-3xl md:text-4xl font-semibold">About Hilda May: The Art of Event Planning</h2>
+      <p>Named after its visionary founder, Hilda May, the firm builds on 15+ years of luxury event planning. We orchestrate immersive experiences reflecting each client’s distinct vision, with a bespoke approach to coordination, design, and vendor booking.</p>
+      <p>Our team brings expertise from interior design, high-end hospitality, and fine arts—delivering breathtaking aesthetics, impeccable service, and unforgettable atmospheres.</p>
+      <p>Studios in New York, London, and Paris provide global reach and local insight, enabling world-class experiences anywhere your celebration takes you.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-neutral-900 text-white">
+    <div class="wrap px-4 py-14 lg:py-20">
+      <h2 class="text-3xl md:text-4xl font-semibold">Contact Us: Let's Plan Your Extraordinary Event</h2>
+      <p class="mt-2 text-neutral-200">Schedule a complimentary consultation to discuss your vision and timeline.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="mailto:info@hildamay.com" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-5 py-3">Email: info@hildamay.com</a>
+        <a href="tel:+16472206104" class="inline-flex items-center rounded-full ring-1 ring-white/40 px-5 py-3">Phone: +1 (647) 220 6104</a>
+      </div>
+      <div class="mt-6 copy text-neutral-200">
+        <p><strong>Instagram:</strong> @HildaMay_Events &nbsp;•&nbsp; <strong>Pinterest:</strong> HildaMayDesign</p>
+        <p><strong>Studios:</strong> New York • London • Paris — consultations by appointment only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200">
+    <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-neutral-600">
+      <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
+      <a href="#home" class="hover:underline">Back to top ↑</a>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    document.getElementById('menuBtn').addEventListener('click',()=> {
+      const m=document.getElementById('mnav'); m.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
