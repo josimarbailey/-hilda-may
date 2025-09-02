@@ -1,5 +1,2 @@
-# Force HTTPS
 http://*  https://:splat  301!
-# Canonical host: send www to apex
 www.hildamay.com/*  https://hildamay.com/:splat  301
-hildamay.com/*  https://www.hildamay.com/:splat  301
