@@ -19,36 +19,38 @@
   <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
 </head>
 <body class="bg-white text-neutral-900">
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-neutral-200">
-    <div class="wrap px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-semibold">HM</span>
-        <span class="font-semibold tracking-wide">Hilda May Events</span>
-      </a>
-      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-        <a href="catering.html" class="font-semibold" aria-current="page">Catering</a>
-        <a href="events.html">Event Planning</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-4 py-2">Book</a>
-      </nav>
-      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
-    </div>
-    <nav id="mnav" class="md:hidden hidden border-t border-neutral-200" aria-label="Mobile">
-      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-        <a href="catering.html" aria-current="page">Catering</a>
-        <a href="events.html">Event Planning</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-black text-white px-4 py-2">Book</a>
-      </div>
+  
+<!-- Header (dark) -->
+<header class="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur border-b border-neutral-800 text-white">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-neutral-900 font-semibold">HM</span>
+      <span class="font-semibold tracking-wide">Hilda May Events</span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="catering.html" class="text-neutral-300 hover:text-white">Catering</a>
+      <a href="events.html" class="text-neutral-300 hover:text-white">Event Planning</a>
+      <a href="gallery.html" class="text-neutral-300 hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="text-neutral-300 hover:text-white">Testimonials</a>
+      <a href="about.html" class="text-neutral-300 hover:text-white">About</a>
+      <a href="faq.html" class="text-neutral-300 hover:text-white">FAQ</a>
+      <a href="contact.html" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
     </nav>
-  </header>
+    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border border-white/20 px-3 py-2 text-sm text-white" aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <nav id="mnav" class="md:hidden hidden border-t border-neutral-800 bg-neutral-950 text-neutral-200" aria-label="Mobile">
+    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
+    </div>
+  </nav>
+</header>
+
 
   <!-- Hero -->
   <section class="relative">
