@@ -18,6 +18,24 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
 </head>
+<script>
+(function(){
+  const FB="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop";
+  document.querySelectorAll("img").forEach(img=>{
+    let triedSwap=false;
+    img.addEventListener("error", ()=>{
+      const src=img.getAttribute("src")||"";
+      if(!triedSwap){
+        img.src = src.startsWith("/images/") ? src.replace(/^\/images\//,"images/")
+                                            : src.replace(/^images\//,"/images/");
+        triedSwap=true;
+        return;
+      }
+      if(img.src!==FB) img.src=FB;
+    });
+  });
+})();
+</script>
 <body class="bg-white text-neutral-900">
   
 <!-- Header (dark) -->
