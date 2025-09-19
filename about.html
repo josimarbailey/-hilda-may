@@ -7,11 +7,14 @@
   <meta name="description" content="Our story, philosophy, and team. Hilda May Events blends creative vision with precise logistics to deliver refined experiences worldwide." />
   <link rel="canonical" href="about.html" />
   <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / Twitter -->
   <meta property="og:title" content="About — Hilda May Events" />
   <meta property="og:description" content="Our story, philosophy, and team. Hilda May Events blends creative vision with precise logistics to deliver refined experiences worldwide." />
-  <meta property="og:image" content="og.jpg" />
-  <meta property="og:url" content="about.html" />
+  <meta property="og:image" content="images/og-about.jpg" />
+  <meta property="og:url" content="https://hildamay.com/about.html" />
   <meta name="twitter:card" content="summary_large_image" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
 </head>
@@ -30,28 +33,40 @@
         <a href="testimonials.html">Testimonials</a>
         <a href="about.html" class="font-semibold" aria-current="page">About</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Book</a>
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-4 py-2">Book</a>
       </nav>
       <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm" aria-controls="mnav" aria-expanded="false">Menu</button>
     </div>
-    <div id="mnav" class="md:hidden hidden border-t border-neutral-200">
-      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm" role="menu" aria-label="Mobile">
+    <nav id="mnav" class="md:hidden hidden border-t border-neutral-200" aria-label="Mobile">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
         <a href="catering.html">Catering</a>
         <a href="events.html">Event Planning</a>
         <a href="gallery.html">Gallery</a>
         <a href="testimonials.html">Testimonials</a>
         <a href="about.html" aria-current="page">About</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-black text-white px-4 py-2">Book</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero image -->
+  <section class="relative">
+    <div class="wrap px-4 py-10">
+      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+        <img class="w-full h-[320px] md:h-[420px] object-cover"
+             src="images/hero-home.jpg"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';"
+             alt="Event detail from a Hilda May production">
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Story -->
   <section class="wrap px-4 py-14 copy">
     <h1 class="text-3xl md:text-4xl font-semibold">Our Story</h1>
     <p>Hilda May Events was founded to bring together culinary artistry and event design with precision logistics. Inspired by over 15 years in luxury hospitality, we craft experiences that balance timeless aesthetics with modern execution.</p>
-    <p>Our founder named the company after her great‑grandmother, Hilda May, whose values of generosity, elegance, and resilience continue to guide our work today.</p>
+    <p>Our founder named the company after her great-grandmother, Hilda May, whose values of generosity, elegance, and resilience continue to guide our work today.</p>
   </section>
 
   <!-- Philosophy -->
@@ -108,12 +123,11 @@
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Mobile menu
     const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
-    b&&m&&b.addEventListener('click',()=>{
-      m.classList.toggle('hidden');
-      b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true');
-    });
+    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true'); }); }
+    // Footer year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
