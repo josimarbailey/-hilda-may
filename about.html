@@ -3,211 +3,217 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
   <title>About — Hilda May Events</title>
-  <meta name="description" content="Our story, philosophy, and team. Hilda May Events blends creative vision with precise logistics to deliver refined experiences worldwide." />
-  <link rel="canonical" href="about.html" />
+  <meta name="description" content="Our story, philosophy, and team. Event planning and production with chef-driven catering partners." />
+  <link rel="canonical" href="https://hildamay.com/about.html" />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="About — Hilda May Events" />
-  <meta property="og:description" content="Our story, philosophy, and team. Hilda May Events blends creative vision with precise logistics to deliver refined experiences worldwide." />
-  <meta property="og:image" content="images/og-about.jpg" />
+  <meta property="og:description" content="Our story, philosophy, and team. Event planning and production with chef-driven catering partners." />
+  <meta property="og:image" content="/images/og.jpg" />
   <meta property="og:url" content="https://hildamay.com/about.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
-</head><script>
-(function(){
-  const FB="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop";
-  document.querySelectorAll("img").forEach(img=>{
-    let triedSwap=false;
-    img.addEventListener("error", ()=>{
-      const src=img.getAttribute("src")||"";
-      if(!triedSwap){
-        img.src = src.startsWith("/images/") ? src.replace(/^\/images\//,"images/")
-                                            : src.replace(/^images\//,"/images/");
-        triedSwap=true;
-        return;
-      }
-      if(img.src!==FB) img.src=FB;
-    });
-  });
-})();
-</script>
-
+</head>
 <body class="bg-white text-neutral-900">
-  <!-- Header (dark) -->
-<header class="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur border-b border-neutral-800 text-white">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-neutral-900 font-semibold">HM</span>
-      <span class="font-semibold tracking-wide">Hilda May Events</span>
-    </a>
-    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="catering.html" class="text-neutral-300 hover:text-white">Catering</a>
-      <a href="events.html" class="text-neutral-300 hover:text-white">Event Planning</a>
-      <a href="gallery.html" class="text-neutral-300 hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-neutral-300 hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-neutral-300 hover:text-white">About</a>
-      <a href="faq.html" class="text-neutral-300 hover:text-white">FAQ</a>
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
-    </nav>
-    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border border-white/20 px-3 py-2 text-sm text-white" aria-controls="mnav" aria-expanded="false">Menu</button>
-  </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-neutral-800 bg-neutral-950 text-neutral-200" aria-label="Mobile">
-    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-      <a href="catering.html" class="hover:text-white">Catering</a>
-      <a href="events.html" class="hover:text-white">Event Planning</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-      <a href="about.html" class="hover:text-white">About</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
-    </div>
-  </nav>
-</header>
 
+  <!-- Header (dark) -->
+  <header class="sticky top-0 z-50 bg-neutral-950/90 backdrop-blur border-b border-neutral-800 text-white">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-neutral-900 font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="events.html" class="text-neutral-300 hover:text-white">Event Planning</a>
+        <a href="catering.html" class="text-neutral-300 hover:text-white">Catering</a>
+        <a href="gallery.html" class="text-neutral-300 hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="text-neutral-300 hover:text-white">Testimonials</a>
+        <a href="about.html" class="text-white font-semibold">About</a>
+        <a href="faq.html" class="text-neutral-300 hover:text-white">FAQ</a>
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border border-white/20 px-3 py-2 text-sm text-white" aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t border-neutral-800 bg-neutral-950 text-neutral-200" aria-label="Mobile">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a href="events.html" class="hover:text-white">Event Planning</a>
+        <a href="catering.html" class="hover:text-white">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-white text-neutral-900 px-4 py-2 font-semibold hover:bg-neutral-200">Book</a>
+      </div>
+    </nav>
+  </header>
 
   <!-- Hero image -->
   <section class="relative">
     <div class="wrap px-4 py-10">
       <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
-        <img class="w-full h-[320px] md:h-[420px] object-cover"
-             src="images/hero-home.jpg"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';"
-             alt="Event detail from a Hilda May production">
+        <picture>
+          <source type="image/webp" srcset="/images/hero-home.webp?v=1" />
+          <img class="w-full h-[320px] md:h-[420px] object-cover"
+               src="/images/hero-home.jpg?v=1"
+               alt="Event detail from a Hilda May production"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';">
+        </picture>
       </div>
     </div>
   </section>
 
   <!-- Intro -->
-<section class="wrap px-4 py-14 copy">
-  <h1 class="text-3xl md:text-4xl font-semibold">About Hilda May Events</h1>
-  <p>We are an event planning and production studio. We lead concept, design, logistics, and on-site execution for weddings, corporate programs, and private celebrations. Catering is delivered by our culinary partners, with menus tailored to the brief.</p>
-  <p>Our name honors our founder’s great-grandmother, Hilda May—whose standards of generosity, elegance, and resolve shape how we work.</p>
-</section>
+  <section class="wrap px-4 py-14 copy">
+    <h1 class="text-3xl md:text-4xl font-semibold">About Hilda May Events</h1>
+    <p>We are an event planning and production studio. We lead concept, design, logistics, and on-site execution for weddings, corporate programs, and private celebrations. Catering is delivered by our culinary partners, with menus tailored to the brief.</p>
+    <p>Our name honors our founder’s great-grandmother, Hilda May—whose standards of generosity, elegance, and resolve shape how we work.</p>
+  </section>
 
-<!-- What we do -->
-<section class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">What we do</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Planning & Production</h3>
-        <ul class="list-disc ml-5">
-          <li>Scope, budget, and critical path</li>
-          <li>Vendor leadership and contracting</li>
-          <li>Run-of-show and showcall</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Design & Styling</h3>
-        <ul class="list-disc ml-5">
-          <li>Experience concept and guest flow</li>
-          <li>Floral, lighting, scenic, and rentals</li>
-          <li>Custom fabrication and branding</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Culinary & Bar</h3>
-        <ul class="list-disc ml-5">
-          <li>Chef-driven menus with partners</li>
-          <li>Dietary accommodations, allergen protocols</li>
-          <li>Bar programs and service staffing</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Our difference -->
-<section>
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Our difference</h2>
-    <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Ownership</h3>
-        <p>Single accountable team from concept to strike. One plan, one showcaller, one budget.</p>
-        <h3>Vendor leadership</h3>
-        <p>We curate, contract, and manage all partners—AV, floral, rentals, venues, and culinary.</p>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Transparency</h3>
-        <p>Clear scope, line-item budgets, and change-order control. No surprises.</p>
-        <h3>Inclusive hospitality</h3>
-        <p>Menus and experiences designed for diverse cultures, diets, and access needs.</p>
+  <!-- What we do -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">What we do</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Planning & Production</h3>
+          <ul class="list-disc ml-5">
+            <li>Scope, budget, and critical path</li>
+            <li>Vendor leadership and contracting</li>
+            <li>Run-of-show and showcall</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Design & Styling</h3>
+          <ul class="list-disc ml-5">
+            <li>Experience concept and guest flow</li>
+            <li>Floral, lighting, scenic, and rentals</li>
+            <li>Custom fabrication and branding</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Culinary & Bar</h3>
+          <ul class="list-disc ml-5">
+            <li>Chef-driven menus with partners</li>
+            <li>Dietary accommodations, allergen protocols</li>
+            <li>Bar programs and service staffing</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Leadership -->
-<section class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Leadership</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Creative Director</h3>
-        <p>Owns the idea, palette, and guest journey. Aligns visual disciplines into one language.</p>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Executive Producer</h3>
-        <p>Builds the critical path and budget. Leads pre-pro, tech, labor, safety, and showcall.</p>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Culinary Partner Lead</h3>
-        <p>Translates concept into food and beverage. Ensures dietary and service excellence.</p>
+  <!-- Our difference -->
+  <section>
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Our difference</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Ownership</h3>
+          <p>Single accountable team from concept to strike. One plan, one showcaller, one budget.</p>
+          <h3>Vendor leadership</h3>
+          <p>We curate, contract, and manage all partners—AV, floral, rentals, venues, and culinary.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Transparency</h3>
+          <p>Clear scope, line-item budgets, and change-order control. No surprises.</p>
+          <h3>Inclusive hospitality</h3>
+          <p>Menus and experiences designed for diverse cultures, diets, and access needs.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Partners -->
-<section>
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Culinary partner</h2>
-    <p>We deliver catering with <strong>Josie’s Kitchen</strong> for scale, authenticity, and chef-driven seasonal menus.</p>
-    <ul class="list-disc ml-5 text-sm mt-3">
-      <li>Conferences, galas, weddings, and private events</li>
-      <li>Full dietary accommodations and allergen protocols</li>
-    </ul>
-    <div class="mt-4 flex gap-3">
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan an Event</a>
-      <a href="catering.html" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Explore Catering</a>
-      <!-- Replace # with Josie’s Kitchen URL -->
-      <a href="#" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Visit Josie’s Kitchen</a>
+  <!-- Leadership -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Leadership</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Creative Director</h3>
+          <p>Owns the idea, palette, and guest journey. Aligns visual disciplines into one language.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Executive Producer</h3>
+          <p>Builds the critical path and budget. Leads pre-pro, tech, labor, safety, and showcall.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Culinary Partner Lead</h3>
+          <p>Translates concept into food and beverage. Ensures dietary and service excellence.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Partners -->
+  <section>
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Culinary partner</h2>
+      <p>We deliver catering with <strong>Josie’s Kitchen</strong> for scale, authenticity, and chef-driven seasonal menus.</p>
+      <ul class="list-disc ml-5 text-sm mt-3">
+        <li>Conferences, galas, weddings, and private events</li>
+        <li>Full dietary accommodations and allergen protocols</li>
+      </ul>
+      <div class="mt-4 flex gap-3">
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan an Event</a>
+        <a href="catering.html" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Explore Catering</a>
+        <a href="#" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Visit Josie’s Kitchen</a>
+      </div>
+    </div>
+  </section>
 
-<!-- Standards -->
-<section class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Standards & sustainability</h2>
-    <ul class="list-disc ml-5 text-sm">
-      <li>Safety: venue compliance, insurance, HACCP-aligned handling</li>
-      <li>Sourcing: seasonal menus, responsible vendors, waste-reduction plans</li>
-      <li>Accessibility: step-free routes, signage, dietary labeling, quiet spaces</li>
-    </ul>
-  </div>
-</section>
+  <!-- Standards -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Standards & sustainability</h2>
+      <ul class="list-disc ml-5 text-sm">
+        <li>Safety: venue compliance, insurance, HACCP-aligned handling</li>
+        <li>Sourcing: seasonal menus, responsible vendors, waste-reduction plans</li>
+        <li>Accessibility: step-free routes, signage, dietary labeling, quiet spaces</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- Studios & reach -->
-<section>
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Where we work</h2>
-    <p>Toronto-based. We serve the GTA and Canada, and we can deliver international programs on request.</p>
-    <p class="text-sm text-neutral-700 mt-2">In-person, online, or hybrid—planned to your brief.</p>
-  </div>
-</section>
+  <!-- Where we work -->
+  <section>
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Where we work</h2>
+      <p>Toronto-based. We serve the GTA and Canada, and we can deliver international programs on request.</p>
+      <p class="text-sm text-neutral-700 mt-2">In-person, online, or hybrid—planned to your brief.</p>
+    </div>
+  </section>
 
+  <!-- Footer -->
+  <footer class="border-t border-neutral-200">
+    <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
+  </footer>
 
-<!-- Clients & press (optional placeholders) -->
-<section class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Selected clients & press</h2>
-    <p class="text-sm">Add logos or pull-quotes here when available.</p>
-  </div>
-</section>
+  <!-- Scripts at end -->
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // Mobile menu
+    const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+    // Image path swap + fallback
+    (function(){
+      const FB='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+      document.querySelectorAll('img').forEach(img=>{
+        let triedSwap=false;
+        img.addEventListener('error',()=>{
+          const src=img.getAttribute('src')||'';
+          if(!triedSwap){
+            img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/') : src.replace(/^images\//,'/images/');
+            triedSwap=true; return;
+          }
+          if(img.src!==FB) img.src=FB;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
