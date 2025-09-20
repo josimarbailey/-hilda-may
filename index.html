@@ -43,62 +43,84 @@
 <body>
 
   <!-- Header: emerald bg + muted-gold text -->
-  <header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
-    <div class="wrap px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] font-semibold">HM</span>
-        <span class="font-semibold tracking-wide">Hilda May Events</span>
-      </a>
-      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-        <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
-        <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
-        <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
-        <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
-        <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
-        <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
-        <a href="contact.html" class="btn btn-secondary">Book</a>
-      </nav>
-      <button id="menuBtn"
-              class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[var(--gold)] border-white/20"
-              aria-controls="mnav" aria-expanded="false">Menu</button>
-    </div>
-    <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
-      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-        <a href="events.html" class="hover:text-white">Event Planning</a>
-        <a href="catering.html" class="hover:text-white">Catering</a>
-        <a href="gallery.html" class="hover:text-white">Gallery</a>
-        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="faq.html" class="hover:text-white">FAQ</a>
-        <a href="contact.html" class="col-span-2 btn btn-secondary text-center">Book</a>
-      </div>
+ <header class="sticky top-0 z-50 bg-[#0f6d4e]/95 backdrop-blur border-b border-[#0b583f] text-[#c7b277]">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0f6d4e] font-semibold">HM</span>
+      <span class="font-semibold tracking-wide">Hilda May Events</span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
+      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
+      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
+      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
+      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
+      <a href="contact.html" class="inline-flex items-center rounded-full px-4 py-2 font-semibold bg-[#c7b277] text-[#0f6d4e]">Book</a>
     </nav>
-  </header>
+    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[#c7b277] border-white/20"
+            aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <nav id="mnav" class="md:hidden hidden border-t border-[#0b583f] bg-[#0f6d4e] text-[#c7b277]" aria-label="Mobile">
+    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold bg-[#c7b277] text-[#0f6d4e]">Book</a>
+    </div>
+  </nav>
+</header>
+
 
   <!-- Hero -->
-  <section class="relative">
-    <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <p class="text-xs uppercase tracking-wider text-[var(--gold)] font-semibold">Event Planning & Production</p>
-        <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">We plan conferences, weddings, and brand moments</h1>
-        <p class="mt-4 text-lg text-[var(--muted)]">Concept, logistics, design, and on-site direction. Catering delivered with <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="contact.html" class="btn btn-primary">Plan an Event</a>
-          <a href="gallery.html" class="btn btn-secondary">View Work</a>
-        </div>
-        <p class="mt-3 text-sm text-[var(--muted)]">Toronto-based • Canada-wide • Select international</p>
+  <!-- Hero -->
+<section class="relative">
+  <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
+      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">We plan conferences, weddings, and brand moments</h1>
+      <p class="mt-4 text-lg text-neutral-700">Concept, logistics, design, and on-site direction. Catering delivered with <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&T)</strong>.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-[#0f6d4e] text-white px-5 py-3">Plan an Event</a>
+        <a href="gallery.html" class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0f6d4e] px-5 py-3">View Work</a>
       </div>
-      <div class="rounded-2xl overflow-hidden ring-1 ring-[var(--line)]">
-        <picture>
-          <source type="image/webp" srcset="/images/hero-home.webp?v=5">
-          <img src="/images/hero-home.jpg?v=5"
-               width="1600" height="1067" decoding="async" loading="eager"
-               alt="Elegant event production and catering setup"
-               class="w-full h-full object-cover">
-        </picture>
-      </div>
+      <p class="mt-3 text-sm text-neutral-500">Toronto-based • Canada-wide • Select international</p>
     </div>
-  </section>
+
+    <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+      <img id="heroImg"
+           src="/images/hero-home.jpg?v=7"
+           alt="Elegant event production and catering setup"
+           class="w-full h-full object-cover"
+           width="1600" height="1067" decoding="async" loading="eager">
+    </div>
+  </div>
+</section>
+
+<script>
+  // Main hero fallback: try path swap, then external fallback
+  (function(){
+    const Fallback = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+    const img = document.getElementById('heroImg');
+    if(!img) return;
+    let triedSwap = false;
+    img.addEventListener('error', ()=>{
+      const src = img.getAttribute('src')||'';
+      if(!triedSwap){
+        // swap /images/ <-> images/ to handle path/base issues
+        img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/')
+                                             : src.replace(/^images\//,'/images/');
+        triedSwap = true;
+      } else {
+        img.src = Fallback;
+      }
+    });
+  })();
+</script>
+
 
   <!-- Value pillars -->
   <section class="bg-[var(--card)]">
@@ -174,15 +196,17 @@
   </section>
 
   <!-- CTA -->
-  <section class="bg-[#111827] text-white">
-    <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">Ready to plan something unforgettable?</h2>
-        <p class="text-gray-300 mt-1">Tell us your date, guest count, and vision.</p>
-      </div>
-      <a href="contact.html" class="btn btn-primary">Start Your Inquiry</a>
+<section class="bg-[#0f6d4e] text-[#c7b277]">
+  <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold">Ready to plan something unforgettable?</h2>
+      <p class="mt-1 opacity-90">Tell us your date, guest count, and vision.</p>
     </div>
-  </section>
+    <a href="contact.html" class="btn btn-secondary">Start Your Inquiry</a>
+  </div>
+</section>
+
+
 
   <!-- Footer: emerald bg + muted-gold text -->
   <footer class="border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]">
