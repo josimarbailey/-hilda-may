@@ -35,19 +35,19 @@
     body{ color:var(--ink); }
     h1,h2,h3{ color:var(--gold); }
     h4{ color:var(--royal); }              /* subheads in green */
-    a{ color:var(--royal); }               /* links in green */
-    a:hover{ color:var(--royal-dark); }    /* darker green on hover */
+    a{ color:var(--royal); }
+    a:hover{ color:var(--royal-dark); }
 
     /* Keep anchor targets visible under sticky header */
     section[id]{ scroll-margin-top:5.5rem; }
 
-    /* Header inherits its own palette */
+    /* Header link color inherits */
     header a{ color:inherit; }
 
     /* Subtle mute utility */
     .muted{opacity:.8}
 
-    /* Buttons (green outline default) */
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:.65rem 1.1rem; border-radius:9999px; font-weight:600;
@@ -55,38 +55,23 @@
       transition:background .2s ease,opacity .2s ease,filter .2s ease;
     }
     .btn:hover{
-      background:rgba(10,93,59,.08); /* safe fallback */
-      background:color-mix(in srgb, var(--royal) 8%, transparent);
+      background:rgba(10,93,59,.08);
     }
     .btn-dark{ background:#000; color:#fff; border-color:#000; }
     .btn-dark:hover{ opacity:.9; }
     .btn-gold{ background:var(--gold); color:var(--royal); border-color:var(--gold); }
     .btn-gold:hover{ filter:brightness(.95); }
-  </style>
-</head><script>
-(() => {
-  const header = document.getElementById('siteHeader');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('shadow-md', window.scrollY > 4);
-    }, { passive: true });
-  }
-  const btn = document.getElementById('menuBtn');
-  const mnav = document.getElementById('mnav');
-  if (btn && mnav) {
-    btn.addEventListener('click', () => {
-      const open = !mnav.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-})();
-</script>
 
+    /* --- Pin the header no matter what --- */
+    #siteHeader{ position:sticky!important; top:0!important; z-index:50!important; transform:translateY(0)!important; }
+    #siteHeader.-translate-y-full, #siteHeader.translate-y-full{ transform:translateY(0)!important; }
+  </style>
+</head>
 
 <body class="bg-white">
   <!-- Header -->
-<header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
- <div class="wrap px-4 py-3 flex items-center justify-between">
+  <header id="siteHeader" class="bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
         <span class="font-semibold tracking-wide">Hilda May Events</span>
@@ -161,7 +146,7 @@
         </div>
         <div class="grid grid-cols-2 gap-3">
           <img src="/images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
-          <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste &amp; Traditions">
+          <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
         </div>
       </div>
     </div>
@@ -450,106 +435,6 @@
     </div>
   </section>
 
-  <!-- Dietary & Inclusion -->
-  <section id="dietary" class="bg-neutral-50">
-    <div class="wrap px-4 py-14 copy">
-      <h2 class="text-2xl md:text-3xl font-semibold">Dietary &amp; inclusion</h2>
-      <p>We plan inclusive menus for mixed audiences. Pick a direction and we tailor items to your brief.</p>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-        <!-- Vegan -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Vegan</h3>
-          <ul class="list-disc ml-5">
-            <li>Roasted beet carpaccio · citrus · herbs</li>
-            <li>Charred broccoli &amp; chickpea socca</li>
-            <li>Cauliflower steak · romesco · caper–raisin</li>
-            <li>Mushroom farro “risotto” · herbs</li>
-            <li>Coconut panna cotta · mango</li>
-          </ul>
-        </div>
-        <!-- Vegetarian -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Vegetarian (v)</h3>
-          <ul class="list-disc ml-5">
-            <li>Truffled arancini · pecorino</li>
-            <li>Burrata · heirloom tomato · basil oil</li>
-            <li>Wild mushroom risotto · parmesan crisp</li>
-            <li>Spinach &amp; ricotta gnudi · brown butter</li>
-            <li>Lemon olive-oil cake</li>
-          </ul>
-        </div>
-        <!-- Gluten-free -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Gluten-free (gf)</h3>
-          <ul class="list-disc ml-5">
-            <li>Seared sea bass · fennel · citrus beurre blanc</li>
-            <li>Sumac chicken · pomegranate glaze</li>
-            <li>Grilled striploin · red wine jus · roots</li>
-            <li>Quinoa tabbouleh · herb vinaigrette</li>
-            <li>Vanilla bean panna cotta · berries</li>
-          </ul>
-        </div>
-        <!-- Dairy-free -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Dairy-free (df)</h3>
-          <ul class="list-disc ml-5">
-            <li>Tuna crudo · citrus · herbs</li>
-            <li>Roasted carrots · tahini · dukkah (nf on request)</li>
-            <li>Harissa chicken · herb pilaf</li>
-            <li>Roasted salmon · salsa verde</li>
-            <li>Sorbets · seasonal fruit</li>
-          </ul>
-        </div>
-        <!-- Nut-free -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Nut-free (nf)</h3>
-          <ul class="list-disc ml-5">
-            <li>Smoked salmon blini · dill (nf)</li>
-            <li>Tomato basil soup shooters (nf)</li>
-            <li>Herb-crusted beef · jus (nf)</li>
-            <li>Roast chicken · lemon–thyme (nf)</li>
-            <li>Chocolate torte (nf)</li>
-          </ul>
-        </div>
-        <!-- Halal / Kosher-style -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Halal / Kosher-style</h3>
-          <ul class="list-disc ml-5">
-            <li>Halal sumac chicken · herbed grains</li>
-            <li>Halal braised lamb shoulder · saffron rice</li>
-            <li>Kosher-style roast salmon · citrus</li>
-            <li>Kosher-style herb chicken · roasted roots</li>
-            <li>Parve desserts and NA pairings available</li>
-          </ul>
-          <p class="text-xs muted mt-3">Certified kosher available on request via partner kitchen.</p>
-        </div>
-      </div>
-
-      <!-- Protocols & labeling -->
-      <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Allergen protocols</h3>
-          <ul class="list-disc ml-5">
-            <li>Separate prep and utensils on request</li>
-            <li>Dedicated allergen-safe plating lane</li>
-            <li>Ingredient logs for FOH reference</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3>Labeling</h3>
-          <p>Badges on menus and stations:</p>
-          <p class="mt-2"><span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free · <span class="font-medium">df</span> dairy-free · <span class="font-medium">nf</span> nut-free · <span class="font-medium">halal</span> halal · <span class="font-medium">ks</span> kosher-style</p>
-        </div>
-      </div>
-
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a href="contact.html" class="btn btn-dark text-sm">Share dietary needs</a>
-        <a href="#menus" class="btn text-sm">See menus</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Gallery strip -->
   <section class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold">Recent dishes</h2>
@@ -590,46 +475,19 @@
 
   <!-- Scripts -->
   <script>
-    // Rolling header: hide on scroll down, show on scroll up; lock when mobile menu is open
-    (function () {
-      const header = document.getElementById('siteHeader');
-      const btn = document.getElementById('menuBtn');
-      const mnav = document.getElementById('mnav');
-      let lastY = window.scrollY, locked = false;
+    // Shadow on scroll (header remains pinned)
+    addEventListener('scroll', () => {
+      const h=document.getElementById('siteHeader');
+      if(h) h.classList.toggle('shadow-md', scrollY > 4);
+    }, { passive:true });
 
-      function onScroll() {
-        const y = window.scrollY;
-        header.classList.toggle('shadow-md', y > 4);
-        if (locked) { lastY = y; return; }
-        if (y > lastY && y > 80) header.classList.add('-translate-y-full');
-        else header.classList.remove('-translate-y-full');
-        lastY = y;
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-
-      if (btn && mnav) {
-        btn.addEventListener('click', () => {
-          const open = !mnav.classList.toggle('hidden');
-          header.classList.remove('-translate-y-full');
-          locked = open;
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-    })();
-
-    // Image fallback: swap /images <-> images then Unsplash fallback
+    // Mobile menu toggle
     (function(){
-      const FB = "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop";
-      document.querySelectorAll("img").forEach(img=>{
-        let triedSwap=false;
-        img.addEventListener("error", ()=>{
-          const src=img.getAttribute("src")||"";
-          if(!triedSwap){
-            img.src = src.startsWith("/images/") ? src.replace(/^\/images\//,"images/") : src.replace(/^images\//,"/images/");
-            triedSwap=true; return;
-          }
-          if(img.src!==FB) img.src=FB;
-        });
+      const btn=document.getElementById('menuBtn');
+      const mnav=document.getElementById('mnav');
+      btn && mnav && btn.addEventListener('click', ()=>{
+        const open=!mnav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(open));
       });
     })();
 
