@@ -437,52 +437,27 @@
 
 <!-- Scripts -->
 <script>
-  // Rolling header: hide on scroll down, show on scroll up; lock when mobile menu is open
-  (function () {
-    const header=document.getElementById('siteHeader');
-    const btn=document.getElementById('menuBtn');
-    const mnav=document.getElementById('mnav');
-    if(!header) return;
-    let lastY=window.scrollY, locked=false;
+(() => {
+  const header = document.getElementById('siteHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-md', window.scrollY > 4);
+    }, { passive: true });
+  }
 
-    function onScroll(){
-      const y=window.scrollY;
-      header.classList.toggle('shadow-md', y>4);
-      if(locked){ lastY=y; return; }
-      if(y>lastY && y>80) header.classList.add('-translate-y-full');
-      else header.classList.remove('-translate-y-full');
-      lastY=y;
-    }
-    window.addEventListener('scroll', onScroll, {passive:true});
-
-    if(btn && mnav){
-      btn.addEventListener('click', ()=>{
-        const open=!mnav.classList.toggle('hidden');
-        header.classList.remove('-translate-y-full');
-        locked=open;
-        btn.setAttribute('aria-expanded', open?'true':'false');
-      });
-    }
-  })();
-
-  // Footer year
-  document.getElementById('y').textContent=new Date().getFullYear();
-
-  // Image auto-fix: try '/images/' <-> 'images/' then Unsplash fallback
-  (function(){
-    const FALLBACK='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
-    document.querySelectorAll('img').forEach(img=>{
-      let tried=false;
-      img.addEventListener('error', ()=>{
-        const orig=img.getAttribute('src')||'';
-        if(!tried){
-          img.src = orig.startsWith('/images/') ? orig.replace(/^\/images\//,'images/') : orig.replace(/^images\//,'/images/');
-          tried=true; return;
-        }
-        if(img.src!==FALLBACK) img.src=FALLBACK;
-      });
+  const btn = document.getElementById('menuBtn');
+  const mnav = document.getElementById('mnav');
+  if (btn && mnav) {
+    btn.addEventListener('click', () => {
+      const open = !mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  })();
+  }
+
+  const y = document.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
+})();
 </script>
+
 </body>
 </html>
