@@ -14,46 +14,73 @@
   <meta name="twitter:card" content="summary_large_image" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>.wrap{max-width:1200px;margin-inline:auto}</style>
+<style>
+  :root{
+    --gold:#c7b277;
+    --royal:#0a5d3b;
+    --royal-dark:#084c31;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:.55rem 1rem;border-radius:9999px;font-weight:600;
+    border:1px solid var(--royal);color:var(--royal);
+  }
+  .btn-gold{background:var(--gold);color:var(--royal);border-color:var(--gold)}
+  .btn-gold:hover{filter:brightness(.95)}
+</style>
+
 </head>
+<script>
+  const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
+  if(b&&m){
+    b.addEventListener('click',()=>{
+      m.classList.toggle('hidden');
+      b.setAttribute('aria-expanded', m.classList.contains('hidden') ? 'false' : 'true');
+    });
+  }
+</script>
+  
 <body class="bg-white text-neutral-900">
  <!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
+<header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
+
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
-        Book
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" aria-current="page" class="hover:text-white font-semibold underline decoration-transparent hover:decoration-inherit">
+        Testimonials
       </a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html" class="btn btn-gold">Book</a>
     </nav>
+
     <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
+            class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
+            aria-controls="mnav" aria-expanded="false">
+      Menu
+    </button>
   </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
+
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
       <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="testimonials.html" aria-current="page" class="hover:text-white font-semibold">Testimonials</a>
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
-        Book
-      </a>
+      <a href="contact.html" class="col-span-2 btn btn-gold">Book</a>
     </div>
   </nav>
 </header>
+
 
 
 
