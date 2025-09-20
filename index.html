@@ -26,6 +26,8 @@
       --gold:#c7b277;          /* muted gold */
       --emerald:#0a5d3b;       /* emerald */
       --emerald-dark:#084c31;  /* darker emerald */
+      --royal:#0a5d3b;         /* header/footer green */
+      --royal-dark:#084c31;    /* border/hover */
       --line:#e5e7eb;
       --card:#f8fafc;
     }
@@ -74,15 +76,12 @@
   </nav>
 </header>
 
-
-
-  
   <!-- Hero -->
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
     <div>
       <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
-      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">We plan conferences, weddings, and brand moments</h1>
+      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">We plan conferences, weddings, and brand moments</h1>
       <p class="mt-4 text-lg text-neutral-700">Concept, logistics, design, and on-site direction. Catering delivered with <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&T)</strong>.</p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="contact.html" class="inline-flex items-center rounded-full bg-[#0f6d4e] text-white px-5 py-3">Plan an Event</a>
@@ -111,7 +110,6 @@
     img.addEventListener('error', ()=>{
       const src = img.getAttribute('src')||'';
       if(!triedSwap){
-        // swap /images/ <-> images/ to handle path/base issues
         img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/')
                                              : src.replace(/^images\//,'/images/');
         triedSwap = true;
@@ -122,20 +120,19 @@
   })();
 </script>
 
-
   <!-- Value pillars -->
   <section class="bg-[var(--card)]">
     <div class="wrap px-4 py-14 grid md:grid-cols-3 gap-6">
       <div class="card p-6">
-        <h3 class="font-semibold">Planning & Production</h3>
+        <h3 class="font-semibold text-[var(--gold)]">Planning & Production</h3>
         <p class="text-sm text-[var(--muted)] mt-2">Scope, timelines, vendor leadership, run-of-show, and showcalling.</p>
       </div>
       <div class="card p-6">
-        <h3 class="font-semibold">Design & Experience</h3>
+        <h3 class="font-semibold text-[var(--gold)]">Design & Experience</h3>
         <p class="text-sm text-[var(--muted)] mt-2">Guest journey, styling, floral, lighting, scenic, and fabrication.</p>
       </div>
       <div class="card p-6">
-        <h3 class="font-semibold">Catering</h3>
+        <h3 class="font-semibold text-[var(--gold)]">Catering</h3>
         <p class="text-sm text-[var(--muted)] mt-2">Chef-driven menus by Josie’s Kitchen and T&T. Inclusive and scalable.</p>
       </div>
     </div>
@@ -154,17 +151,14 @@
   <!-- Gallery preview -->
   <section class="bg-[var(--card)]">
     <div class="wrap px-4 py-14">
-      <h2 class="text-2xl md:text-3xl font-semibold">Recent work</h2>
+      <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Recent work</h2>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0401.jpg?v=5"
-             alt="Canapés">
+             src="/images/IMG_0401.jpg?v=5" alt="Canapés">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0610.jpg?v=5"
-             alt="Buffet spread">
+             src="/images/IMG_0610.jpg?v=5" alt="Buffet spread">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0525.jpg?v=5"
-             alt="Entrée">
+             src="/images/IMG_0525.jpg?v=5" alt="Entrée">
       </div>
       <div class="mt-6">
         <a href="gallery.html" class="btn btn-primary">See Full Gallery</a>
@@ -175,7 +169,7 @@
   <!-- Testimonials preview -->
   <section>
     <div class="wrap px-4 py-14">
-      <h2 class="text-2xl md:text-3xl font-semibold">What clients say</h2>
+      <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">What clients say</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
         <blockquote class="card p-5">
           <p>“Amazing! Six nights straight—bartending, drinks, furniture rentals. Seamless.”</p>
@@ -207,44 +201,38 @@
   </div>
 </section>
 
-
-
   <!-- Footer: emerald bg + muted-gold text -->
-  <footer class="border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]">
+<footer class="border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]">
   <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
     <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
     <p><a class="hover:text-white" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="hover:text-white" href="tel:+16472206104">+1 (647) 220 6104</a></p>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 
+<script>
+  // Footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  <script>
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
+  // Mobile menu toggle
+  const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+  if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
 
-    // Mobile menu toggle
-    const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
-    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
-
-    // Image auto-fix: try '/images/' <-> 'images/' then Unsplash fallback
-    (function(){
-      const FALLBACK = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
-      document.querySelectorAll('img').forEach(img=>{
-        let triedSwap=false;
-        img.addEventListener('error', ()=>{
-          const orig = img.getAttribute('src')||'';
-          if(!triedSwap){
-            img.src = orig.startsWith('/images/') ? orig.replace(/^\/images\//,'images/')
-                                                  : orig.replace(/^images\//,'/images/');
-            triedSwap=true; return;
-          }
-          if(img.src!==FALLBACK) img.src = FALLBACK;
-        }, { once:false });
+  // Image auto-fix: try '/images/' <-> 'images/' then Unsplash fallback
+  (function(){
+    const FALLBACK = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+    document.querySelectorAll('img').forEach(img=>{
+      let triedSwap=false;
+      img.addEventListener('error', ()=>{
+        const orig = img.getAttribute('src')||'';
+        if(!triedSwap){
+          img.src = orig.startsWith('/images/') ? orig.replace(/^\/images\//,'images/')
+                                                : orig.replace(/^images\//,'/images/');
+          triedSwap=true; return;
+        }
+        if(img.src!==FALLBACK) img.src = FALLBACK;
       });
-    })();
-  </script>
+    });
+  })();
+</script>
 </body>
 </html>
-
-
