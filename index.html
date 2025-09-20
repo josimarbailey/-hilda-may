@@ -17,39 +17,36 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .wrap{max-width:1200px;margin-inline:auto}
-    .copy p{margin-top:.9rem}
-    .copy h3{margin-top:1rem;font-weight:700}
-  </style>
-</head>
-<body class="bg-white text-neutral-900">
+ <style>
+  :root{
+    --gold:#c7b277;          /* muted gold */
+    --emerald:#047857;       /* Tailwind emerald-600 */
+    --emerald-dark:#065f46;  /* emerald-700 */
+    --deep:#0b3d2e;          /* deep green background */
+  }
+  /* Global */
+  body{background:var(--deep); color:var(--gold);}
+  a{color:var(--gold);} a:hover{color:#fff;}
+  /* Cards and dividers */
+  .card{background:#0f3f30; border:1px solid rgba(6,94,70,.45); border-radius:1rem;}
+  .muted{color:#bfae84;}
+  /* Buttons */
+  .btn-emerald{background:var(--emerald); color:#0b3d2e;}
+  .btn-emerald:hover{background:var(--emerald-dark);}
+  .btn-outline{border:1px solid rgba(6,94,70,.55);}
+</style>
+<meta name="theme-color" content="#0b3d2e">
 
-<!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
+</head>
+<body class="bg-[var(--deep)] text-[var(--gold)]">
+
+<header class="sticky top-0 z-50 bg-[rgba(11,61,46,.95)] backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--deep)] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
-        Book
-      </a>
-    </nav>
-    <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
-  </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
-    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
       <a href="gallery.html" class="hover:text-white">Gallery</a>
@@ -57,12 +54,28 @@
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
       <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
+         class="inline-flex items-center rounded-full px-4 py-2 font-semibold btn-emerald focus:outline-none focus:ring-2 focus:ring-[var(--emerald)]/60 focus:ring-offset-2 focus:ring-offset-[var(--deep)]">
         Book
       </a>
+    </nav>
+    <button id="menuBtn"
+            class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[var(--gold)] border-[var(--emerald)]/40"
+            aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--deep)] text-[var(--gold)]" aria-label="Mobile">
+    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold btn-emerald">Book</a>
     </div>
   </nav>
 </header>
+
+
 
 
   <!-- Hero -->
