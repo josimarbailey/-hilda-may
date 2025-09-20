@@ -8,8 +8,6 @@
   <link rel="canonical" href="catering.html" />
   <meta name="robots" content="index,follow" />
 
-
-
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Catering — Hilda May Events" />
   <meta property="og:description" content="Seasonal, chef-driven menus. Plated, stations, or elevated buffets. Inclusive options for all diets." />
@@ -18,68 +16,52 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
+  <style>
+    .wrap{max-width:1200px;margin-inline:auto}
+    .copy p{margin-top:.9rem}
+    .copy h3{margin-top:1rem;font-weight:700}
+  </style>
 </head>
-<script>
-(function(){
-  const FB="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop";
-  document.querySelectorAll("img").forEach(img=>{
-    let triedSwap=false;
-    img.addEventListener("error", ()=>{
-      const src=img.getAttribute("src")||"";
-      if(!triedSwap){
-        img.src = src.startsWith("/images/") ? src.replace(/^\/images\//,"images/")
-                                            : src.replace(/^images\//,"/images/");
-        triedSwap=true;
-        return;
-      }
-      if(img.src!==FB) img.src=FB;
-    });
-  });
-})();
-</script>
 <body class="bg-white text-neutral-900">
-  
-<!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
-      <span class="font-semibold tracking-wide">Hilda May Events</span>
-    </a>
-    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
-        Book
+
+  <!-- Header (rolls on scroll) -->
+  <header id="siteHeader" class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277] transition-transform duration-300 will-change-transform">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
       </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
+        <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
+        <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
+        <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
+        <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
+        <a href="contact.html"
+           class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
+          Book
+        </a>
+      </nav>
+      <button id="menuBtn"
+              class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
+              aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+    <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a href="events.html" class="hover:text-white">Event Planning</a>
+        <a href="catering.html" class="hover:text-white">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html"
+           class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
+          Book
+        </a>
+      </div>
     </nav>
-    <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
-  </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
-    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-      <a href="events.html" class="hover:text-white">Event Planning</a>
-      <a href="catering.html" class="hover:text-white">Catering</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-      <a href="about.html" class="hover:text-white">About</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
-        Book
-      </a>
-    </div>
-  </nav>
-</header>
-
-
+  </header>
 
   <!-- Hero -->
   <section class="relative">
@@ -88,10 +70,9 @@
         <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">Chef-Driven | Detail-Obsessed</p>
         <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Catering for weddings, corporate, and private celebrations</h1>
         <p class="mt-4 text-lg text-neutral-700">
-  Conferences, galas, weddings, and private events. We plan the experience and deliver chef-driven menus with
-  <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>—scaled to your brief and audience.
-</p>
-
+          Conferences, galas, weddings, and private events. We plan the experience and deliver chef-driven menus with
+          <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>—scaled to your brief and audience.
+        </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Request a Proposal</a>
           <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3">View Menus</a>
@@ -100,469 +81,441 @@
       </div>
       <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
         <picture>
-          <picture>
-  <source type="image/webp" srcset="/images/hero-catering.webp">
-  <img class="w-full h-full object-cover"
-       src="/images/hero-catering.jpg"
-       width="1600" height="1067" decoding="async"
-       alt="Plated entrée with seasonal garnish and table styling">
-</picture>
-rée with seasonal garnish and table styling">
+          <source type="image/webp" srcset="/images/hero-catering.webp">
+          <img class="w-full h-full object-cover"
+               src="/images/hero-catering.jpg"
+               width="1600" height="1067" decoding="async"
+               alt="Plated entrée with seasonal garnish and table styling">
         </picture>
       </div>
     </div>
   </section>
 
   <!-- Partner -->
-  <<section>
-  <div class="wrap px-4 py-8">
-    <div class="rounded-xl ring-1 ring-neutral-200 p-5 grid md:grid-cols-3 gap-5 items-center">
-      <div class="md:col-span-2">
-        <p class="text-sm md:text-base">
-          Catering is fulfilled by <strong>Josie’s Kitchen</strong> and our elegant brand
-          <strong>Taste & Traditions (T&amp;T)</strong>. Seasonal menus, responsible sourcing, and full dietary accommodations.
-        </p>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Josie’s Kitchen</a>
-          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Taste & Traditions</a>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 gap-3">
-        <img src="/images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
-        <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Service styles  -->
-<section id="styles" class="bg-neutral-50">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold">Service styles</h2>
-    <p class="text-neutral-700">Choose the format. We align menu, pacing, and staffing to your run-of-show.</p>
-
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-
-      <!-- Plated -->
-      <article id="plated" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details open class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Plated service</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
-
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Multi-course, synchronized service. Best for formal dinners, awards, and keynotes with timed speeches.</p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>Tray pass canapés or reception</li>
-                  <li>First course plated</li>
-                  <li>Main course with sides</li>
-                  <li>Dessert plated or station</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 server / 10–12 guests</li>
-                  <li>1 busser / 2 servers</li>
-                  <li>1 captain / 3–4 servers</li>
-                  <li>BOH: 1 chef / 30–40 covers</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Charger, dinnerware, flatware</li>
-                  <li>Stemware, coffee service</li>
-                  <li>Linen, napkins, table numbers</li>
-                  <li>Back-of-house kitchen build</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Strong for speeches and reveals</li>
-                  <li>Clear dietary labeling on place cards</li>
-                  <li>Accurate counts due 10 days prior</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Wine pairings, bread service, plated dessert with coffee, late-night bite station.</p>
-            </div>
+  <section>
+    <div class="wrap px-4 py-8">
+      <div class="rounded-xl ring-1 ring-neutral-200 p-5 grid md:grid-cols-3 gap-5 items-center">
+        <div class="md:col-span-2">
+          <p class="text-sm md:text-base">
+            Catering is fulfilled by <strong>Josie’s Kitchen</strong> and our elegant brand
+            <strong>Taste & Traditions (T&amp;T)</strong>. Seasonal menus, responsible sourcing, and full dietary accommodations.
+          </p>
+          <div class="mt-4 grid sm:grid-cols-2 gap-3">
+            <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Josie’s Kitchen</a>
+            <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Taste & Traditions</a>
           </div>
-        </details>
-      </article>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <img src="/images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
+          <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Chef Stations -->
-      <article id="stations" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Chef stations</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
+  <!-- Service styles  -->
+  <section id="styles" class="bg-neutral-50">
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">Service styles</h2>
+      <p class="text-neutral-700">Choose the format. We align menu, pacing, and staffing to your run-of-show.</p>
 
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Interactive, high-flow service. Best for mingling, networking, and mixed seating.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
 
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>3–5 live stations (hot + cold)</li>
-                  <li>Circulating canapés to reduce lines</li>
-                  <li>Attendant-served allergen lanes</li>
-                </ul>
+        <!-- Plated -->
+        <article id="plated" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details open class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Plated service</h3>
+              <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p class="text-neutral-700">Multi-course, synchronized service. Best for formal dinners, awards, and keynotes with timed speeches.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Tray pass canapés or reception</li>
+                    <li>First course plated</li>
+                    <li>Main course with sides</li>
+                    <li>Dessert plated or station</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 server / 10–12 guests</li>
+                    <li>1 busser / 2 servers</li>
+                    <li>1 captain / 3–4 servers</li>
+                    <li>BOH: 1 chef / 30–40 covers</li>
+                  </ul>
+                </div>
               </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Rentals & setup</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Charger, dinnerware, flatware</li>
+                    <li>Stemware, coffee service</li>
+                    <li>Linen, napkins, table numbers</li>
+                    <li>Back-of-house kitchen build</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Good to know</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Strong for speeches and reveals</li>
+                    <li>Clear dietary labeling on place cards</li>
+                    <li>Accurate counts due 10 days prior</li>
+                  </ul>
+                </div>
+              </div>
+
               <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 station chef / station</li>
-                  <li>1 attendant / station</li>
-                  <li>1 floater / 75–100 guests</li>
-                  <li>BOH: 1 chef / 60–80 guests</li>
-                </ul>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Wine pairings, bread service, plated dessert with coffee, late-night bite station.</p>
               </div>
             </div>
+          </details>
+        </article>
 
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Themed station facades</li>
-                  <li>Smallwares, chafers, induction</li>
-                  <li>Signage and allergen labels</li>
-                  <li>Highboys and cruiser tables</li>
-                </ul>
+        <!-- Chef Stations -->
+        <article id="stations" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Chef stations</h3>
+              <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p class="text-neutral-700">Interactive, high-flow service. Best for mingling, networking, and mixed seating.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>3–5 live stations (hot + cold)</li>
+                    <li>Circulating canapés to reduce lines</li>
+                    <li>Attendant-served allergen lanes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 station chef / station</li>
+                    <li>1 attendant / station</li>
+                    <li>1 floater / 75–100 guests</li>
+                    <li>BOH: 1 chef / 60–80 guests</li>
+                  </ul>
+                </div>
               </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Rentals & setup</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Themed station facades</li>
+                    <li>Smallwares, chafers, induction</li>
+                    <li>Signage and allergen labels</li>
+                    <li>Highboys and cruiser tables</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Good to know</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Best with staggered call times</li>
+                    <li>Line management improves experience</li>
+                    <li>Great for brand activations</li>
+                  </ul>
+                </div>
+              </div>
+
               <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Best with staggered call times</li>
-                  <li>Line management improves experience</li>
-                  <li>Great for brand activations</li>
-                </ul>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Action carving, pasta wheel, raw bar, dessert bar, espresso cart.</p>
               </div>
             </div>
+          </details>
+        </article>
 
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Action carving, pasta wheel, raw bar, dessert bar, espresso cart.</p>
+        <!-- Elevated Buffet -->
+        <article id="buffet" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Elevated buffet</h3>
+              <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p class="text-neutral-700">Efficient for large audiences. Designed for flow, variety, and clear labeling.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Multiple mirrored lines</li>
+                    <li>Dedicated allergen-safe lane</li>
+                    <li>Attended protein carving</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 attendant / buffet line</li>
+                    <li>1 runner / 100 guests</li>
+                    <li>BOH: 1 chef / 80–100 guests</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Rentals & setup</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Buffet risers, platters, guards</li>
+                    <li>Heat holding or induction</li>
+                    <li>Clear dish labels and icons</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Good to know</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Pre-set salads speed lines</li>
+                    <li>Separate VEG/GF line improves access</li>
+                    <li>Great for conferences and galas</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Welcome canapé pass, dessert station, late-night snacks.</p>
+              </div>
             </div>
+          </details>
+        </article>
+
+      </div>
+
+      <!-- Quick CTA -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan your format</a>
+        <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menus (split by partner) -->
+  <section id="menus">
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">Menus</h2>
+      <p class="text-neutral-700">Choose a direction. We tailor to your brief, season, and dietary needs.</p>
+
+      <!-- Tabs -->
+      <div class="mt-6 inline-flex rounded-full ring-1 ring-neutral-200 overflow-hidden">
+        <button type="button" class="px-4 py-2 text-sm bg-black text-white" data-menu-tab="menu-josie" aria-controls="menu-josie" aria-selected="true">Josie’s Kitchen</button>
+        <button type="button" class="px-4 py-2 text-sm" data-menu-tab="menu-tt" aria-controls="menu-tt" aria-selected="false">T&amp;T Elevated</button>
+      </div>
+
+      <!-- Josie's Kitchen -->
+      <div id="menu-josie" data-menu-panel class="mt-8">
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Hors d’Oeuvres -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Hors d’Oeuvres</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Tuna tartare cones</span><p class="text-neutral-600">sesame, lime <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+              <li class="py-3"><span class="font-medium">Whipped goat cheese crostini</span><p class="text-neutral-600">fig, pistachio</p></li>
+              <li class="py-3"><span class="font-medium">Smoked salmon blini</span><p class="text-neutral-600">crème fraîche, dill</p></li>
+              <li class="py-3"><span class="font-medium">Charred corn arancini</span><p class="text-neutral-600">basil pesto <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Roasted beet spoon</span><p class="text-neutral-600">citrus, cashew ricotta <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan</span></p></li>
+            </ul>
           </div>
-        </details>
-      </article>
-
-      <!-- Elevated Buffet -->
-      <article id="buffet" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Elevated buffet</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
-
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Efficient for large audiences. Designed for flow, variety, and clear labeling.</p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>Multiple mirrored lines</li>
-                  <li>Dedicated allergen-safe lane</li>
-                  <li>Attended protein carving</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 attendant / buffet line</li>
-                  <li>1 runner / 100 guests</li>
-                  <li>BOH: 1 chef / 80–100 guests</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Buffet risers, platters, guards</li>
-                  <li>Heat holding or induction</li>
-                  <li>Clear dish labels and icons</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Pre-set salads speed lines</li>
-                  <li>Separate VEG/GF line improves access</li>
-                  <li>Great for conferences and galas</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Welcome canapé pass, dessert station, late-night snacks.</p>
-            </div>
+          <!-- Plated Mains -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Herb-crusted beef tenderloin</span><p class="text-neutral-600">red wine jus, pomme purée</p></li>
+              <li class="py-3"><span class="font-medium">Seared sea bass</span><p class="text-neutral-600">fennel, citrus beurre blanc</p></li>
+              <li class="py-3"><span class="font-medium">Sumac chicken</span><p class="text-neutral-600">pomegranate glaze, herbed grains</p></li>
+              <li class="py-3"><span class="font-medium">Wild mushroom risotto</span><p class="text-neutral-600">parmesan crisp <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Cauliflower steak</span><p class="text-neutral-600">romesco, caper raisin <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan · gf</span></p></li>
+            </ul>
           </div>
-        </details>
-      </article>
-
-    </div>
-
-    <!-- Quick CTA -->
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan your format</a>
-      <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
-    </div>
-  </div>
-</section>
-
-
-
-  
-
-<!-- Menus (split by partner) -->
-<section id="menus">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold">Menus</h2>
-    <p class="text-neutral-700">Choose a direction. We tailor to your brief, season, and dietary needs.</p>
-
-    <!-- Tabs -->
-    <div class="mt-6 inline-flex rounded-full ring-1 ring-neutral-200 overflow-hidden">
-      <button type="button" class="px-4 py-2 text-sm bg-black text-white" data-menu-tab="menu-josie" aria-controls="menu-josie" aria-selected="true">Josie’s Kitchen</button>
-      <button type="button" class="px-4 py-2 text-sm" data-menu-tab="menu-tt" aria-controls="menu-tt" aria-selected="false">T&amp;T Elevated</button>
-    </div>
-
-    <!-- Josie's Kitchen -->
-    <div id="menu-josie" data-menu-panel class="mt-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Hors d’Oeuvres -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Hors d’Oeuvres</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Tuna tartare cones</span><p class="text-neutral-600">sesame, lime <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
-            <li class="py-3"><span class="font-medium">Whipped goat cheese crostini</span><p class="text-neutral-600">fig, pistachio</p></li>
-            <li class="py-3"><span class="font-medium">Smoked salmon blini</span><p class="text-neutral-600">crème fraîche, dill</p></li>
-            <li class="py-3"><span class="font-medium">Charred corn arancini</span><p class="text-neutral-600">basil pesto <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-            <li class="py-3"><span class="font-medium">Roasted beet spoon</span><p class="text-neutral-600">citrus, cashew ricotta <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan</span></p></li>
-          </ul>
-        </div>
-        <!-- Plated Mains -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Plated Mains</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Herb-crusted beef tenderloin</span><p class="text-neutral-600">red wine jus, pomme purée</p></li>
-            <li class="py-3"><span class="font-medium">Seared sea bass</span><p class="text-neutral-600">fennel, citrus beurre blanc</p></li>
-            <li class="py-3"><span class="font-medium">Sumac chicken</span><p class="text-neutral-600">pomegranate glaze, herbed grains</p></li>
-            <li class="py-3"><span class="font-medium">Wild mushroom risotto</span><p class="text-neutral-600">parmesan crisp <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-            <li class="py-3"><span class="font-medium">Cauliflower steak</span><p class="text-neutral-600">romesco, caper raisin <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan · gf</span></p></li>
-          </ul>
-        </div>
-        <!-- Stations & Buffets -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Stations & Buffets</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Live taco bar</span><p class="text-neutral-600">adobo chicken, grilled veg, house salsas</p></li>
-            <li class="py-3"><span class="font-medium">Mediterranean mezze & carving</span><p class="text-neutral-600">shawarma, tabbouleh, dips</p></li>
-            <li class="py-3"><span class="font-medium">Pasta atelier</span><p class="text-neutral-600">cacio e pepe, short rib ragù</p></li>
-            <li class="py-3"><span class="font-medium">Seafood raw bar</span><p class="text-neutral-600">oysters, shrimp, mignonette <span class="text-neutral-500">(market)</span></p></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Taste & Traditions -->
-    <div id="menu-tt" data-menu-panel class="mt-8 hidden">
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Canapés -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Canapés</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Caviar blini</span><p class="text-neutral-600">crème fraîche, chive</p></li>
-            <li class="py-3"><span class="font-medium">Beef tartare toast</span><p class="text-neutral-600">cornichon, dijon</p></li>
-            <li class="py-3"><span class="font-medium">Butter-poached lobster roll</span><p class="text-neutral-600">brown butter brioche</p></li>
-            <li class="py-3"><span class="font-medium">Truffled arancini</span><p class="text-neutral-600">pecorino <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-          </ul>
-        </div>
-        <!-- Plated Mains -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Plated Mains</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Wagyu striploin</span><p class="text-neutral-600">bordelaise, pommes Anna</p></li>
-            <li class="py-3"><span class="font-medium">Halibut</span><p class="text-neutral-600">champagne beurre blanc, leek fondue</p></li>
-            <li class="py-3"><span class="font-medium">Duck breast</span><p class="text-neutral-600">cherry jus, confit potato</p></li>
-            <li class="py-3"><span class="font-medium">Black truffle risotto</span><p class="text-neutral-600">aged parmesan <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-          </ul>
-        </div>
-        <!-- Stations -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Elevated Stations</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Oyster & crudo bar</span><p class="text-neutral-600">mignonette, citrus, chili oils <span class="text-neutral-500">(market)</span></p></li>
-            <li class="py-3"><span class="font-medium">Truffle pasta wheel</span><p class="text-neutral-600">table-side finish</p></li>
-            <li class="py-3"><span class="font-medium">Japanese robata</span><p class="text-neutral-600">skewers, tare glaze</p></li>
-            <li class="py-3"><span class="font-medium">Artisanal cheese & charcuterie</span><p class="text-neutral-600">condiments, breads</p></li>
-          </ul>
+          <!-- Stations & Buffets -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Stations & Buffets</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Live taco bar</span><p class="text-neutral-600">adobo chicken, grilled veg, house salsas</p></li>
+              <li class="py-3"><span class="font-medium">Mediterranean mezze & carving</span><p class="text-neutral-600">shawarma, tabbouleh, dips</p></li>
+              <li class="py-3"><span class="font-medium">Pasta atelier</span><p class="text-neutral-600">cacio e pepe, short rib ragù</p></li>
+              <li class="py-3"><span class="font-medium">Seafood raw bar</span><p class="text-neutral-600">oysters, shrimp, mignonette <span class="text-neutral-500">(market)</span></p></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Optional elevated desserts -->
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <!-- Taste & Traditions -->
+      <div id="menu-tt" data-menu-panel class="mt-8 hidden">
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Canapés -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Canapés</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Caviar blini</span><p class="text-neutral-600">crème fraîche, chive</p></li>
+              <li class="py-3"><span class="font-medium">Beef tartare toast</span><p class="text-neutral-600">cornichon, dijon</p></li>
+              <li class="py-3"><span class="font-medium">Butter-poached lobster roll</span><p class="text-neutral-600">brown butter brioche</p></li>
+              <li class="py-3"><span class="font-medium">Truffled arancini</span><p class="text-neutral-600">pecorino <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+          <!-- Plated Mains -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Wagyu striploin</span><p class="text-neutral-600">bordelaise, pommes Anna</p></li>
+              <li class="py-3"><span class="font-medium">Halibut</span><p class="text-neutral-600">champagne beurre blanc, leek fondue</p></li>
+              <li class="py-3"><span class="font-medium">Duck breast</span><p class="text-neutral-600">cherry jus, confit potato</p></li>
+              <li class="py-3"><span class="font-medium">Black truffle risotto</span><p class="text-neutral-600">aged parmesan <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+          <!-- Stations -->
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Elevated Stations</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Oyster & crudo bar</span><p class="text-neutral-600">mignonette, citrus, chili oils <span class="text-neutral-500">(market)</span></p></li>
+              <li class="py-3"><span class="font-medium">Truffle pasta wheel</span><p class="text-neutral-600">table-side finish</p></li>
+              <li class="py-3"><span class="font-medium">Japanese robata</span><p class="text-neutral-600">skewers, tare glaze</p></li>
+              <li class="py-3"><span class="font-medium">Artisanal cheese & charcuterie</span><p class="text-neutral-600">condiments, breads</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Optional elevated desserts -->
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Desserts</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Chocolate marquise</span><p class="text-neutral-600">cocoa nib, chantilly</p></li>
+              <li class="py-3"><span class="font-medium">Vanilla mille-feuille</span><p class="text-neutral-600">caramelized puff</p></li>
+              <li class="py-3"><span class="font-medium">Citrus pavlova</span><p class="text-neutral-600">lemon curd, seasonal fruit <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+            </ul>
+          </div>
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Beverage Programs</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Sommelier pairings</span><p class="text-neutral-600">Old World & New World</p></li>
+              <li class="py-3"><span class="font-medium">Signature cocktails</span><p class="text-neutral-600">house infusions, zero-proof</p></li>
+              <li class="py-3"><span class="font-medium">Champagne service</span><p class="text-neutral-600">sabrage on request</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm text-neutral-600">Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free. Final menus adjusted for allergies and preferences.</p>
+    </div>
+  </section>
+
+  <!-- Dietary & Inclusion -->
+  <section id="dietary" class="bg-neutral-50">
+    <div class="wrap px-4 py-14 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Dietary & inclusion</h2>
+      <p class="text-neutral-700">We plan inclusive menus for mixed audiences. Pick a direction and we tailor items to your brief.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <!-- Vegan -->
         <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Desserts</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Chocolate marquise</span><p class="text-neutral-600">cocoa nib, chantilly</p></li>
-            <li class="py-3"><span class="font-medium">Vanilla mille-feuille</span><p class="text-neutral-600">caramelized puff</p></li>
-            <li class="py-3"><span class="font-medium">Citrus pavlova</span><p class="text-neutral-600">lemon curd, seasonal fruit <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+          <h3>Vegan</h3>
+          <ul class="list-disc ml-5">
+            <li>Roasted beet carpaccio · citrus · herbs</li>
+            <li>Charred broccoli & chickpea socca</li>
+            <li>Cauliflower steak · romesco · caper–raisin</li>
+            <li>Mushroom farro “risotto” · herbs</li>
+            <li>Coconut panna cotta · mango</li>
+          </ul>
+        </div>
+        <!-- Vegetarian -->
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Vegetarian (v)</h3>
+          <ul class="list-disc ml-5">
+            <li>Truffled arancini · pecorino</li>
+            <li>Burrata · heirloom tomato · basil oil</li>
+            <li>Wild mushroom risotto · parmesan crisp</li>
+            <li>Spinach & ricotta gnudi · brown butter</li>
+            <li>Lemon olive-oil cake</li>
+          </ul>
+        </div>
+        <!-- Gluten-free -->
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Gluten-free (gf)</h3>
+          <ul class="list-disc ml-5">
+            <li>Seared sea bass · fennel · citrus beurre blanc</li>
+            <li>Sumac chicken · pomegranate glaze</li>
+            <li>Grilled striploin · red wine jus · roots</li>
+            <li>Quinoa tabbouleh · herb vinaigrette</li>
+            <li>Vanilla bean panna cotta · berries</li>
+          </ul>
+        </div>
+        <!-- Dairy-free -->
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Dairy-free (df)</h3>
+          <ul class="list-disc ml-5">
+            <li>Tuna crudo · citrus · herbs</li>
+            <li>Roasted carrots · tahini · dukkah (nf on request)</li>
+            <li>Harissa chicken · herb pilaf</li>
+            <li>Roasted salmon · salsa verde</li>
+            <li>Sorbets · seasonal fruit</li>
+          </ul>
+        </div>
+        <!-- Nut-free -->
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Nut-free (nf)</h3>
+          <ul class="list-disc ml-5">
+            <li>Smoked salmon blini · dill (nf)</li>
+            <li>Tomato basil soup shooters (nf)</li>
+            <li>Herb-crusted beef · jus (nf)</li>
+            <li>Roast chicken · lemon–thyme (nf)</li>
+            <li>Chocolate torte (nf)</li>
+          </ul>
+        </div>
+        <!-- Halal / Kosher-style -->
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Halal / Kosher-style</h3>
+          <ul class="list-disc ml-5">
+            <li>Halal sumac chicken · herbed grains</li>
+            <li>Halal braised lamb shoulder · saffron rice</li>
+            <li>Kosher-style roast salmon · citrus</li>
+            <li>Kosher-style herb chicken · roasted roots</li>
+            <li>Parve desserts and NA pairings available</li>
+          </ul>
+          <p class="text-xs text-neutral-600 mt-3">Certified kosher available on request via partner kitchen.</p>
+        </div>
+      </div>
+
+      <!-- Protocols & labeling -->
+      <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Allergen protocols</h3>
+          <ul class="list-disc ml-5">
+            <li>Separate prep and utensils on request</li>
+            <li>Dedicated allergen-safe plating lane</li>
+            <li>Ingredient logs for FOH reference</li>
           </ul>
         </div>
         <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Beverage Programs</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Sommelier pairings</span><p class="text-neutral-600">Old World & New World</p></li>
-            <li class="py-3"><span class="font-medium">Signature cocktails</span><p class="text-neutral-600">house infusions, zero-proof</p></li>
-            <li class="py-3"><span class="font-medium">Champagne service</span><p class="text-neutral-600">sabrage on request</p></li>
-          </ul>
+          <h3>Labeling</h3>
+          <p>Badges on menus and stations:</p>
+          <p class="mt-2"><span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free · <span class="font-medium">df</span> dairy-free · <span class="font-medium">nf</span> nut-free · <span class="font-medium">halal</span> halal · <span class="font-medium">ks</span> kosher-style</p>
         </div>
       </div>
-    </div>
 
-    <p class="mt-6 text-sm text-neutral-600">Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free. Final menus adjusted for allergies and preferences.</p>
-  </div>
-</section>
-
-<script>
-  // tabs for menus
-  (function(){
-    const tabs = document.querySelectorAll('[data-menu-tab]');
-    const panels = document.querySelectorAll('[data-menu-panel]');
-    function activate(id, btn){
-      panels.forEach(p => p.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
-      tabs.forEach(b => { b.classList.remove('bg-black','text-white'); b.setAttribute('aria-selected','false'); });
-      btn.classList.add('bg-black','text-white');
-      btn.setAttribute('aria-selected','true');
-    }
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => activate(btn.getAttribute('data-menu-tab'), btn));
-    });
-  })();
-</script>
-
-
-<!-- Dietary & Inclusion -->
-<section id="dietary" class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Dietary & inclusion</h2>
-    <p class="text-neutral-700">We plan inclusive menus for mixed audiences. Pick a direction and we tailor items to your brief.</p>
-
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-      <!-- Vegan -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Vegan</h3>
-        <ul class="list-disc ml-5">
-          <li>Roasted beet carpaccio · citrus · herbs</li>
-          <li>Charred broccoli & chickpea socca</li>
-          <li>Cauliflower steak · romesco · caper–raisin</li>
-          <li>Mushroom farro “risotto” · herbs</li>
-          <li>Coconut panna cotta · mango</li>
-        </ul>
-      </div>
-      <!-- Vegetarian -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Vegetarian (v)</h3>
-        <ul class="list-disc ml-5">
-          <li>Truffled arancini · pecorino</li>
-          <li>Burrata · heirloom tomato · basil oil</li>
-          <li>Wild mushroom risotto · parmesan crisp</li>
-          <li>Spinach & ricotta gnudi · brown butter</li>
-          <li>Lemon olive-oil cake</li>
-        </ul>
-      </div>
-      <!-- Gluten-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Gluten-free (gf)</h3>
-        <ul class="list-disc ml-5">
-          <li>Seared sea bass · fennel · citrus beurre blanc</li>
-          <li>Sumac chicken · pomegranate glaze</li>
-          <li>Grilled striploin · red wine jus · roots</li>
-          <li>Quinoa tabbouleh · herb vinaigrette</li>
-          <li>Vanilla bean panna cotta · berries</li>
-        </ul>
-      </div>
-      <!-- Dairy-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Dairy-free (df)</h3>
-        <ul class="list-disc ml-5">
-          <li>Tuna crudo · citrus · herbs</li>
-          <li>Roasted carrots · tahini · dukkah (nf on request)</li>
-          <li>Harissa chicken · herb pilaf</li>
-          <li>Roasted salmon · salsa verde</li>
-          <li>Sorbets · seasonal fruit</li>
-        </ul>
-      </div>
-      <!-- Nut-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Nut-free (nf)</h3>
-        <ul class="list-disc ml-5">
-          <li>Smoked salmon blini · dill (nf)</li>
-          <li>Tomato basil soup shooters (nf)</li>
-          <li>Herb-crusted beef · jus (nf)</li>
-          <li>Roast chicken · lemon–thyme (nf)</li>
-          <li>Chocolate torte (nf)</li>
-        </ul>
-      </div>
-      <!-- Halal / Kosher-style -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Halal / Kosher-style</h3>
-        <ul class="list-disc ml-5">
-          <li>Halal sumac chicken · herbed grains</li>
-          <li>Halal braised lamb shoulder · saffron rice</li>
-          <li>Kosher-style roast salmon · citrus</li>
-          <li>Kosher-style herb chicken · roasted roots</li>
-          <li>Parve desserts and NA pairings available</li>
-        </ul>
-        <p class="text-xs text-neutral-600 mt-3">Certified kosher available on request via partner kitchen.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Share dietary needs</a>
+        <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
       </div>
     </div>
-
-
-
-    <!-- Protocols & labeling -->
-    <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Allergen protocols</h3>
-        <ul class="list-disc ml-5">
-          <li>Separate prep and utensils on request</li>
-          <li>Dedicated allergen-safe plating lane</li>
-          <li>Ingredient logs for FOH reference</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Labeling</h3>
-        <p>Badges on menus and stations:</p>
-        <p class="mt-2"><span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free · <span class="font-medium">df</span> dairy-free · <span class="font-medium">nf</span> nut-free · <span class="font-medium">halal</span> halal · <span class="font-medium">ks</span> kosher-style</p>
-      </div>
-    </div>
-
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Share dietary needs</a>
-      <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Gallery strip -->
   <section class="wrap px-4 py-14">
@@ -602,546 +555,70 @@ rée with seasonal garnish and table styling">
     <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
   </footer>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
-    // Mobile menu
-    const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
-    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true'); }); }
-    // Footer year
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  </script>
-</body>
-</html>
+    // Rolling header: hide on scroll down, show on scroll up; lock when mobile menu is open
+    (function () {
+      const header = document.getElementById('siteHeader');
+      const btn = document.getElementById('menuBtn');
+      const mnav = document.getElementById('mnav');
+      let lastY = window.scrollY, locked = false;
 
+      function onScroll() {
+        const y = window.scrollY;
+        header.classList.toggle('shadow-md', y > 4);
+        if (locked) { lastY = y; return; }
+        if (y > lastY && y > 80) header.classList.add('-translate-y-full');
+        else header.classList.remove('-translate-y-full');
+        lastY = y;
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
 
-  <!-- Hero -->
-  <section class="relative">
-    <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
-      <div>
-        <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold">Chef-Driven | Detail-Obsessed</p>
-        <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Catering for weddings, corporate, and private celebrations</h1>
-        <p class="mt-4 text-lg text-neutral-700">
-  Conferences, galas, weddings, and private events. We plan the experience and deliver chef-driven menus with
-  <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>—scaled to your brief and audience.
-</p>
+      if (btn && mnav) {
+        btn.addEventListener('click', () => {
+          const open = !mnav.classList.toggle('hidden');
+          header.classList.remove('-translate-y-full');
+          locked = open;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
 
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3">Request a Proposal</a>
-          <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3">View Menus</a>
-        </div>
-        <p class="mt-3 text-sm text-neutral-500">Based in Toronto • Serving North America • Select destinations</p>
-      </div>
-      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
-        <picture>
-          <picture>
-  <source type="image/webp" srcset="/images/hero-catering.webp">
-  <img class="w-full h-full object-cover"
-       src="/images/hero-catering.jpg"
-       width="1600" height="1067" decoding="async"
-       alt="Plated entrée with seasonal garnish and table styling">
-</picture>
-rée with seasonal garnish and table styling">
-        </picture>
-      </div>
-    </div>
-  </section>
+    // Image fallback: swap /images <-> images then Unsplash fallback
+    (function(){
+      const FB = "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop";
+      document.querySelectorAll("img").forEach(img=>{
+        let triedSwap=false;
+        img.addEventListener("error", ()=>{
+          const src=img.getAttribute("src")||"";
+          if(!triedSwap){
+            img.src = src.startsWith("/images/") ? src.replace(/^\/images\//,"images/") : src.replace(/^images\//,"/images/");
+            triedSwap=true; return;
+          }
+          if(img.src!==FB) img.src=FB;
+        });
+      });
+    })();
 
-  <!-- Partner -->
-  <<section>
-  <div class="wrap px-4 py-8">
-    <div class="rounded-xl ring-1 ring-neutral-200 p-5 grid md:grid-cols-3 gap-5 items-center">
-      <div class="md:col-span-2">
-        <p class="text-sm md:text-base">
-          Catering is fulfilled by <strong>Josie’s Kitchen</strong> and our elegant brand
-          <strong>Taste & Traditions (T&amp;T)</strong>. Seasonal menus, responsible sourcing, and full dietary accommodations.
-        </p>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Josie’s Kitchen</a>
-          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border px-5 py-2">Visit Taste & Traditions</a>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 gap-3">
-        <img src="/images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
-        <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Service styles  -->
-<section id="styles" class="bg-neutral-50">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold">Service styles</h2>
-    <p class="text-neutral-700">Choose the format. We align menu, pacing, and staffing to your run-of-show.</p>
+    // Tabs for menus
+    (function(){
+      const tabs = document.querySelectorAll('[data-menu-tab]');
+      const panels = document.querySelectorAll('[data-menu-panel]');
+      function activate(id, btn){
+        panels.forEach(p => p.classList.add('hidden'));
+        const active = document.getElementById(id);
+        if (active) active.classList.remove('hidden');
+        tabs.forEach(b => { b.classList.remove('bg-black','text-white'); b.setAttribute('aria-selected','false'); });
+        btn.classList.add('bg-black','text-white');
+        btn.setAttribute('aria-selected','true');
+      }
+      tabs.forEach(btn => btn.addEventListener('click', () => activate(btn.getAttribute('data-menu-tab'), btn)));
+    })();
 
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-
-      <!-- Plated -->
-      <article id="plated" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details open class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Plated service</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
-
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Multi-course, synchronized service. Best for formal dinners, awards, and keynotes with timed speeches.</p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>Tray pass canapés or reception</li>
-                  <li>First course plated</li>
-                  <li>Main course with sides</li>
-                  <li>Dessert plated or station</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 server / 10–12 guests</li>
-                  <li>1 busser / 2 servers</li>
-                  <li>1 captain / 3–4 servers</li>
-                  <li>BOH: 1 chef / 30–40 covers</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Charger, dinnerware, flatware</li>
-                  <li>Stemware, coffee service</li>
-                  <li>Linen, napkins, table numbers</li>
-                  <li>Back-of-house kitchen build</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Strong for speeches and reveals</li>
-                  <li>Clear dietary labeling on place cards</li>
-                  <li>Accurate counts due 10 days prior</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Wine pairings, bread service, plated dessert with coffee, late-night bite station.</p>
-            </div>
-          </div>
-        </details>
-      </article>
-
-      <!-- Chef Stations -->
-      <article id="stations" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Chef stations</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
-
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Interactive, high-flow service. Best for mingling, networking, and mixed seating.</p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>3–5 live stations (hot + cold)</li>
-                  <li>Circulating canapés to reduce lines</li>
-                  <li>Attendant-served allergen lanes</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 station chef / station</li>
-                  <li>1 attendant / station</li>
-                  <li>1 floater / 75–100 guests</li>
-                  <li>BOH: 1 chef / 60–80 guests</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Themed station facades</li>
-                  <li>Smallwares, chafers, induction</li>
-                  <li>Signage and allergen labels</li>
-                  <li>Highboys and cruiser tables</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Best with staggered call times</li>
-                  <li>Line management improves experience</li>
-                  <li>Great for brand activations</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Action carving, pasta wheel, raw bar, dessert bar, espresso cart.</p>
-            </div>
-          </div>
-        </details>
-      </article>
-
-      <!-- Elevated Buffet -->
-      <article id="buffet" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
-        <details class="p-6">
-          <summary class="flex items-center justify-between cursor-pointer">
-            <h3 class="text-lg font-semibold">Elevated buffet</h3>
-            <span class="text-neutral-500 text-xs">tap to collapse/expand</span>
-          </summary>
-
-          <div class="mt-4 space-y-4">
-            <p class="text-neutral-700">Efficient for large audiences. Designed for flow, variety, and clear labeling.</p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Typical flow</h4>
-                <ul class="list-disc ml-5">
-                  <li>Multiple mirrored lines</li>
-                  <li>Dedicated allergen-safe lane</li>
-                  <li>Attended protein carving</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Staffing ratios</h4>
-                <ul class="list-disc ml-5">
-                  <li>1 attendant / buffet line</li>
-                  <li>1 runner / 100 guests</li>
-                  <li>BOH: 1 chef / 80–100 guests</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <h4 class="font-medium">Rentals & setup</h4>
-                <ul class="list-disc ml-5">
-                  <li>Buffet risers, platters, guards</li>
-                  <li>Heat holding or induction</li>
-                  <li>Clear dish labels and icons</li>
-                </ul>
-              </div>
-              <div>
-                <h4 class="font-medium">Good to know</h4>
-                <ul class="list-disc ml-5">
-                  <li>Pre-set salads speed lines</li>
-                  <li>Separate VEG/GF line improves access</li>
-                  <li>Great for conferences and galas</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h4 class="font-medium">Pairs well with</h4>
-              <p>Welcome canapé pass, dessert station, late-night snacks.</p>
-            </div>
-          </div>
-        </details>
-      </article>
-
-    </div>
-
-    <!-- Quick CTA -->
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan your format</a>
-      <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
-    </div>
-  </div>
-</section>
-
-
-
-  
-
-<!-- Menus (split by partner) -->
-<section id="menus">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold">Menus</h2>
-    <p class="text-neutral-700">Choose a direction. We tailor to your brief, season, and dietary needs.</p>
-
-    <!-- Tabs -->
-    <div class="mt-6 inline-flex rounded-full ring-1 ring-neutral-200 overflow-hidden">
-      <button type="button" class="px-4 py-2 text-sm bg-black text-white" data-menu-tab="menu-josie" aria-controls="menu-josie" aria-selected="true">Josie’s Kitchen</button>
-      <button type="button" class="px-4 py-2 text-sm" data-menu-tab="menu-tt" aria-controls="menu-tt" aria-selected="false">T&amp;T Elevated</button>
-    </div>
-
-    <!-- Josie's Kitchen -->
-    <div id="menu-josie" data-menu-panel class="mt-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Hors d’Oeuvres -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Hors d’Oeuvres</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Tuna tartare cones</span><p class="text-neutral-600">sesame, lime <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
-            <li class="py-3"><span class="font-medium">Whipped goat cheese crostini</span><p class="text-neutral-600">fig, pistachio</p></li>
-            <li class="py-3"><span class="font-medium">Smoked salmon blini</span><p class="text-neutral-600">crème fraîche, dill</p></li>
-            <li class="py-3"><span class="font-medium">Charred corn arancini</span><p class="text-neutral-600">basil pesto <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-            <li class="py-3"><span class="font-medium">Roasted beet spoon</span><p class="text-neutral-600">citrus, cashew ricotta <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan</span></p></li>
-          </ul>
-        </div>
-        <!-- Plated Mains -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Plated Mains</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Herb-crusted beef tenderloin</span><p class="text-neutral-600">red wine jus, pomme purée</p></li>
-            <li class="py-3"><span class="font-medium">Seared sea bass</span><p class="text-neutral-600">fennel, citrus beurre blanc</p></li>
-            <li class="py-3"><span class="font-medium">Sumac chicken</span><p class="text-neutral-600">pomegranate glaze, herbed grains</p></li>
-            <li class="py-3"><span class="font-medium">Wild mushroom risotto</span><p class="text-neutral-600">parmesan crisp <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-            <li class="py-3"><span class="font-medium">Cauliflower steak</span><p class="text-neutral-600">romesco, caper raisin <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan · gf</span></p></li>
-          </ul>
-        </div>
-        <!-- Stations & Buffets -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Stations & Buffets</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Live taco bar</span><p class="text-neutral-600">adobo chicken, grilled veg, house salsas</p></li>
-            <li class="py-3"><span class="font-medium">Mediterranean mezze & carving</span><p class="text-neutral-600">shawarma, tabbouleh, dips</p></li>
-            <li class="py-3"><span class="font-medium">Pasta atelier</span><p class="text-neutral-600">cacio e pepe, short rib ragù</p></li>
-            <li class="py-3"><span class="font-medium">Seafood raw bar</span><p class="text-neutral-600">oysters, shrimp, mignonette <span class="text-neutral-500">(market)</span></p></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Taste & Traditions -->
-    <div id="menu-tt" data-menu-panel class="mt-8 hidden">
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Canapés -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Canapés</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Caviar blini</span><p class="text-neutral-600">crème fraîche, chive</p></li>
-            <li class="py-3"><span class="font-medium">Beef tartare toast</span><p class="text-neutral-600">cornichon, dijon</p></li>
-            <li class="py-3"><span class="font-medium">Butter-poached lobster roll</span><p class="text-neutral-600">brown butter brioche</p></li>
-            <li class="py-3"><span class="font-medium">Truffled arancini</span><p class="text-neutral-600">pecorino <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-          </ul>
-        </div>
-        <!-- Plated Mains -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Plated Mains</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Wagyu striploin</span><p class="text-neutral-600">bordelaise, pommes Anna</p></li>
-            <li class="py-3"><span class="font-medium">Halibut</span><p class="text-neutral-600">champagne beurre blanc, leek fondue</p></li>
-            <li class="py-3"><span class="font-medium">Duck breast</span><p class="text-neutral-600">cherry jus, confit potato</p></li>
-            <li class="py-3"><span class="font-medium">Black truffle risotto</span><p class="text-neutral-600">aged parmesan <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
-          </ul>
-        </div>
-        <!-- Stations -->
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Elevated Stations</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Oyster & crudo bar</span><p class="text-neutral-600">mignonette, citrus, chili oils <span class="text-neutral-500">(market)</span></p></li>
-            <li class="py-3"><span class="font-medium">Truffle pasta wheel</span><p class="text-neutral-600">table-side finish</p></li>
-            <li class="py-3"><span class="font-medium">Japanese robata</span><p class="text-neutral-600">skewers, tare glaze</p></li>
-            <li class="py-3"><span class="font-medium">Artisanal cheese & charcuterie</span><p class="text-neutral-600">condiments, breads</p></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Optional elevated desserts -->
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Desserts</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Chocolate marquise</span><p class="text-neutral-600">cocoa nib, chantilly</p></li>
-            <li class="py-3"><span class="font-medium">Vanilla mille-feuille</span><p class="text-neutral-600">caramelized puff</p></li>
-            <li class="py-3"><span class="font-medium">Citrus pavlova</span><p class="text-neutral-600">lemon curd, seasonal fruit <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
-          </ul>
-        </div>
-        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-          <h3 class="text-lg font-semibold">Beverage Programs</h3>
-          <ul class="mt-4 divide-y divide-neutral-200 text-sm">
-            <li class="py-3"><span class="font-medium">Sommelier pairings</span><p class="text-neutral-600">Old World & New World</p></li>
-            <li class="py-3"><span class="font-medium">Signature cocktails</span><p class="text-neutral-600">house infusions, zero-proof</p></li>
-            <li class="py-3"><span class="font-medium">Champagne service</span><p class="text-neutral-600">sabrage on request</p></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <p class="mt-6 text-sm text-neutral-600">Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free. Final menus adjusted for allergies and preferences.</p>
-  </div>
-</section>
-
-<script>
-  // tabs for menus
-  (function(){
-    const tabs = document.querySelectorAll('[data-menu-tab]');
-    const panels = document.querySelectorAll('[data-menu-panel]');
-    function activate(id, btn){
-      panels.forEach(p => p.classList.add('hidden'));
-      document.getElementById(id).classList.remove('hidden');
-      tabs.forEach(b => { b.classList.remove('bg-black','text-white'); b.setAttribute('aria-selected','false'); });
-      btn.classList.add('bg-black','text-white');
-      btn.setAttribute('aria-selected','true');
-    }
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => activate(btn.getAttribute('data-menu-tab'), btn));
-    });
-  })();
-</script>
-
-
-<!-- Dietary & Inclusion -->
-<section id="dietary" class="bg-neutral-50">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold">Dietary & inclusion</h2>
-    <p class="text-neutral-700">We plan inclusive menus for mixed audiences. Pick a direction and we tailor items to your brief.</p>
-
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-      <!-- Vegan -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Vegan</h3>
-        <ul class="list-disc ml-5">
-          <li>Roasted beet carpaccio · citrus · herbs</li>
-          <li>Charred broccoli & chickpea socca</li>
-          <li>Cauliflower steak · romesco · caper–raisin</li>
-          <li>Mushroom farro “risotto” · herbs</li>
-          <li>Coconut panna cotta · mango</li>
-        </ul>
-      </div>
-      <!-- Vegetarian -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Vegetarian (v)</h3>
-        <ul class="list-disc ml-5">
-          <li>Truffled arancini · pecorino</li>
-          <li>Burrata · heirloom tomato · basil oil</li>
-          <li>Wild mushroom risotto · parmesan crisp</li>
-          <li>Spinach & ricotta gnudi · brown butter</li>
-          <li>Lemon olive-oil cake</li>
-        </ul>
-      </div>
-      <!-- Gluten-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Gluten-free (gf)</h3>
-        <ul class="list-disc ml-5">
-          <li>Seared sea bass · fennel · citrus beurre blanc</li>
-          <li>Sumac chicken · pomegranate glaze</li>
-          <li>Grilled striploin · red wine jus · roots</li>
-          <li>Quinoa tabbouleh · herb vinaigrette</li>
-          <li>Vanilla bean panna cotta · berries</li>
-        </ul>
-      </div>
-      <!-- Dairy-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Dairy-free (df)</h3>
-        <ul class="list-disc ml-5">
-          <li>Tuna crudo · citrus · herbs</li>
-          <li>Roasted carrots · tahini · dukkah (nf on request)</li>
-          <li>Harissa chicken · herb pilaf</li>
-          <li>Roasted salmon · salsa verde</li>
-          <li>Sorbets · seasonal fruit</li>
-        </ul>
-      </div>
-      <!-- Nut-free -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Nut-free (nf)</h3>
-        <ul class="list-disc ml-5">
-          <li>Smoked salmon blini · dill (nf)</li>
-          <li>Tomato basil soup shooters (nf)</li>
-          <li>Herb-crusted beef · jus (nf)</li>
-          <li>Roast chicken · lemon–thyme (nf)</li>
-          <li>Chocolate torte (nf)</li>
-        </ul>
-      </div>
-      <!-- Halal / Kosher-style -->
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Halal / Kosher-style</h3>
-        <ul class="list-disc ml-5">
-          <li>Halal sumac chicken · herbed grains</li>
-          <li>Halal braised lamb shoulder · saffron rice</li>
-          <li>Kosher-style roast salmon · citrus</li>
-          <li>Kosher-style herb chicken · roasted roots</li>
-          <li>Parve desserts and NA pairings available</li>
-        </ul>
-        <p class="text-xs text-neutral-600 mt-3">Certified kosher available on request via partner kitchen.</p>
-      </div>
-    </div>
-
-
-
-    <!-- Protocols & labeling -->
-    <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Allergen protocols</h3>
-        <ul class="list-disc ml-5">
-          <li>Separate prep and utensils on request</li>
-          <li>Dedicated allergen-safe plating lane</li>
-          <li>Ingredient logs for FOH reference</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3>Labeling</h3>
-        <p>Badges on menus and stations:</p>
-        <p class="mt-2"><span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free · <span class="font-medium">df</span> dairy-free · <span class="font-medium">nf</span> nut-free · <span class="font-medium">halal</span> halal · <span class="font-medium">ks</span> kosher-style</p>
-      </div>
-    </div>
-
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Share dietary needs</a>
-      <a href="#menus" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">See menus</a>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Gallery strip -->
-  <section class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold">Recent dishes</h2>
-    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy"
-           src="/images/IMG_0401.jpg"
-           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521334726092-b509a19597a8?q=80&w=1200&auto=format&fit=crop';"
-           alt="Canapés">
-      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy"
-           src="/images/IMG_0610.jpg"
-           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530023367847-a683933f4174?q=80&w=1200&auto=format&fit=crop';"
-           alt="Buffet">
-      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy"
-           src="/images/IMG_0525.jpg"
-           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=1200&auto=format&fit=crop';"
-           alt="Entrée">
-    </div>
-    <div class="mt-6">
-      <a href="gallery.html" class="inline-flex items-center rounded-full border px-5 py-3">See Full Gallery</a>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-neutral-900 text-white">
-    <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">Ready to design your menu?</h2>
-        <p class="text-neutral-300 mt-1">Tell us your date, format, and guest count.</p>
-      </div>
-      <a href="contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-neutral-200">
-    <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
-  </footer>
-
-  <!-- Script -->
-  <script>
-    // Mobile menu
-    const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
-    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true'); }); }
-    // Footer year
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+    // Mobile menu + footer year
+    (function(){
+      const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
