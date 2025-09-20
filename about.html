@@ -17,49 +17,78 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.wrap{max-width:1200px;margin-inline:auto}.copy p{margin-top:.9rem}.copy h3{margin-top:1rem;font-weight:700}</style>
+
+  <style>
+    :root{
+      --text:#111827;           /* body copy */
+      --gold:#c7b277;           /* headings & accents */
+      --emerald:#0a5d3b;        /* primary green */
+      --emerald-dark:#084c31;   /* borders/hover */
+      --line:#e5e7eb;
+      --card:#f8fafc;
+    }
+    /* Layout helpers */
+    .wrap{max-width:1200px;margin-inline:auto}
+    .copy p{margin-top:.9rem}
+    .copy h3{margin-top:1rem;font-weight:700}
+
+    /* Typography palette */
+    body{background:#fff;color:var(--text)}
+    a{color:inherit}
+    h1,h2,h3{color:var(--gold)}
+
+    /* Buttons */
+    .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+    .btn-primary{background:var(--emerald);color:#fff}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-secondary{background:var(--gold);color:#0b3d2e}
+    .btn-secondary:hover{filter:brightness(.97)}
+    .btn-outline{border:1px solid var(--emerald);color:var(--emerald)}
+    .btn-outline:hover{background:var(--emerald);color:#fff}
+
+    img{max-width:100%;height:auto;display:block}
+  </style>
 </head>
-<body class="bg-white text-neutral-900">
+<body>
 
-  <!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
-      <span class="font-semibold tracking-wide">Hilda May Events</span>
-    </a>
-    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
-        Book
+  <!-- Header (emerald + gold) -->
+  <header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
       </a>
-    </nav>
-    <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
-  </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
-    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-      <a href="events.html" class="hover:text-white">Event Planning</a>
-      <a href="catering.html" class="hover:text-white">Catering</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-      <a href="about.html" class="hover:text-white">About</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
-        Book
-      </a>
+      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+        <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
+        <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
+        <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
+        <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
+        <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
+        <a href="contact.html"
+           class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--emerald)]">
+          Book
+        </a>
+      </nav>
+      <button id="menuBtn"
+              class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
+              aria-controls="mnav" aria-expanded="false">Menu</button>
     </div>
-  </nav>
-</header>
-
+    <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a href="events.html" class="hover:text-white">Event Planning</a>
+        <a href="catering.html" class="hover:text-white">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html"
+           class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90">
+          Book
+        </a>
+      </div>
+    </nav>
+  </header>
 
   <!-- Hero image -->
   <section class="relative">
@@ -168,9 +197,9 @@
         <li>Full dietary accommodations and allergen protocols</li>
       </ul>
       <div class="mt-4 flex gap-3">
-        <a href="contact.html" class="inline-flex items-center rounded-full bg-black text-white px-5 py-3 text-sm font-semibold">Plan an Event</a>
-        <a href="catering.html" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Explore Catering</a>
-        <a href="#" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border px-5 py-3 text-sm">Visit Josie’s Kitchen</a>
+        <a href="contact.html" class="btn btn-primary text-sm">Plan an Event</a>
+        <a href="catering.html" class="btn btn-secondary text-sm">Explore Catering</a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-outline text-sm">Visit Josie’s Kitchen</a>
       </div>
     </div>
   </section>
@@ -201,13 +230,17 @@
     <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
   </footer>
 
-  <!-- Scripts at end -->
+  <!-- Scripts -->
   <script>
     // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
     // Mobile menu
-    const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
-    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+    (function(){
+      const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+      if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+    })();
+
     // Image path swap + fallback
     (function(){
       const FB='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
