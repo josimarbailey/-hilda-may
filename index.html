@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <base href="/" />
   <title>Hilda May Events — Event Planning & Catering</title>
-  <meta name="description" content="Planning and production for conferences, weddings, and brand moments. Catering by Josie’s Kitchen and Taste & Traditions. Toronto-based, serving Canada and select destinations.">
-  <link rel="canonical" href="https://hildamay.com/">
-  <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Hilda May Events — Event Planning & Catering">
-  <meta property="og:description" content="Planning and production for conferences, weddings, and brand moments. Catering by Josie’s Kitchen and Taste & Traditions.">
-  <meta property="og:image" content="/images/og-home.jpg">
-  <meta property="og:url" content="https://hildamay.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#0f6d4e">
+  <meta name="description" content="Planning and production for conferences, weddings, and brand moments. Catering by Josie’s Kitchen and Taste & Traditions. Toronto-based, serving Canada and select destinations." />
+  <link rel="canonical" href="https://hildamay.com/" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Hilda May Events — Event Planning & Catering" />
+  <meta property="og:description" content="Planning and production for conferences, weddings, and brand moments. Catering by Josie’s Kitchen and Taste & Traditions." />
+  <meta property="og:image" content="/images/og-home.jpg" />
+  <meta property="og:url" content="https://hildamay.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f6d4e" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -27,11 +27,14 @@
       --royal-dark:var(--emerald-dark);
       --line:#e5e7eb;
       --card:#f8fafc;
+      --header-h:64px; /* fallback; updated by JS */
     }
+
     html,body{overflow-x:hidden}
-    body{background:#fff;color:var(--text)}
+    body{background:#fff;color:var(--text); padding-top:var(--header-h);}
     a{color:inherit}
     h1,h2,h3{color:var(--gold)}
+
     .wrap{max-width:1200px;margin-inline:auto;width:100%}
     .card{background:var(--card);border:1px solid var(--line);border-radius:1rem}
     .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
@@ -43,10 +46,11 @@
     img,video{max-width:100%;height:auto;display:block}
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transition-shadow">
+  <!-- Header (fixed; never hides) -->
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transition-shadow">
     <div class="wrap px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
@@ -197,7 +201,7 @@
   <section>
     <div class="wrap px-4 py-10">
       <div class="card p-5 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm md:text-base">Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&amp;T)</strong>. Seasonal menus, responsible sourcing, full dietary accommodations.</p>
+        <p class="text-sm md:text-base">Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&T)</strong>. Seasonal menus, responsible sourcing, full dietary accommodations.</p>
         <a href="catering.html" class="btn btn-secondary">Explore Menus</a>
       </div>
     </div>
@@ -325,31 +329,6 @@
     </div>
   </section>
 
-  <!-- Fast facts (duplicate section kept for structure) -->
-  <section>
-    <div class="wrap px-4 py-14">
-      <h2 class="text-2xl md:text-3xl font-semibold">Fast facts</h2>
-      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="card p-5 text-center">
-          <div class="text-3xl font-semibold text-[var(--gold)]">15+</div>
-          <div class="text-xs uppercase tracking-wide mt-1">Years in events</div>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl font-semibold text-[var(--gold)]">100+</div>
-          <div class="text-xs uppercase tracking-wide mt-1">Programs delivered</div>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl font-semibold text-[var(--gold)]">30–3000+</div>
-          <div class="text-xs uppercase tracking-wide mt-1">Guest scale</div>
-        </div>
-        <div class="card p-5 text-center">
-          <div class="text-3xl font-semibold text-[var(--gold)]">&lt;24h</div>
-          <div class="text-xs uppercase tracking-wide mt-1">Typical response</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ preview -->
   <section class="bg-[var(--card)]">
     <div class="wrap px-4 py-14">
@@ -395,47 +374,55 @@
     </div>
   </footer>
 
-  <!-- Scripts at end (header stays pinned; menu toggle; year; image fallback) -->
+  <!-- Consolidated scripts -->
   <script>
-  (() => {
-    // Header shadow on scroll (no hide/show)
-    const header = document.getElementById('siteHeader');
-    if (header) {
+    (function(){
+      // Header height → body padding
+      const header = document.getElementById('siteHeader');
+      const root = document.documentElement;
+      function setHeaderPad(){
+        if(!header) return;
+        root.style.setProperty('--header-h', header.offsetHeight + 'px');
+      }
+      setHeaderPad();
+      window.addEventListener('resize', setHeaderPad);
+
+      // Shadow on scroll
       window.addEventListener('scroll', () => {
-        header.classList.toggle('shadow-md', window.scrollY > 4);
-      }, { passive: true });
-    }
+        if (header) header.classList.toggle('shadow-md', window.scrollY > 4);
+      }, { passive:true });
 
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const mnav = document.getElementById('mnav');
-    if (btn && mnav) {
-      btn.addEventListener('click', () => {
-        const open = !mnav.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
+      // Mobile menu toggle + recalc height
+      const btn = document.getElementById('menuBtn');
+      const mnav = document.getElementById('mnav');
+      if (btn && mnav) {
+        btn.addEventListener('click', () => {
+          const open = !mnav.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          setHeaderPad();
+        });
+      }
 
-    // Footer year
-    const y = document.getElementById('y');
-    if (y) y.textContent = new Date().getFullYear();
+      // Footer year
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
 
-    // Hero image fallback: swap /images <-> images, then Unsplash
-    const img = document.getElementById('heroImg');
-    if (img) {
-      const FALLBACK = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
-      let triedSwap = false;
-      img.addEventListener('error', () => {
-        const src = img.getAttribute('src') || '';
-        if (!triedSwap) {
-          img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/') : src.replace(/^images\//,'/images/');
-          triedSwap = true;
-        } else if (img.src !== FALLBACK) {
-          img.src = FALLBACK;
-        }
-      });
-    }
-  })();
+      // Hero image fallback: swap /images ↔ images, then Unsplash
+      const img = document.getElementById('heroImg');
+      if (img) {
+        const FB = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+        let triedSwap = false;
+        img.addEventListener('error', () => {
+          const src = img.getAttribute('src') || '';
+          if (!triedSwap) {
+            img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/') : src.replace(/^images\//,'/images/');
+            triedSwap = true;
+          } else if (img.src !== FB) {
+            img.src = FB;
+          }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
