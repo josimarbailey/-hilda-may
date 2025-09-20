@@ -24,10 +24,10 @@
       --text:#111827;
       --muted:#6b7280;
       --gold:#c7b277;          /* muted gold */
-      --emerald:#0a5d3b;       /* emerald */
-      --emerald-dark:#084c31;  /* darker emerald */
+      --emerald:#0a5d3b;       /* emerald (buttons) */
+      --emerald-dark:#084c31;
       --royal:#0b3d2e;         /* header green */
-      --royal-dark:#072a20;    /* border/hover */
+      --royal-dark:#072a20;
       --line:#e5e7eb;
       --card:#f8fafc;
     }
@@ -44,30 +44,30 @@
 </head>
 <body>
 
-<!-- Header (royal green + muted gold) — SAME AS INDEX -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
+<!-- Header (royal green + muted gold) — matches index -->
+<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white font-semibold">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
+      <a href="events.html" class="text-[var(--gold)] hover:text-white font-semibold">Event Planning</a>
+      <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
+      <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
+      <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
+      <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
       <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
+         class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--royal)]">
         Book
       </a>
     </nav>
     <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
+            class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
             aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
@@ -76,7 +76,7 @@
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
       <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
+         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90">
         Book
       </a>
     </div>
@@ -87,8 +87,8 @@
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
     <div>
-      <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
-      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[#c7b277]">
+      <p class="text-xs uppercase tracking-wider text-[var(--gold)] font-semibold">Event Planning & Production</p>
+      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">
         Seamless events of every size — from ten guests to ten thousand
       </h1>
       <p class="mt-4 text-lg text-neutral-700">
@@ -96,8 +96,8 @@
         Culinary by <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&amp;T)</strong>.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a href="contact.html" class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-5 py-3 font-semibold">Plan an Event</a>
-        <a href="catering.html" class="inline-flex items-center rounded-full border border-[#c7b277]/40 text-[#0b3d2e] px-5 py-3">Explore Catering</a>
+        <a href="contact.html" class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-5 py-3 font-semibold">Plan an Event</a>
+        <a href="catering.html" class="inline-flex items-center rounded-full border border-[var(--gold)] text-[var(--gold)] px-5 py-3">Explore Catering</a>
       </div>
       <p class="mt-3 text-sm text-neutral-500">Toronto-based • Canada-wide • Select international</p>
     </div>
@@ -111,13 +111,12 @@
   </div>
 </section>
 
-<!-- EVERYTHING WE PLAN (muted gold & black) -->
+<!-- EVERYTHING WE PLAN -->
 <section id="everything-we-plan" class="bg-white">
   <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Everything we plan</h2>
 
     <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
-      <!-- Conferences & Corporate -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Conferences & Corporate</h3>
         <ul class="list-disc ml-5 mt-2">
@@ -126,8 +125,6 @@
           <li>Sponsor lounges, VIP, press moments</li>
         </ul>
       </div>
-
-      <!-- Weddings & Social -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Weddings & Social</h3>
         <ul class="list-disc ml-5 mt-2">
@@ -136,8 +133,6 @@
           <li>Rehearsal dinners, after-parties, next-day brunch</li>
         </ul>
       </div>
-
-      <!-- Brand & Experiential -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Brand & Experiential</h3>
         <ul class="list-disc ml-5 mt-2">
@@ -150,7 +145,7 @@
   </div>
 </section>
 
-<!-- STATS BAND (black background, muted-gold text) -->
+<!-- STATS BAND -->
 <section class="bg-[#111827] text-[var(--gold)]">
   <div class="wrap px-4 py-10 grid md:grid-cols-3 gap-6 text-center">
     <div>
@@ -168,10 +163,9 @@
   </div>
 </section>
 
-<!-- CAPABILITIES (muted-gold headings, black text) -->
+<!-- CAPABILITIES -->
 <section id="capabilities" class="bg-[var(--card)]">
   <div class="wrap px-4 py-14 grid md:grid-cols-3 gap-6">
-    <!-- Planning & Production -->
     <div class="card p-6">
       <h3 class="font-semibold text-[var(--gold)]">Planning & Production</h3>
       <ul class="list-disc ml-5 mt-2 text-sm">
@@ -181,8 +175,6 @@
         <li>Run-of-show, cueing, showcalling</li>
       </ul>
     </div>
-
-    <!-- Design & Experience -->
     <div class="card p-6">
       <h3 class="font-semibold text-[var(--gold)]">Design & Experience</h3>
       <ul class="list-disc ml-5 mt-2 text-sm">
@@ -192,8 +184,6 @@
         <li>Branding, signage, wayfinding</li>
       </ul>
     </div>
-
-    <!-- Catering & Beverage -->
     <div class="card p-6">
       <h3 class="font-semibold text-[var(--gold)]">Catering & Beverage</h3>
       <ul class="list-disc ml-5 mt-2 text-sm">
@@ -206,7 +196,7 @@
   </div>
 </section>
 
-<!-- SERVICES (muted-gold headings, black text) -->
+<!-- SERVICES -->
 <section id="services" class="bg-white">
   <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Services</h2>
@@ -239,80 +229,68 @@
   </div>
 </section>
 
- <!-- WHAT WE OFFER -->
+<!-- WHAT WE OFFER -->
 <section class="bg-[var(--card)]" id="what-we-offer">
   <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">What we offer</h2>
 
     <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-      <!-- Planning & Production -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Planning & Production</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
           <li>Scope, budgets, timelines, critical path</li>
-          <li>Vendor leadership, RFPs & contracting</li>
-          <li>Run-of-show, cueing & showcalling</li>
-          <li>Permits, insurance & compliance</li>
+          <li>Vendor leadership, RFPs &amp; contracting</li>
+          <li>Run-of-show, cueing &amp; showcalling</li>
+          <li>Permits, insurance &amp; compliance</li>
         </ul>
       </div>
-
-      <!-- Design & Experience -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Design & Experience</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
-          <li>Concept boards & palettes</li>
-          <li>Floral, tabletop, linens & lounges</li>
-          <li>Scenic, staging, lighting & effects</li>
-          <li>Branding, signage & wayfinding</li>
+          <li>Concept boards &amp; palettes</li>
+          <li>Floral, tabletop, linens &amp; lounges</li>
+          <li>Scenic, staging, lighting &amp; effects</li>
+          <li>Branding, signage &amp; wayfinding</li>
         </ul>
       </div>
-
-      <!-- Catering & Beverage -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Catering & Beverage</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
-          <li>Chef-driven menus by Josie’s Kitchen & T&amp;T</li>
-          <li>Plated, chef stations & elevated buffets</li>
-          <li>Dietary & cultural programs (vegan, halal, etc.)</li>
-          <li>Bar design, pairings & signature cocktails</li>
+          <li>Chef-driven menus by Josie’s Kitchen &amp; T&amp;T</li>
+          <li>Plated, chef stations &amp; elevated buffets</li>
+          <li>Dietary &amp; cultural programs (vegan, halal, etc.)</li>
+          <li>Bar design, pairings &amp; signature cocktails</li>
         </ul>
       </div>
-
-      <!-- Logistics & Operations -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Logistics & Operations</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
-          <li>Load-in/out plans & back-of-house maps</li>
-          <li>Power, generators & distro coordination</li>
-          <li>Security, medical, valet & transportation</li>
-          <li>Sustainability & waste-reduction plans</li>
+          <li>Load-in/out plans &amp; BOH maps</li>
+          <li>Power, generators &amp; distro coordination</li>
+          <li>Security, medical, valet &amp; transportation</li>
+          <li>Sustainability &amp; waste-reduction plans</li>
         </ul>
       </div>
-
-      <!-- Tech & Broadcast -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Tech & Broadcast</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
-          <li>Audio, video, LED/projection & staging</li>
-          <li>Livestream, recording & post-event edits</li>
-          <li>Translation, captioning & multi-language MC</li>
-          <li>Show networks & comms (radio plans)</li>
+          <li>Audio, video, LED/projection &amp; staging</li>
+          <li>Livestream, recording &amp; post-event edits</li>
+          <li>Translation, captioning &amp; multi-language MC</li>
+          <li>Show networks &amp; comms (radio plans)</li>
         </ul>
       </div>
-
-      <!-- Guest Services -->
       <div class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Guest Services</h3>
         <ul class="list-disc ml-5 mt-2 text-[var(--muted)]">
-          <li>Registration, ticketing & RSVPs</li>
-          <li>Guest comms & concierge</li>
-          <li>VIP handling, hospitality & gifting</li>
-          <li>Hotels & travel coordination</li>
+          <li>Registration, ticketing &amp; RSVPs</li>
+          <li>Guest comms &amp; concierge</li>
+          <li>VIP handling, hospitality &amp; gifting</li>
+          <li>Hotels &amp; travel coordination</li>
         </ul>
       </div>
     </div>
 
-    <!-- Formats & Sizes -->
     <div class="mt-8 card p-6">
       <h3 class="font-semibold text-[var(--gold)]">Formats & sizes</h3>
       <p class="text-[var(--muted)] mt-2">
@@ -322,7 +300,6 @@
   </div>
 </section>
 
-
 <!-- PACKAGES -->
 <section class="bg-white" id="packages">
   <div class="wrap px-4 py-14">
@@ -330,7 +307,6 @@
     <p class="mt-2 text-sm text-[var(--muted)]">Every proposal is tailored to scope, date, venue logistics, guest count, and vendor mix.</p>
 
     <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-      <!-- Essential -->
       <div class="card p-6">
         <h3 class="text-xl font-semibold text-[var(--gold)]">Essential</h3>
         <p class="text-neutral-600">Month-of / Day-of Coordination</p>
@@ -340,15 +316,14 @@
           <li>Kickoff call (60–90 min)</li>
           <li>Final site visit or virtual walkthrough</li>
           <li>Vendor confirmations (2 weeks out)</li>
-          <li>Consolidated timeline & floor plan</li>
+          <li>Consolidated timeline &amp; floor plan</li>
           <li>Rehearsal (1–2 hrs, if applicable)</li>
           <li>10–12 hrs on-site lead + assistant</li>
-          <li>Showcalling & cueing, strike coordination</li>
+          <li>Showcalling &amp; cueing, strike coordination</li>
         </ul>
         <p class="mt-4 text-xs text-[var(--muted)]">Ideal for: well-booked events needing expert execution.</p>
       </div>
 
-      <!-- Premium -->
       <div class="card p-6 ring-2 ring-[var(--gold)]">
         <span class="inline-block rounded-full bg-[var(--gold)]/10 text-[var(--gold)] px-3 py-1 text-xs font-semibold">Most Booked</span>
         <h3 class="mt-3 text-xl font-semibold text-[var(--gold)]">Premium</h3>
@@ -356,66 +331,63 @@
         <p class="mt-3 text-3xl font-semibold text-[var(--gold)]">$12,000+</p>
         <h4 class="mt-4 font-semibold text-[var(--gold)]">Everything in Essential, plus</h4>
         <ul class="list-disc ml-5 mt-2">
-          <li>Concept refinement & style board</li>
+          <li>Concept refinement &amp; style board</li>
           <li>Vendor shortlist (3–5 per category) + contract review</li>
-          <li>Budget framework & tracking document</li>
-          <li>Production schedule & critical path</li>
-          <li>Venue plan: load-in/out & back-of-house map</li>
+          <li>Budget framework &amp; tracking document</li>
+          <li>Production schedule &amp; critical path</li>
+          <li>Venue plan: load-in/out &amp; BOH map</li>
           <li>2 site visits with vendor walk-throughs</li>
           <li>On-site lead + 2–4 coordinators (scale-based)</li>
         </ul>
         <p class="mt-4 text-xs text-[var(--muted)]">Ideal for: clients who want design/logistics leadership with shared decisions.</p>
       </div>
 
-      <!-- Luxury -->
       <div class="card p-6">
         <h3 class="text-xl font-semibold text-[var(--gold)]">Luxury</h3>
         <p class="text-neutral-600">Full-Service Planning</p>
         <p class="mt-3 text-3xl font-semibold text-[var(--gold)]">$25,000+</p>
         <h4 class="mt-4 font-semibold text-[var(--gold)]">Everything in Premium, plus</h4>
         <ul class="list-disc ml-5 mt-2">
-          <li>Full concept development & creative direction</li>
-          <li>Venue scouting & holds (3+), permits & compliance</li>
-          <li>Master budget, procurement & invoice management</li>
-          <li>Full vendor management (AV, floral, rentals, entertainment, culinary partners)</li>
-          <li>Guest comms & RSVP management (optional)</li>
+          <li>Full concept development &amp; creative direction</li>
+          <li>Venue scouting &amp; holds (3+), permits &amp; compliance</li>
+          <li>Master budget, procurement &amp; invoice management</li>
+          <li>Full vendor mgmt (AV, floral, rentals, entertainment, culinary partners)</li>
+          <li>Guest comms &amp; RSVP management (optional)</li>
           <li>Hospitality: transportation, hotels, gifting, VIP handling</li>
-          <li>Detailed showbook, radio comms plan & safety brief</li>
-          <li>On-site producer, showcaller, stage manager, 4–10 staff (scale-based)</li>
+          <li>Detailed showbook, radio comms plan &amp; safety brief</li>
+          <li>On-site producer, showcaller, stage mgr, 4–10 staff (scale-based)</li>
         </ul>
         <p class="mt-4 text-xs text-[var(--muted)]">Ideal for: complex programs, destination events, premium experiences.</p>
       </div>
     </div>
 
-    <!-- All packages include -->
     <div class="mt-8 card p-6">
       <h4 class="font-semibold text-[var(--gold)]">All packages include</h4>
       <ul class="list-disc ml-5 mt-2 text-sm">
         <li>Lead producer as single point of contact</li>
-        <li>Shared planning workspace (timelines, layouts, budgets)</li>
-        <li>Contingency & weather plan, vendor comms & confirmations</li>
-        <li>Inclusive hospitality: dietary labeling & access considerations</li>
+        <li>Shared workspace (timelines, layouts, budgets)</li>
+        <li>Contingency &amp; weather plan, vendor comms &amp; confirmations</li>
+        <li>Inclusive hospitality: dietary labeling &amp; access considerations</li>
       </ul>
     </div>
 
-    <!-- Add-ons -->
     <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
       <div class="card p-6">
         <h4 class="font-semibold text-[var(--gold)]">Popular add-ons</h4>
         <ul class="list-disc ml-5 mt-2">
-          <li>Branding & scenic design; custom fabrication</li>
-          <li>Broadcast / live streaming & content capture</li>
+          <li>Branding &amp; scenic design; custom fabrication</li>
+          <li>Broadcast / live streaming &amp; content capture</li>
           <li>Multilingual MC / translation / captioning</li>
-          <li>Security, medical, valet & transportation</li>
+          <li>Security, medical, valet &amp; transportation</li>
         </ul>
       </div>
       <div class="card p-6">
-        <h4 class="font-semibold text-[var(--gold)]">Destination & specialty</h4>
+        <h4 class="font-semibold text-[var(--gold)]">Destination &amp; specialty</h4>
         <ul class="list-disc ml-5 mt-2">
-          <li>International logistics, customs & freight</li>
-          <li>Sustainability & waste-reduction plans</li>
-          <li>Accessibility programs & ADA/CSA compliance</li>
-          <li>After-party & next-day brunch planning</li>
+          <li>International logistics, customs &amp; freight</li>
+          <li>Sustainability &amp; waste-reduction plans</li>
+          <li>Accessibility programs &amp; ADA/CSA compliance</li>
+          <li>After-party &amp; next-day brunch planning</li>
         </ul>
       </div>
     </div>
@@ -424,27 +396,26 @@
   </div>
 </section>
 
-
 <!-- INCLUSION -->
 <section class="bg-[var(--card)]">
   <div class="wrap px-4 py-14">
-    <h2 class="text-2xl md:text-3xl font-semibold text-[#0b3d2e]">Inclusive by design</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Inclusive by design</h2>
     <p class="text-[var(--muted)]">All diets, cultures, and access needs considered. Vegan, vegetarian, gluten-free, nut-free, halal, kosher-style, allergy-aware workflows, step-free routing, and clear labeling.</p>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-[#0b3d2e] text-[#c7b277]">
+<!-- CTA (royal green band) -->
+<section class="bg-[var(--royal)] text-[var(--gold)]">
   <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
       <h2 class="text-2xl md:text-3xl font-semibold">Tell us the vision. We’ll build the show.</h2>
       <p class="mt-1 opacity-90">Dates, guest count, goals—send the brief and we’ll propose options within days.</p>
     </div>
-    <a href="contact.html" class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-6 py-3 font-semibold">Start Your Inquiry</a>
+    <a href="contact.html" class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-6 py-3 font-semibold">Start Your Inquiry</a>
   </div>
 </section>
 
-<!-- Footer (white) — SAME AS INDEX -->
+<!-- Footer (white) — matches index -->
 <footer class="border-t border-neutral-200 bg-white text-neutral-600">
   <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
     <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
