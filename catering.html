@@ -26,10 +26,10 @@
 
   <!-- In <head> (once per site) -->
 <style>
-  :root{
-    --gold:#c7b277;
-    --royal:#0a5d3b;
-    --royal-dark:#084c31;
+  :root{ --gold:#c7b277; --royal:#0a5d3b; }
+  /* Turn all copy gold when <body> has .gold */
+  body.gold, body.gold :is(h1,h2,h3,h4,h5,h6,p,li,span,small,blockquote,summary,dd,dt,a,figcaption,label){
+    color:var(--gold) !important;
   }
   /* Make links inherit header color */
   header a{ color: inherit; }
