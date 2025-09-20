@@ -41,16 +41,15 @@
     .btn-secondary{background:var(--gold);color:#0b3d2e}
     .btn-secondary:hover{filter:brightness(.97)}
     /* Make index width match other pages */
-.wrap{max-width:1200px;margin-inline:auto;width:100%}
-
-/* Prevent any stray horizontal overflow */
-img,video{max-width:100%;height:auto;display:block}
-html,body{overflow-x:hidden}
-
+    .wrap{max-width:1200px;margin-inline:auto;width:100%}
+    /* Prevent any stray horizontal overflow */
+    img,video{max-width:100%;height:auto;display:block}
+    html,body{overflow-x:hidden}
   </style>
 </head>
 <body>
-  <!-- Rolling header -->
+
+<!-- Rolling header (single) -->
 <header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transform transition-transform duration-300 will-change-transform">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
@@ -81,63 +80,23 @@ html,body{overflow-x:hidden}
   </nav>
 </header>
 
-<!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
-      <span class="font-semibold tracking-wide">Hilda May Events</span>
-    </a>
-    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[var(--gold)] hover:text-white font-semibold">Event Planning</a>
-      <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
-      <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--royal)]">
-        Book
-      </a>
-    </nav>
-    <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
-  </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
-    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-      <a href="events.html" class="hover:text-white">Event Planning</a>
-      <a href="catering.html" class="hover:text-white">Catering</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-      <a href="about.html" class="hover:text-white">About</a>
-      <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90">
-        Book
-      </a>
-    </div>
-  </nav>
-</header>
-
-  <!-- Hero -->
+<!-- Hero -->
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
     <div>
-     <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
-<h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">
-  End-to-end planning for conferences, weddings & brand moments
-</h1>
-<p class="mt-4 text-lg text-neutral-700">
-  From first brief to final cue: concept, logistics, design, and on-site showcalling.
-  Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&amp;T)</strong>.
-</p>
-<div class="mt-6 flex flex-wrap gap-3">
-  <a href="contact.html" class="btn btn-primary">Plan an Event</a>
-  <a href="events.html" class="btn btn-secondary">Explore Services</a>
-</div>
-<p class="mt-3 text-sm text-neutral-500">Toronto-based • Canada-wide • Select international</p>
-
+      <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
+      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">
+        End-to-end planning for conferences, weddings & brand moments
+      </h1>
+      <p class="mt-4 text-lg text-neutral-700">
+        From first brief to final cue: concept, logistics, design, and on-site showcalling.
+        Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&amp;T)</strong>.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-primary">Plan an Event</a>
+        <a href="events.html" class="btn btn-secondary">Explore Services</a>
+      </div>
+      <p class="mt-3 text-sm text-neutral-500">Toronto-based • Canada-wide • Select international</p>
     </div>
 
     <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
@@ -170,15 +129,12 @@ html,body{overflow-x:hidden}
   })();
 </script>
 
-  <!-- Value pillars -->
- <!-- What we deliver (expanded) -->
+<!-- What we deliver -->
 <section id="services" class="bg-[var(--card)]">
   <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">What we deliver</h2>
 
-    <!-- 3 pillars, expanded -->
     <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <!-- Planning & Production -->
       <article class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Planning & Production</h3>
         <p class="text-sm text-[var(--muted)] mt-2">Single accountable team from discovery to strike—budgets, timelines, vendors, and the show itself.</p>
@@ -194,7 +150,6 @@ html,body{overflow-x:hidden}
         <a href="events.html" class="btn btn-primary mt-5">See Planning</a>
       </article>
 
-      <!-- Design & Experience -->
       <article class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Design & Experience</h3>
         <p class="text-sm text-[var(--muted)] mt-2">A coherent guest journey—styling, floral, lighting, scenic, and brand details that feel intentional.</p>
@@ -210,7 +165,6 @@ html,body{overflow-x:hidden}
         <a href="events.html#design" class="btn btn-primary mt-5">Explore Design</a>
       </article>
 
-      <!-- Catering -->
       <article class="card p-6">
         <h3 class="font-semibold text-[var(--gold)]">Catering</h3>
         <p class="text-sm text-[var(--muted)] mt-2">Chef-driven menus by <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions</strong>—inclusive and scalable.</p>
@@ -262,44 +216,41 @@ html,body{overflow-x:hidden}
   </div>
 </section>
 
-
-  <!-- Partnership -->
-  <section>
-    <div class="wrap px-4 py-10">
-      <div class="card p-5 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-sm md:text-base">Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&T)</strong>. Seasonal menus, responsible sourcing, full dietary accommodations.</p>
-        <a href="catering.html" class="btn btn-secondary">Explore Menus</a>
-      </div>
+<!-- Partnership -->
+<section>
+  <div class="wrap px-4 py-10">
+    <div class="card p-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm md:text-base">Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&T)</strong>. Seasonal menus, responsible sourcing, full dietary accommodations.</p>
+      <a href="catering.html" class="btn btn-secondary">Explore Menus</a>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  
-
-  <!-- Testimonials preview -->
-  <section>
-    <div class="wrap px-4 py-14">
-      <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">What clients say</h2>
-      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
-        <blockquote class="card p-5">
-          <p>“Amazing! Six nights straight—bartending, drinks, furniture rentals. Seamless.”</p>
-          <footer class="mt-3 text-[var(--muted)]">— Sarah Lopes · Nov 24, 2024</footer>
-        </blockquote>
-        <blockquote class="card p-5">
-          <p>“Staff is friendly, accommodating, and professional. Food is amazing—very versatile!”</p>
-          <footer class="mt-3 text-[var(--muted)]">— Genevieve · Oct 5, 2024</footer>
-        </blockquote>
-        <blockquote class="card p-5">
-          <p>“Our taco event exceeded all expectations—fresh, delicious, and effortless.”</p>
-          <footer class="mt-3 text-[var(--muted)]">— Sheema Farrukh · Sep 30, 2024</footer>
-        </blockquote>
-      </div>
-      <div class="mt-6">
-        <a href="testimonials.html" class="btn btn-secondary">Read More</a>
-      </div>
+<!-- Testimonials -->
+<section>
+  <div class="wrap px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">What clients say</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+      <blockquote class="card p-5">
+        <p>“Amazing! Six nights straight—bartending, drinks, furniture rentals. Seamless.”</p>
+        <footer class="mt-3 text-[var(--muted)]">— Sarah Lopes · Nov 24, 2024</footer>
+      </blockquote>
+      <blockquote class="card p-5">
+        <p>“Staff is friendly, accommodating, and professional. Food is amazing—very versatile!”</p>
+        <footer class="mt-3 text-[var(--muted)]">— Genevieve · Oct 5, 2024</footer>
+      </blockquote>
+      <blockquote class="card p-5">
+        <p>“Our taco event exceeded all expectations—fresh, delicious, and effortless.”</p>
+        <footer class="mt-3 text-[var(--muted)]">— Sheema Farrukh · Sep 30, 2024</footer>
+      </blockquote>
     </div>
-  </section>
-  <!-- Who we serve -->
+    <div class="mt-6">
+      <a href="testimonials.html" class="btn btn-secondary">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Who we serve -->
 <section>
   <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Who we serve</h2>
@@ -444,8 +395,7 @@ html,body{overflow-x:hidden}
   </div>
 </section>
 
-
-  <!-- CTA -->
+<!-- CTA -->
 <section class="bg-[#0f6d4e] text-[#c7b277]">
   <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
@@ -456,7 +406,6 @@ html,body{overflow-x:hidden}
   </div>
 </section>
 
- 
 <!-- Footer: white -->
 <footer class="border-t border-neutral-200 bg-white text-neutral-600">
   <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
@@ -469,14 +418,39 @@ html,body{overflow-x:hidden}
   </div>
 </footer>
 
-
+<!-- Scripts -->
 <script>
+  // Rolling header: hide on scroll down, show on scroll up; lock open when mobile menu is open
+  (function () {
+    const header = document.getElementById('siteHeader');
+    const btn = document.getElementById('menuBtn');
+    const mnav = document.getElementById('mnav');
+    if (!header) return;
+
+    let lastY = window.scrollY, locked = false;
+
+    function onScroll() {
+      const y = window.scrollY;
+      header.classList.toggle('shadow-md', y > 4);
+      if (locked) { lastY = y; return; }
+      if (y > lastY && y > 80) header.classList.add('-translate-y-full');
+      else header.classList.remove('-translate-y-full');
+      lastY = y;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if (btn && mnav) {
+      btn.addEventListener('click', () => {
+        const open = !mnav.classList.toggle('hidden');
+        header.classList.remove('-translate-y-full');
+        locked = open;
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  })();
+
   // Footer year
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Mobile menu toggle
-  const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
-  if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
 
   // Image auto-fix: try '/images/' <-> 'images/' then Unsplash fallback
   (function(){
