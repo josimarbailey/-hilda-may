@@ -5,42 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery — Hilda May Events</title>
   <meta name="description" content="A curated view of our food presentations and event designs." />
-  <link rel="canonical" href="gallery.html" />
+  <link rel="canonical" href="https://hildamay.com/gallery.html" />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Gallery — Hilda May Events" />
   <meta property="og:description" content="Browse our gallery of dishes, décor, and moments." />
-  <meta property="og:image" content="og.jpg" />
-  <meta property="og:url" content="gallery.html" />
+  <meta property="og:image" content="https://hildamay.com/images/og.jpg" />
+  <meta property="og:url" content="https://hildamay.com/gallery.html" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0a5d3b" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.wrap{max-width:1200px;margin-inline:auto}</style>
+  <style>
+    :root{
+      --text:#111827;
+      --muted:#6b7280;
+      --gold:#c7b277;
+      --emerald:#0a5d3b;
+      --emerald-dark:#084c31;
+      --line:#e5e7eb;
+    }
+    body{background:#fff;color:var(--text)}
+    a{color:inherit}
+    a:hover{color:var(--emerald)}
+    .wrap{max-width:1200px;margin-inline:auto}
+    h1,h2,h3{color:var(--gold)}
+  </style>
 </head>
 <body class="bg-white text-neutral-900">
- <!-- Header (dark) -->
 <!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
+<header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
+      <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
+      <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
+      <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
+      <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
+      <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
       <a href="contact.html"
-         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
+         class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--emerald)]">
         Book
       </a>
     </nav>
     <button id="menuBtn"
-            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
+            class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
             aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
@@ -49,55 +63,71 @@
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
       <a href="contact.html"
-         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
+         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90">
         Book
       </a>
     </div>
   </nav>
 </header>
 
+<!-- Hero -->
+<section class="wrap px-4 py-14">
+  <h1 class="text-3xl md:text-4xl font-semibold">Gallery</h1>
+  <p class="mt-2 text-[var(--muted)]">A selection of our recent dishes, event moments, and design highlights.</p>
+</section>
 
-  <!-- Hero -->
-  <section class="wrap px-4 py-14">
-    <h1 class="text-3xl md:text-4xl font-semibold">Gallery</h1>
-    <p class="mt-2 text-neutral-700">A selection of our recent dishes, event moments, and design highlights.</p>
-  </section>
+<!-- Gallery Grid -->
+<section class="wrap px-4 pb-14">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0401.jpg" alt="Canapés on platter">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0610.jpg" alt="Buffet station">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0525.jpg" alt="Entrée with garnish">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0196.jpeg" alt="Dessert plating">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0880.jpg" alt="Reception setup">
+    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_1234.jpg" alt="Floral centerpiece">
+  </div>
+</section>
 
-  <!-- Gallery Grid -->
-  <section class="wrap px-4 pb-14">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_0401.jpg" alt="Canapés on platter">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_0610.jpg" alt="Buffet station">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_0525.jpg" alt="Entrée with garnish">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_0196.jpeg" alt="Dessert plating">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_0880.jpg" alt="Reception setup">
-      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" src="images/IMG_1234.jpg" alt="Floral centerpiece">
+<!-- CTA -->
+<section class="bg-[var(--emerald)] text-[var(--gold)]">
+  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold">Like what you see?</h2>
+      <p class="mt-1 opacity-90">Let’s tailor a menu and design to your occasion.</p>
     </div>
-  </section>
+    <a href="contact.html" class="rounded-full bg-[var(--gold)] text-[var(--emerald)] px-6 py-3 font-semibold hover:opacity-90">Start Your Inquiry</a>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="bg-neutral-900 text-white">
-    <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-semibold">Like what you see?</h2>
-        <p class="text-neutral-300 mt-1">Let’s tailor a menu and design to your occasion.</p>
-      </div>
-      <a href="contact.html" class="rounded-full bg-white text-neutral-900 px-6 py-3 font-semibold">Start Your Inquiry</a>
-    </div>
-  </section>
+<!-- Footer -->
+<footer class="border-t border-neutral-200">
+  <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
+</footer>
 
-  <!-- Footer -->
-  <footer class="border-t border-neutral-200">
-    <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
-  </footer>
+<script>
+  // Footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
-    b&&m&&b.addEventListener('click',()=>{
-      m.classList.toggle('hidden');
-      b.setAttribute('aria-expanded',m.classList.contains('hidden')?'false':'true');
+  // Mobile menu
+  const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
+  if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+
+  // Image fallback: swap /images <-> images then Unsplash fallback
+  (function(){
+    const FB = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+    document.querySelectorAll('img').forEach(img=>{
+      let triedSwap=false;
+      img.addEventListener('error', ()=>{
+        const src=img.getAttribute('src')||'';
+        if(!triedSwap){
+          img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/')
+                                               : src.replace(/^images\//,'/images/');
+          triedSwap=true; return;
+        }
+        if(img.src!==FB) img.src=FB;
+      });
     });
-  </script>
+  })();
+</script>
 </body>
 </html>
