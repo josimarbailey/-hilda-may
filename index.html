@@ -19,22 +19,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
  <style>
   :root{
-    --gold:#c7b277;          /* muted gold */
-    --emerald:#047857;       /* Tailwind emerald-600 */
-    --emerald-dark:#065f46;  /* emerald-700 */
-    --deep:#0b3d2e;          /* deep green background */
+    --bg:#ffffff;           /* base */
+    --text:#111827;         /* near-black */
+    --muted:#6b7280;
+    --gold:#c7b277;         /* muted gold */
+    --emerald:#0f6d4e;      /* deep emerald (accents only) */
+    --line:#e5e7eb;
+    --card:#f8fafc;
   }
-  /* Global */
-  body{background:var(--deep); color:var(--gold);}
-  a{color:var(--gold);} a:hover{color:#fff;}
-  /* Cards and dividers */
-  .card{background:#0f3f30; border:1px solid rgba(6,94,70,.45); border-radius:1rem;}
-  .muted{color:#bfae84;}
-  /* Buttons */
-  .btn-emerald{background:var(--emerald); color:#0b3d2e;}
-  .btn-emerald:hover{background:var(--emerald-dark);}
-  .btn-outline{border:1px solid rgba(6,94,70,.55);}
+  body{background:var(--bg);color:var(--text);}
+  a{color:inherit}
+  .link:hover{color:var(--emerald)}
+  .badge{color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.72rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:1rem}
+  .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600}
+  .btn-primary{background:var(--emerald);color:#fff}
+  .btn-secondary{background:var(--gold);color:#0b3d2e}
+  .hr{border-color:var(--line)}
 </style>
+
 <meta name="theme-color" content="#0b3d2e">
 
 </head>
