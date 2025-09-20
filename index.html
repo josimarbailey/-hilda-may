@@ -16,24 +16,22 @@
   <meta property="og:url" content="https://hildamay.com/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#0f6d4e" />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Neutral theme + components -->
   <style>
     :root{
-      --bg:#ffffff;
       --text:#111827;
       --muted:#6b7280;
-      --gold:#c7b277;      /* accents */
-      --emerald:#0f6d4e;   /* CTA only */
+      --gold:#c7b277;          /* muted gold */
+      --emerald:#0f6d4e;       /* emerald */
+      --emerald-dark:#0b583f;  /* darker emerald */
       --line:#e5e7eb;
       --card:#f8fafc;
     }
-    body{background:var(--bg);color:var(--text);}
+    body{background:#ffffff;color:var(--text);}
     a{color:inherit}
     .link:hover{color:var(--emerald)}
-    .badge{color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.72rem}
     .card{background:var(--card);border:1px solid var(--line);border-radius:1rem}
     .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
     .btn-primary{background:var(--emerald);color:#fff}
@@ -44,34 +42,35 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-[var(--line)]">
+  <!-- Header: emerald bg + muted-gold text -->
+  <header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
     <div class="wrap px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[#0b3d2e] font-semibold">HM</span>
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] font-semibold">HM</span>
         <span class="font-semibold tracking-wide">Hilda May Events</span>
       </a>
       <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-        <a href="events.html" class="link">Event Planning</a>
-        <a href="catering.html" class="link">Catering</a>
-        <a href="gallery.html" class="link">Gallery</a>
-        <a href="testimonials.html" class="link">Testimonials</a>
-        <a href="about.html" class="link">About</a>
-        <a href="faq.html" class="link">FAQ</a>
+        <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
+        <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
+        <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
+        <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
+        <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
         <a href="contact.html" class="btn btn-secondary">Book</a>
       </nav>
-      <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm border-[var(--line)]"
+      <button id="menuBtn"
+              class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[var(--gold)] border-white/20"
               aria-controls="mnav" aria-expanded="false">Menu</button>
     </div>
-    <nav id="mnav" class="md:hidden hidden border-t border-[var(--line)] bg-white" aria-label="Mobile">
+    <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
       <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-        <a href="events.html" class="link">Event Planning</a>
-        <a href="catering.html" class="link">Catering</a>
-        <a href="gallery.html" class="link">Gallery</a>
-        <a href="testimonials.html" class="link">Testimonials</a>
-        <a href="about.html" class="link">About</a>
-        <a href="faq.html" class="link">FAQ</a>
-        <a href="contact.html" class="col-span-2 btn btn-secondary">Book</a>
+        <a href="events.html" class="hover:text-white">Event Planning</a>
+        <a href="catering.html" class="hover:text-white">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html" class="col-span-2 btn btn-secondary text-center">Book</a>
       </div>
     </nav>
   </header>
@@ -80,9 +79,9 @@
   <section class="relative">
     <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="badge">Event Planning & Production</p>
+        <p class="text-xs uppercase tracking-wider text-[var(--gold)] font-semibold">Event Planning & Production</p>
         <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight">We plan conferences, weddings, and brand moments</h1>
-        <p class="mt-4 text-lg text-neutral-700">Concept, logistics, design, and on-site direction. Catering delivered with <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>.</p>
+        <p class="mt-4 text-lg text-[var(--muted)]">Concept, logistics, design, and on-site direction. Catering delivered with <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste & Traditions (T&T)</strong>.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="contact.html" class="btn btn-primary">Plan an Event</a>
           <a href="gallery.html" class="btn btn-secondary">View Work</a>
@@ -91,11 +90,11 @@
       </div>
       <div class="rounded-2xl overflow-hidden ring-1 ring-[var(--line)]">
         <picture>
-          <source type="image/webp" srcset="/images/hero-home.webp?v=4">
-          <img src="/images/hero-home.jpg?v=4"
+          <source type="image/webp" srcset="/images/hero-home.webp?v=5">
+          <img src="/images/hero-home.jpg?v=5"
+               width="1600" height="1067" decoding="async" loading="eager"
                alt="Elegant event production and catering setup"
-               class="w-full h-full object-cover"
-               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';">
+               class="w-full h-full object-cover">
         </picture>
       </div>
     </div>
@@ -135,16 +134,13 @@
       <h2 class="text-2xl md:text-3xl font-semibold">Recent work</h2>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0401.jpg?v=4"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521334726092-b509a19597a8?q=80&w=1200&auto=format&fit=crop';"
+             src="/images/IMG_0401.jpg?v=5"
              alt="Canapés">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0610.jpg?v=4"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530023367847-a683933f4174?q=80&w=1200&auto=format&fit=crop';"
+             src="/images/IMG_0610.jpg?v=5"
              alt="Buffet spread">
         <img class="rounded-xl ring-1 ring-[var(--line)] object-cover w-full h-60" loading="lazy"
-             src="/images/IMG_0525.jpg?v=4"
-             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=1200&auto=format&fit=crop';"
+             src="/images/IMG_0525.jpg?v=5"
              alt="Entrée">
       </div>
       <div class="mt-6">
@@ -188,20 +184,38 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-[var(--line)]">
-    <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-[var(--muted)]">
+  <!-- Footer: emerald bg + muted-gold text -->
+  <footer class="border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]">
+    <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
       <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
-      <p><a class="link hover:underline" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="link hover:underline" href="tel:+16472206104">+1 (647) 220 6104</a></p>
+      <p><a class="hover:text-white" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="hover:text-white" href="tel:+16472206104">+1 (647) 220 6104</a></p>
     </div>
   </footer>
 
   <script>
     // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
     // Mobile menu toggle
     const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
     if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+
+    // Image auto-fix: try '/images/' <-> 'images/' then Unsplash fallback
+    (function(){
+      const FALLBACK = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+      document.querySelectorAll('img').forEach(img=>{
+        let triedSwap=false;
+        img.addEventListener('error', ()=>{
+          const orig = img.getAttribute('src')||'';
+          if(!triedSwap){
+            img.src = orig.startsWith('/images/') ? orig.replace(/^\/images\//,'images/')
+                                                  : orig.replace(/^images\//,'/images/');
+            triedSwap=true; return;
+          }
+          if(img.src!==FALLBACK) img.src = FALLBACK;
+        }, { once:false });
+      });
+    })();
   </script>
 </body>
 </html>
