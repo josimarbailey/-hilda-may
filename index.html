@@ -24,8 +24,8 @@
       --text:#111827;
       --muted:#6b7280;
       --gold:#c7b277;          /* muted gold */
-      --emerald:#0f6d4e;       /* emerald */
-      --emerald-dark:#0b583f;  /* darker emerald */
+      --emerald:#0a5d3b;       /* emerald */
+      --emerald-dark:#084c31;  /* darker emerald */
       --line:#e5e7eb;
       --card:#f8fafc;
     }
@@ -43,25 +43,25 @@
 <body>
 
   <!-- Header: emerald bg + muted-gold text -->
- <header class="sticky top-0 z-50 bg-[#0f6d4e]/95 backdrop-blur border-b border-[#0b583f] text-[#c7b277]">
+ <header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0f6d4e] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-      <a href="contact.html" class="inline-flex items-center rounded-full px-4 py-2 font-semibold bg-[#c7b277] text-[#0f6d4e]">Book</a>
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html" class="inline-flex items-center rounded-full px-4 py-2 font-semibold bg-[var(--gold)] text-[var(--royal)]">Book</a>
     </nav>
-    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[#c7b277] border-white/20"
+    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border px-3 py-2 text-sm text-[var(--gold)] border-white/20"
             aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[#0b583f] bg-[#0f6d4e] text-[#c7b277]" aria-label="Mobile">
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
@@ -69,13 +69,14 @@
       <a href="testimonials.html" class="hover:text-white">Testimonials</a>
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold bg-[#c7b277] text-[#0f6d4e]">Book</a>
+      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full px-4 py-2 font-semibold bg-[var(--gold)] text-[var(--royal)]">Book</a>
     </div>
   </nav>
 </header>
 
 
-  <!-- Hero -->
+
+  
   <!-- Hero -->
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
@@ -209,12 +210,14 @@
 
 
   <!-- Footer: emerald bg + muted-gold text -->
-  <footer class="border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]">
-    <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-      <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
-      <p><a class="hover:text-white" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="hover:text-white" href="tel:+16472206104">+1 (647) 220 6104</a></p>
-    </div>
-  </footer>
+  <footer class="border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]">
+  <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+    <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
+    <p><a class="hover:text-white" href="mailto:info@hildamay.com">info@hildamay.com</a> · <a class="hover:text-white" href="tel:+16472206104">+1 (647) 220 6104</a></p>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
 
   <script>
     // Footer year
