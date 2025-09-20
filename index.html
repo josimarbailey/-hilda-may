@@ -49,10 +49,53 @@ html,body{overflow-x:hidden}
 
   </style>
 </head>
+   <script>
+(function () {
+  const header = document.querySelector('header.sticky');
+  const btn = document.getElementById('menuBtn');
+  const mnav = document.getElementById('mnav');
+  let lastY = window.scrollY;
+  let forceShow = false;
+
+  function onScroll() {
+    const y = window.scrollY;
+
+    // subtle shadow when scrolled
+    if (y > 4) header.classList.add('shadow-md');
+    else header.classList.remove('shadow-md');
+
+    if (forceShow) { lastY = y; return; }
+
+    // hide on scroll down (past 80px), show on scroll up
+    if (y > lastY && y > 80) header.classList.add('-translate-y-full');
+    else header.classList.remove('-translate-y-full');
+
+    lastY = y;
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // keep header visible when mobile nav is open
+  if (btn && mnav) {
+    btn.addEventListener('click', () => {
+      mnav.classList.toggle('hidden');
+      const open = !mnav.classList.contains('hidden');
+      header.classList.remove('-translate-y-full');
+      forceShow = open;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+  
 <body>
 
 <!-- Header (royal green + muted gold) -->
-<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transition-transform duration-300 will-change-transform">
+  <!-- ...your existing header content exactly as-is... -->
+</header>
+
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
       <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
