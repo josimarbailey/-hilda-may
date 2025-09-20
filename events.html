@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="/" />
   <title>Event Planning & Production — Hilda May Events</title>
   <meta name="description" content="Full-service planning, vendor leadership, timelines, styling, florals, rentals, and showcalling. Toronto-based, serving Canada and select destinations." />
   <link rel="canonical" href="https://hildamay.com/events.html" />
@@ -15,7 +16,7 @@
   <meta property="og:url" content="https://hildamay.com/events.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="theme-color" content="#0b3d2e" />
+  <meta name="theme-color" content="#0f6d4e" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -23,46 +24,50 @@
       --text:#111827;
       --muted:#6b7280;
       --gold:#c7b277;          /* muted gold */
-      --emerald:#0f6d4e;       /* CTA / accents */
+      --emerald:#0a5d3b;       /* emerald */
+      --emerald-dark:#084c31;  /* darker emerald */
       --royal:#0b3d2e;         /* header green */
-      --royal-dark:#072a20;    /* darker border */
+      --royal-dark:#072a20;    /* border/hover */
       --line:#e5e7eb;
       --card:#f8fafc;
     }
-    body{background:#fff;color:var(--text);}
+    body{background:#ffffff;color:var(--text);}
     a{color:inherit}
     .wrap{max-width:1200px;margin-inline:auto}
-    .copy p{margin-top:.9rem}
     .card{background:var(--card);border:1px solid var(--line);border-radius:1rem}
     .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
     .btn-primary{background:var(--emerald);color:#fff}
     .btn-primary:hover{filter:brightness(.95)}
-    .btn-secondary{background:var(--gold);color:var(--royal)}
+    .btn-secondary{background:var(--gold);color:#0b3d2e}
     .btn-secondary:hover{filter:brightness(.97)}
-    .badge{color:var(--gold);letter-spacing:.06em;text-transform:uppercase;font-weight:700;font-size:.72rem}
   </style>
 </head>
 <body>
 
-<!-- Header (emerald/royal) -->
-<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+<!-- Header (royal green + muted gold) — SAME AS INDEX -->
+<header class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
       <span class="font-semibold tracking-wide">Hilda May Events</span>
     </a>
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-      <a href="events.html" class="text-[var(--gold)] hover:text-white font-semibold">Event Planning</a>
-      <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
-      <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
-      <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
-      <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
-      <a href="contact.html" class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90">Book</a>
+      <a href="events.html" class="text-[#c7b277] hover:text-white font-semibold">Event Planning</a>
+      <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
+      <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
+      <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
+      <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
+      <a href="contact.html"
+         class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
+        Book
+      </a>
     </nav>
-    <button id="menuBtn" class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]" aria-controls="mnav" aria-expanded="false">Menu</button>
+    <button id="menuBtn"
+            class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
+            aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
-  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
+  <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
@@ -70,20 +75,25 @@
       <a href="testimonials.html" class="hover:text-white">Testimonials</a>
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
-      <a href="contact.html" class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90">Book</a>
+      <a href="contact.html"
+         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
+        Book
+      </a>
     </div>
   </nav>
 </header>
 
-<!-- Hero -->
+<!-- Hero (matches index hero styling) -->
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
     <div>
-      <p class="badge">Event Planning & Production</p>
-      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">End-to-end planning for conferences, weddings & brand moments</h1>
+      <p class="text-xs uppercase tracking-wider text-[#c7b277] font-semibold">Event Planning & Production</p>
+      <h1 class="mt-3 text-4xl md:text-6xl font-semibold leading-tight text-[var(--gold)]">
+        End-to-end planning for conferences, weddings & brand moments
+      </h1>
       <p class="mt-4 text-lg text-neutral-700">
-        From first brief to final cue: concept, logistics, design, and on-site showcalling.
-        Catering by <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&amp;T)</strong>.
+        Concept, logistics, design, and on-site direction. Catering delivered with
+        <strong>Josie’s Kitchen</strong> and <strong>Taste & Traditions (T&amp;T)</strong>.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
         <a href="contact.html" class="btn btn-primary">Request a Proposal</a>
@@ -91,75 +101,71 @@
       </div>
       <p class="mt-3 text-sm text-neutral-500">Toronto-based • Canada-wide • Select international</p>
     </div>
+
     <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
       <img id="heroImg"
-           src="/images/hero-events.jpg?v=2"
-           alt="Elegant event setup with florals and candlelight"
+           src="/images/hero-events.jpg?v=3"
+           alt="Elegant event production setup"
            class="w-full h-full object-cover"
            width="1600" height="1067" decoding="async" loading="eager">
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section class="wrap px-4 py-14 copy" id="services">
-  <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Services</h2>
-  <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-    <div class="card p-6">
-      <h3 class="font-semibold text-[var(--gold)]">Planning</h3>
-      <ul class="list-disc ml-5">
-        <li>Full & partial planning</li>
-        <li>Budget ownership & timeline builds</li>
-        <li>Vendor curation, RFPs & contracting</li>
-      </ul>
-    </div>
-    <div class="card p-6">
-      <h3 class="font-semibold text-[var(--gold)]">Design</h3>
-      <ul class="list-disc ml-5">
-        <li>Guest journey & experience concept</li>
-        <li>Styling, floral, lighting & scenic</li>
-        <li>Custom fabrication & branding</li>
-      </ul>
-    </div>
-    <div class="card p-6">
-      <h3 class="font-semibold text-[var(--gold)]">Production</h3>
-      <ul class="list-disc ml-5">
-        <li>Run-of-show & technical direction</li>
-        <li>Labor, rentals & logistics</li>
-        <li>On-site management & showcalling</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Process -->
+<!-- Value cards (same look as index) -->
 <section class="bg-[var(--card)]">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Process</h2>
-    <div class="mt-8 grid md:grid-cols-4 gap-6 text-sm">
+  <div class="wrap px-4 py-14 grid md:grid-cols-3 gap-6">
+    <div class="card p-6">
+      <h3 class="font-semibold text-[var(--gold)]">Planning & Production</h3>
+      <p class="text-sm text-[var(--muted)] mt-2">Scope, timelines, vendor leadership, run-of-show, and showcalling.</p>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-semibold text-[var(--gold)]">Design & Experience</h3>
+      <p class="text-sm text-[var(--muted)] mt-2">Guest journey, styling, floral, lighting, scenic, and fabrication.</p>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-semibold text-[var(--gold)]">Catering</h3>
+      <p class="text-sm text-[var(--muted)] mt-2">Chef-driven menus by Josie’s Kitchen and T&T. Inclusive and scalable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services (detail) -->
+<section>
+  <div class="wrap px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Services</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
       <div class="card p-6">
-        <p class="badge">1. Discovery</p>
-        <p class="mt-2 text-[var(--muted)]">Brief, goals, scope, venue fit, budget ranges.</p>
+        <h3 class="font-semibold text-[var(--gold)]">Planning</h3>
+        <ul class="list-disc ml-5">
+          <li>Full & partial planning</li>
+          <li>Budget & timeline ownership</li>
+          <li>Vendor curation, RFPs & contracting</li>
+        </ul>
       </div>
       <div class="card p-6">
-        <p class="badge">2. Design</p>
-        <p class="mt-2 text-[var(--muted)]">Mood, layouts, renderings, culinary direction.</p>
+        <h3 class="font-semibold text-[var(--gold)]">Design</h3>
+        <ul class="list-disc ml-5">
+          <li>Experience concept & guest flow</li>
+          <li>Styling, floral, lighting & scenic</li>
+          <li>Custom fabrication & branding</li>
+        </ul>
       </div>
       <div class="card p-6">
-        <p class="badge">3. Pre-Pro</p>
-        <p class="mt-2 text-[var(--muted)]">Run-of-show, vendors, tech, staffing, rehearsals.</p>
-      </div>
-      <div class="card p-6">
-        <p class="badge">4. Showday</p>
-        <p class="mt-2 text-[var(--muted)]">Build, cue-to-cue, guest services, strike & wrap.</p>
+        <h3 class="font-semibold text-[var(--gold)]">Production</h3>
+        <ul class="list-disc ml-5">
+          <li>Run-of-show & technical direction</li>
+          <li>Labor, rentals & logistics</li>
+          <li>On-site management & cue-to-cue</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Packages -->
+<!-- Packages (same visual language) -->
 <section class="bg-white" id="packages">
-  <div class="wrap px-4 py-14 copy">
+  <div class="wrap px-4 py-14">
     <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Packages (typical ranges)</h2>
     <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
       <div class="card p-6">
@@ -195,73 +201,50 @@
   </div>
 </section>
 
-<!-- FAQs -->
-<section class="bg-[var(--card)]">
-  <div class="wrap px-4 py-14 copy">
-    <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">FAQs</h2>
-    <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
-      <div class="card p-6">
-        <h3 class="font-semibold">Do you work outside Toronto?</h3>
-        <p class="text-[var(--muted)]">Yes—Canada-wide with select international programs.</p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">Can you handle catering?</h3>
-        <p class="text-[var(--muted)]">Yes. Menus are delivered with Josie’s Kitchen and T&amp;T, tailored to your brief.</p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">How do we start?</h3>
-        <p class="text-[var(--muted)]">Share date, guest count, budget, and vision—then we provide a proposal.</p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">Do you support hybrid/virtual?</h3>
-        <p class="text-[var(--muted)]">We can produce online, in-person, or hybrid formats.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-[var(--emerald)] text-[var(--gold)]">
-  <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+<!-- CTA (same colors as index CTA variant) -->
+<section class="bg-[#0f6d4e] text-[#c7b277]">
+  <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
-      <h2 class="text-2xl md:text-3xl font-semibold">Let’s craft your experience</h2>
-      <p class="mt-1 opacity-90">From concept to curtain call.</p>
+      <h2 class="text-2xl md:text-3xl font-semibold">Ready to plan something unforgettable?</h2>
+      <p class="mt-1 opacity-90">Tell us your date, guest count, and vision.</p>
     </div>
-    <a href="contact.html" class="btn btn-secondary">Request Proposal</a>
+    <a href="contact.html" class="btn btn-secondary">Start Your Inquiry</a>
   </div>
 </section>
 
-<!-- Footer (white) -->
+<!-- Footer (white) — SAME AS INDEX -->
 <footer class="border-t border-neutral-200 bg-white text-neutral-600">
-  <div class="wrap px-4 py-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
-    <p>© <span id="y"></span> Hilda May Events.</p>
+  <div class="wrap px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+    <p>© <span id="y"></span> Hilda May Events. All rights reserved.</p>
     <p>
-      <a class="hover:underline hover:text-[var(--emerald)]" href="mailto:info@hildamay.com">info@hildamay.com</a> ·
+      <a class="hover:underline hover:text-[var(--emerald)]" href="mailto:info@hildamay.com">info@hildamay.com</a>
+      ·
       <a class="hover:underline hover:text-[var(--emerald)]" href="tel:+16472206104">+1 (647) 220 6104</a>
     </p>
   </div>
 </footer>
 
 <script>
-  // Year
+  // Footer year
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Mobile menu
+  // Mobile menu toggle (same as index)
   const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
   if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
 
-  // Image fallback: swap /images <-> images, then Unsplash
+  // Image auto-fix (same logic as index): try '/images/' <-> 'images/', then Unsplash fallback
   (function(){
-    const FB='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
+    const FALLBACK='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
     document.querySelectorAll('img').forEach(img=>{
       let swapped=false;
-      img.addEventListener('error',()=>{
-        const src=img.getAttribute('src')||'';
+      img.addEventListener('error', ()=>{
+        const orig=img.getAttribute('src')||'';
         if(!swapped){
-          img.src = src.startsWith('/images/') ? src.replace(/^\/images\//,'images/') : src.replace(/^images\//,'/images/');
+          img.src = orig.startsWith('/images/') ? orig.replace(/^\/images\//,'images/')
+                                                : orig.replace(/^images\//,'/images/');
           swapped=true; return;
         }
-        if(img.src!==FB) img.src=FB;
+        if(img.src!==FALLBACK) img.src=FALLBACK;
       });
     });
   })();
