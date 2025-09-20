@@ -84,23 +84,25 @@
   </nav>
 </header>
 
-<script>
+  <script defer>
 (() => {
   const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('shadow-md', window.scrollY > 4);
-  }, { passive: true });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-md', window.scrollY > 4);
+    }, { passive: true });
+  }
 
   const btn = document.getElementById('menuBtn');
   const mnav = document.getElementById('mnav');
-  btn && mnav && btn.addEventListener('click', () => {
-    const open = !mnav.classList.toggle('hidden');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+  if (btn && mnav) {
+    btn.addEventListener('click', () => {
+      const open = !mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
 })();
 </script>
-
-
 
 <!-- Hero -->
 <section class="relative">
