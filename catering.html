@@ -11,7 +11,7 @@
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Catering — Hilda May Events" />
   <meta property="og:description" content="Seasonal, chef-driven menus. Plated, stations, or elevated buffets. Inclusive options for all diets." />
-  <meta property="og:image" content="/images/og-home.jpg" />
+  <meta property="og:image" content="https://hildamay.com/images/og-home.jpg" />
   <meta property="og:url" content="https://hildamay.com/catering.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -38,10 +38,13 @@
     a{ color:var(--royal); }               /* links in green */
     a:hover{ color:var(--royal-dark); }    /* darker green on hover */
 
+    /* Keep anchor targets visible under sticky header */
+    section[id]{ scroll-margin-top:5.5rem; }
+
     /* Header inherits its own palette */
     header a{ color:inherit; }
 
-    /* Small utility to mute supporting copy without changing to gray color token */
+    /* Subtle mute utility */
     .muted{opacity:.8}
 
     /* Buttons (green outline default) */
@@ -49,8 +52,12 @@
       display:inline-flex; align-items:center; justify-content:center;
       padding:.65rem 1.1rem; border-radius:9999px; font-weight:600;
       border:1px solid var(--royal); color:var(--royal);
+      transition:background .2s ease,opacity .2s ease,filter .2s ease;
     }
-    .btn:hover{ background:color-mix(in srgb, var(--royal) 8%, transparent); }
+    .btn:hover{
+      background:rgba(10,93,59,.08); /* safe fallback */
+      background:color-mix(in srgb, var(--royal) 8%, transparent);
+    }
     .btn-dark{ background:#000; color:#fff; border-color:#000; }
     .btn-dark:hover{ opacity:.9; }
     .btn-gold{ background:var(--gold); color:var(--royal); border-color:var(--gold); }
@@ -136,7 +143,7 @@
         </div>
         <div class="grid grid-cols-2 gap-3">
           <img src="/images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
-          <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
+          <img src="/images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste &amp; Traditions">
         </div>
       </div>
     </div>
@@ -628,3 +635,4 @@
   </script>
 </body>
 </html>
+
