@@ -24,44 +24,62 @@
 </head>
 <body class="bg-white text-neutral-900">
 
-  <!-- Header (rolls on scroll) -->
-  <header id="siteHeader" class="sticky top-0 z-50 bg-[#0b3d2e]/95 backdrop-blur border-b border-[#072a20] text-[#c7b277] transition-transform duration-300 will-change-transform">
-    <div class="wrap px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] font-semibold">HM</span>
-        <span class="font-semibold tracking-wide">Hilda May Events</span>
+  <!-- In <head> (once per site) -->
+<style>
+  :root{
+    --gold:#c7b277;
+    --royal:#0a5d3b;
+    --royal-dark:#084c31;
+  }
+  /* Make links inherit header color */
+  header a{ color: inherit; }
+</style>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+  <div class="wrap px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
+      <span class="font-semibold tracking-wide">Hilda May Events</span>
+    </a>
+    <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+      <a href="events.html" class="hover:text-white font-semibold">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html"
+         class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--royal)]">
+        Book
       </a>
-      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
-        <a href="events.html" class="text-[#c7b277] hover:text-white">Event Planning</a>
-        <a href="catering.html" class="text-[#c7b277] hover:text-white">Catering</a>
-        <a href="gallery.html" class="text-[#c7b277] hover:text-white">Gallery</a>
-        <a href="testimonials.html" class="text-[#c7b277] hover:text-white">Testimonials</a>
-        <a href="about.html" class="text-[#c7b277] hover:text-white">About</a>
-        <a href="faq.html" class="text-[#c7b277] hover:text-white">FAQ</a>
-        <a href="contact.html"
-           class="inline-flex items-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#c7b277]/70 focus:ring-offset-2 focus:ring-offset-[#0b3d2e]">
-          Book
-        </a>
-      </nav>
-      <button id="menuBtn"
-              class="md:hidden inline-flex items-center rounded-md border border-[#c7b277]/30 px-3 py-2 text-sm text-[#c7b277]"
-              aria-controls="mnav" aria-expanded="false">Menu</button>
-    </div>
-    <nav id="mnav" class="md:hidden hidden border-t border-[#072a20] bg-[#0b3d2e] text-[#c7b277]" aria-label="Mobile">
-      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
-        <a href="events.html" class="hover:text-white">Event Planning</a>
-        <a href="catering.html" class="hover:text-white">Catering</a>
-        <a href="gallery.html" class="hover:text-white">Gallery</a>
-        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-        <a href="about.html" class="hover:text-white">About</a>
-        <a href="faq.html" class="hover:text-white">FAQ</a>
-        <a href="contact.html"
-           class="col-span-2 inline-flex items-center justify-center rounded-full bg-[#c7b277] text-[#0b3d2e] px-4 py-2 font-semibold hover:opacity-90">
-          Book
-        </a>
-      </div>
     </nav>
-  </header>
+    <button id="menuBtn"
+            class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm"
+            aria-controls="mnav" aria-expanded="false">Menu</button>
+  </div>
+  <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)]">
+    <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+      <a href="events.html" class="hover:text-white">Event Planning</a>
+      <a href="catering.html" class="hover:text-white">Catering</a>
+      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+      <a href="about.html" class="hover:text-white">About</a>
+      <a href="faq.html" class="hover:text-white">FAQ</a>
+      <a href="contact.html"
+         class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] px-4 py-2 font-semibold hover:opacity-90">
+        Book
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile menu toggle -->
+<script>
+  const b=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+  if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+</script>
+
 
   <!-- Hero -->
   <section class="relative">
