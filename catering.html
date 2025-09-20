@@ -63,12 +63,30 @@
     .btn-gold{ background:var(--gold); color:var(--royal); border-color:var(--gold); }
     .btn-gold:hover{ filter:brightness(.95); }
   </style>
-</head>
+</head><script>
+(() => {
+  const header = document.getElementById('siteHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('shadow-md', window.scrollY > 4);
+    }, { passive: true });
+  }
+  const btn = document.getElementById('menuBtn');
+  const mnav = document.getElementById('mnav');
+  if (btn && mnav) {
+    btn.addEventListener('click', () => {
+      const open = !mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
 
 <body class="bg-white">
   <!-- Header -->
-  <header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transform-gpu transition-transform">
-    <div class="wrap px-4 py-3 flex items-center justify-between">
+<header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+ <div class="wrap px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
         <span class="font-semibold tracking-wide">Hilda May Events</span>
