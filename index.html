@@ -49,45 +49,11 @@ html,body{overflow-x:hidden}
 
   </style>
 
-<script>
-(function () {
-const header = document.getElementById('siteHeader');
-  const btn = document.getElementById('menuBtn');
-  const mnav = document.getElementById('mnav');
-  if (!header) return;
-
-  let lastY = window.scrollY;
-  let lock = false;
-
-  function onScroll() {
-    const y = window.scrollY;
-    header.classList.toggle('shadow-md', y > 4);
-    if (lock) { lastY = y; return; }
-    if (y > lastY && y > 80) header.classList.add('-translate-y-full');
-    else header.classList.remove('-translate-y-full');
-    lastY = y;
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  if (btn && mnav) {
-    btn.addEventListener('click', () => {
-      const open = !mnav.classList.toggle('hidden');
-      header.classList.remove('-translate-y-full');
-      lock = open;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-})();
-</script>
-
-
   
 <body>
 
 <!-- Header (royal green + muted gold) -->
-<header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transform transition-transform duration-300 will-change-transform">
-
+<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
       <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
@@ -109,7 +75,6 @@ const header = document.getElementById('siteHeader');
             class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
             aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
-
   <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
