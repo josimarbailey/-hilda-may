@@ -52,8 +52,7 @@
 <body>
 
 <!-- Header -->
-<!-- Header (royal green + muted gold) — matches index -->
-<header class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)]">
+<header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transition-shadow">
   <div class="wrap px-4 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
       <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
@@ -71,7 +70,7 @@
         Book
       </a>
     </nav>
-    <button id="menuBtn"
+    <button id="menuBtn" type="button"
             class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
             aria-controls="mnav" aria-expanded="false">Menu</button>
   </div>
@@ -90,25 +89,29 @@
     </div>
   </nav>
 </header>
+
 <script>
-  // Keep header visible; just add a shadow when scrolling
-  (function () {
-    const header = document.getElementById('siteHeader');
+(function () {
+  const header = document.getElementById('siteHeader');
+  if (header) {
     window.addEventListener('scroll', () => {
       header.classList.toggle('shadow-md', window.scrollY > 4);
     }, { passive: true });
+  }
 
-    // Mobile menu toggle
-    const btn = document.getElementById('menuBtn');
-    const mnav = document.getElementById('mnav');
-    if (btn && mnav) {
-      btn.addEventListener('click', () => {
-        const open = !mnav.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-  })();
+  // Mobile menu toggle
+  const btn = document.getElementById('menuBtn');
+  const mnav = document.getElementById('mnav');
+  if (btn && mnav) {
+    btn.addEventListener('click', () => {
+      const open = !mnav.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
 </script>
+
+
 <!-- Hero -->
 <section class="relative">
   <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
