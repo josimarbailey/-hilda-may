@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.hildamay.com/</loc></url>
-  <url><loc>https://www.hildamay.com/contact.html</loc></url>
-  <url><loc>https://www.hildamay.com/thanks.html</loc></url>
-  <url><loc>https://www.hildamay.com/404.html</loc></url>
+  <url><loc>https://hildamay.com/</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/events.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/catering.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/gallery.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/testimonials.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/about.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/faq.html</loc><lastmod>2025-09-20</lastmod></url>
+  <url><loc>https://hildamay.com/contact.html</loc><lastmod>2025-09-20</lastmod></url>
 </urlset>
