@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +13,8 @@
   <meta property="og:url" content="https://hildamay.com/gallery.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0a5d3b" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com" defer></script>
   <style>
     :root{
       --text:#111827;
@@ -29,10 +29,15 @@
     a:hover{color:var(--emerald)}
     .wrap{max-width:1200px;margin-inline:auto}
     h1,h2,h3{color:var(--gold)}
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
 <body class="bg-white text-neutral-900">
-@-- Header (royal green + muted gold) --
+
 <!-- Header (royal green + muted gold) -->
 <header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
   <div class="wrap px-4 py-3 flex items-center justify-between">
@@ -43,7 +48,7 @@
     <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
       <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
       <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
-      <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
+      <a href="gallery.html" class="text-[var(--gold)] hover:text-white" aria-current="page">Gallery</a>
       <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
       <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
       <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
@@ -54,13 +59,13 @@
     </nav>
     <button id="menuBtn"
             class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
-            aria-controls="mnav" aria-expanded="false">Menu</button>
+            aria-controls="mnav" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
   </div>
   <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
     <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
       <a href="events.html" class="hover:text-white">Event Planning</a>
       <a href="catering.html" class="hover:text-white">Catering</a>
-      <a href="gallery.html" class="hover:text-white">Gallery</a>
+      <a href="gallery.html" class="hover:text-white" aria-current="page">Gallery</a>
       <a href="testimonials.html" class="hover:text-white">Testimonials</a>
       <a href="about.html" class="hover:text-white">About</a>
       <a href="faq.html" class="hover:text-white">FAQ</a>
@@ -72,27 +77,60 @@
   </nav>
 </header>
 
-@-- Hero --
 <!-- Hero -->
 <section class="wrap px-4 py-14">
   <h1 class="text-3xl md:text-4xl font-semibold">Gallery</h1>
   <p class="mt-2 text-[var(--muted)]">A selection of our recent dishes, event moments, and design highlights.</p>
 </section>
 
-@-- Gallery Grid --
 <!-- Gallery Grid -->
 <section class="wrap px-4 pb-14">
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0401.jpg" alt="Canapés on platter">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0610.jpg" alt="Buffet station">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0525.jpg" alt="Entrée with garnish">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0196.jpeg" alt="Dessert plating">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_0880.jpg" alt="Reception setup">
-    <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" src="images/IMG_1234.jpg" alt="Floral centerpiece">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery" data-lightbox>
+    <!-- Each image doubles as a button to open the lightbox -->
+    <button class="group relative" data-full="images/IMG_0401.jpg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_0401.jpg" alt="Canapés arranged on a polished platter" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
+
+    <button class="group relative" data-full="images/IMG_0610.jpg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_0610.jpg" alt="Buffet station with warmers and greenery" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
+
+    <button class="group relative" data-full="images/IMG_0525.jpg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_0525.jpg" alt="Entrée topped with fresh herb garnish" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
+
+    <button class="group relative" data-full="images/IMG_0196.jpeg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_0196.jpeg" alt="Dessert plated with coulis and edible flowers" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
+
+    <button class="group relative" data-full="images/IMG_0880.jpg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_0880.jpg" alt="Reception setup with candles and linens" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
+
+    <button class="group relative" data-full="images/IMG_1234.jpg">
+      <img class="rounded-xl ring-1 ring-neutral-200 w-full h-64 object-cover" loading="lazy" decoding="async" 
+           src="images/IMG_1234.jpg" alt="Floral centerpiece with muted gold accents" 
+           sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw">
+      <span class="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/0 group-hover:ring-black/10"></span>
+    </button>
   </div>
 </section>
 
-@-- CTA --
 <!-- CTA -->
 <section class="bg-[var(--emerald)] text-[var(--gold)]">
   <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
@@ -104,19 +142,31 @@
   </div>
 </section>
 
-@-- Footer --
 <!-- Footer -->
 <footer class="border-t border-neutral-200">
   <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
 </footer>
 
-<script>
+<!-- Native Lightbox Dialog -->
+<dialog id="lightbox" class="backdrop:bg-black/60 rounded-2xl p-0">
+  <div class="relative">
+    <button class="absolute top-3 right-3 z-10 inline-flex items-center justify-center rounded-full bg-black/60 text-white px-3 py-1 text-sm" data-close>Close</button>
+    <img id="lightboxImg" src="" alt="Selected gallery image" class="max-h-[85vh] w-auto object-contain rounded-2xl" loading="eager" />
+  </div>
+</dialog>
+
+<script defer>
   // Footer year
-  document.getElementById('y').textContent = new Date().getFullYear();
+  document.addEventListener('DOMContentLoaded', () => {
+    const yEl = document.getElementById('y');
+    if (yEl) yEl.textContent = new Date().getFullYear();
+  });
 
   // Mobile menu
-  const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
-  if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+  document.addEventListener('DOMContentLoaded', () => {
+    const b=document.getElementById('menuBtn'),m=document.getElementById('mnav');
+    if(b&&m){ b.addEventListener('click',()=>{ m.classList.toggle('hidden'); b.setAttribute('aria-expanded', m.classList.contains('hidden')?'false':'true'); }); }
+  });
 
   // Image fallback: swap /images <-> images then Unsplash fallback
   (function(){
@@ -131,3 +181,33 @@
           triedSwap=true; return;
         }
         if(img.src!==FB) img.src=FB;
+      }, { once:false });
+    });
+  })();
+
+  // Lightweight lightbox using <dialog>
+  (function(){
+    const g = document.getElementById('gallery');
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const closeBtn = dlg?.querySelector('[data-close]');
+
+    if(!g || !dlg || !img) return;
+
+    g.addEventListener('click', (e)=>{
+      const btn = e.target.closest('button[data-full]');
+      if(!btn) return;
+      const full = btn.getAttribute('data-full');
+      if(!full) return;
+      img.src = full;
+      try { dlg.showModal(); } catch(_) { dlg.setAttribute('open',''); }
+    });
+
+    const closeDialog = ()=>{ if(dlg.open) dlg.close(); else dlg.removeAttribute('open'); };
+    closeBtn?.addEventListener('click', closeDialog);
+    dlg.addEventListener('click', (e)=>{ if(e.target === dlg) closeDialog(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDialog(); });
+  })();
+</script>
+</body>
+</html>
