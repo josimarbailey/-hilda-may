@@ -3,12 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Removed <base href="/"> for GitHub Pages compatibility -->
 
   <title>About — Hilda May Events</title>
   <meta name="description" content="Our story, philosophy, and team. Event planning and production with chef-driven catering partners." />
-  <link rel="canonical" href="https://hildamay.com/about.html" />
   <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hildamay.com/about.html" />
+
+  <!-- Favicon (add these files to the same folder as this page) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="About — Hilda May Events" />
@@ -22,123 +27,255 @@
   <style>
     :root{
       --text:#111827;
+      --muted:#6b7280;
       --gold:#c7b277;
       --emerald:#0f766e;
       --emerald-dark:#0c5f59;
       --line:#e5e7eb;
       --card:#f8fafc;
     }
-    .wrap{max-width:1200px;margin-inline:auto}
-    .copy p{margin-top:.9rem}
-    .copy h3{margin-top:1rem;font-weight:700}
 
-    body{background:#fff;color:var(--text)}
-    a{color:inherit}
-    h1,h2,h3{color:var(--gold)}
+    body{ background:#fff; color:var(--text); }
+    a{ color:inherit; text-decoration:none; }
+    h1,h2,h3{ color:var(--gold); }
+    .wrap{ max-width:1200px; margin-inline:auto; }
+    .muted{ color:var(--muted); }
 
-    .btn{border-radius:9999px;padding:.7rem 1.1rem;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
-    .btn-primary{background:var(--emerald);color:#fff}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-secondary{background:var(--gold);color:#0b3d2e}
-    .btn-secondary:hover{filter:brightness(.97)}
-    .btn-outline{border:1px solid var(--emerald);color:var(--emerald)}
-    .btn-outline:hover{background:var(--emerald);color:#fff}
+    /* Buttons */
+    .btn{
+      border-radius:9999px;
+      padding:.7rem 1.1rem;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.4rem;
+      transition:filter .15s ease, opacity .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+      border:1px solid transparent;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .btn-gold{ background:var(--gold); color:var(--emerald); }
+    .btn-gold:hover{ filter:brightness(.97); }
+    .btn-emerald{ background:var(--emerald); color:#fff; }
+    .btn-emerald:hover{ filter:brightness(.95); }
+    .btn-outline-gold{
+      border-color:var(--gold);
+      color:var(--gold);
+      background:transparent;
+    }
+    .btn-outline-gold:hover{
+      background:var(--gold);
+      color:var(--emerald);
+    }
 
-    img{max-width:100%;height:auto;display:block}
+    /* Content spacing */
+    .copy p{ margin-top:.9rem; }
+    .copy ul{ margin-top:.75rem; }
+    .copy h3{ margin-top:1rem; font-weight:700; }
+
+    /* Make anchor jumps land below sticky header */
+    section[id]{ scroll-margin-top:6rem; }
   </style>
 </head>
+
 <body>
 
+  <!-- Header -->
   <header class="sticky top-0 z-50 bg-[var(--emerald)]/95 backdrop-blur border-b border-[var(--emerald-dark)] text-[var(--gold)]">
     <div class="wrap px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] font-semibold">HM</span>
         <span class="font-semibold tracking-wide">Hilda May Events</span>
       </a>
-      <nav class="hidden md:flex gap-6 text-sm" aria-label="Primary">
+
+      <nav class="hidden md:flex gap-6 text-sm items-center" aria-label="Primary">
         <a href="events.html" class="text-[var(--gold)] hover:text-white">Event Planning</a>
         <a href="catering.html" class="text-[var(--gold)] hover:text-white">Catering</a>
         <a href="gallery.html" class="text-[var(--gold)] hover:text-white">Gallery</a>
         <a href="testimonials.html" class="text-[var(--gold)] hover:text-white">Testimonials</a>
-        <a href="about.html" class="text-[var(--gold)] hover:text-white">About</a>
+        <a href="about.html" class="text-white font-semibold" aria-current="page">About</a>
         <a href="faq.html" class="text-[var(--gold)] hover:text-white">FAQ</a>
-        <a href="contact.html"
-           class="inline-flex items-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--gold)]/70 focus:ring-offset-2 focus:ring-offset-[var(--emerald)]">
-          Book
-        </a>
+
+        <a href="contact.html" class="btn btn-gold text-sm">Book</a>
       </nav>
+
       <button id="menuBtn"
               class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
-              aria-controls="mnav" aria-expanded="false">Menu</button>
+              aria-controls="mnav" aria-expanded="false" aria-label="Open menu">
+        Menu
+      </button>
     </div>
+
+    <!-- Mobile nav -->
     <nav id="mnav" class="md:hidden hidden border-t border-[var(--emerald-dark)] bg-[var(--emerald)] text-[var(--gold)]" aria-label="Mobile">
       <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm">
         <a href="events.html" class="hover:text-white">Event Planning</a>
         <a href="catering.html" class="hover:text-white">Catering</a>
         <a href="gallery.html" class="hover:text-white">Gallery</a>
         <a href="testimonials.html" class="hover:text-white">Testimonials</a>
-        <a href="about.html" class="hover:text-white">About</a>
+        <a href="about.html" class="hover:text-white font-semibold" aria-current="page">About</a>
         <a href="faq.html" class="hover:text-white">FAQ</a>
-        <a href="contact.html"
-           class="col-span-2 inline-flex items-center justify-center rounded-full bg-[var(--gold)] text-[var(--emerald)] px-4 py-2 font-semibold hover:opacity-90">
-          Book
-        </a>
+
+        <a href="contact.html" class="col-span-2 btn btn-gold text-sm">Book</a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero image -->
-  <section class="relative">
-    <div class="wrap px-4 py-10">
-      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
-        <picture>
-          <source type="image/webp" srcset="images/hero-home.webp?v=1" />
-          <img class="w-full h-[320px] md:h-[420px] object-cover"
-               src="images/hero-home.jpg?v=1"
-               alt="Event detail from a Hilda May production">
-        </picture>
+  <!-- Intro / Hero (no image) -->
+  <section class="wrap px-4 py-16 text-center copy">
+    <p class="text-xs uppercase tracking-wider font-semibold text-[var(--emerald)]">Our story</p>
+    <h1 class="mt-3 text-3xl md:text-4xl font-semibold">About Hilda May Events</h1>
+    <p class="mt-4 max-w-3xl mx-auto">
+      We are an event planning and production studio. We lead concept, design, logistics, and on-site execution for weddings,
+      corporate programs, and private celebrations. Catering is delivered by our culinary partners, with menus tailored to the brief.
+    </p>
+    <p class="max-w-3xl mx-auto">
+      Our name honors our founder’s great-grandmother, Hilda May—whose standards of generosity, elegance, and resolve shape how we work.
+    </p>
+
+    <div class="mt-7 flex flex-wrap justify-center gap-3">
+      <a href="contact.html" class="btn btn-gold">Book a Consultation</a>
+      <a href="#approach" class="btn btn-outline-gold">Our Approach</a>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section id="approach" class="bg-neutral-50">
+    <div class="wrap px-4 py-16 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Our approach</h2>
+      <p>
+        Exceptional events are built through clarity, intention, and calm leadership. Our role is to hold the full picture —
+        creative vision, timing, logistics, vendor alignment, and guest experience — so you can be fully present.
+      </p>
+      <p>
+        We design events that feel thoughtful rather than overproduced. Every decision supports the experience: spatial flow,
+        pacing, transitions, and the details your guests will remember.
+      </p>
+      <p>
+        We collaborate closely with venues, chefs, and production partners to deliver a seamless and polished result — executed with care,
+        precision, and warmth.
+      </p>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section id="services">
+    <div class="wrap px-4 py-16 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">What we do</h2>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-8 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6 bg-white">
+          <h3>Event planning & production</h3>
+          <p>End-to-end planning: timelines, vendor management, budgets, logistics, and on-site execution.</p>
+        </div>
+
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6 bg-white">
+          <h3>Design & guest experience</h3>
+          <p>Concept direction, layout planning, atmosphere, pacing, and cohesive visual storytelling.</p>
+        </div>
+
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6 bg-white">
+          <h3>Catering coordination</h3>
+          <p>Chef-driven catering delivered through trusted partners, tailored to season, style, and dietary needs.</p>
+        </div>
+
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6 bg-white">
+          <h3>On-site leadership</h3>
+          <p>Calm, confident showcalling — managing timing, teams, and changes behind the scenes.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="events.html" class="btn btn-emerald">Explore Planning</a>
+        <a href="catering.html" class="btn btn-gold">Explore Catering</a>
       </div>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="wrap px-4 py-14 copy">
-    <h1 class="text-3xl md:text-4xl font-semibold">About Hilda May Events</h1>
-    <p>We are an event planning and production studio. We lead concept, design, logistics, and on-site execution for weddings, corporate programs, and private celebrations. Catering is delivered by our culinary partners, with menus tailored to the brief.</p>
-    <p>Our name honors our founder’s great-grandmother, Hilda May—whose standards of generosity, elegance, and resolve shape how we work.</p>
+  <!-- Who we work with -->
+  <section class="bg-neutral-50">
+    <div class="wrap px-4 py-16 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">Who we work with</h2>
+      <p>
+        Our clients value thoughtful planning, refined design, and a professional process. We work with individuals, teams,
+        and organizations who want their event to feel intentional, well-paced, and genuinely welcoming.
+      </p>
+
+      <ul class="list-disc ml-5 text-sm">
+        <li>Weddings and multi-day celebrations</li>
+        <li>Corporate events, conferences, and galas</li>
+        <li>Private dinners and milestone celebrations</li>
+        <li>Brand activations and curated experiences</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- (rest of your content unchanged) -->
+  <!-- Values -->
+  <section>
+    <div class="wrap px-4 py-16 copy">
+      <h2 class="text-2xl md:text-3xl font-semibold">What sets us apart</h2>
 
+      <div class="mt-8 grid md:grid-cols-2 gap-6 text-sm">
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Clarity over chaos</h3>
+          <p>Clear scope, clear timelines, and a plan that stays calm even when things change.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Design with purpose</h3>
+          <p>We focus on how it feels — flow, pacing, lighting, and the guest journey.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Trusted partnerships</h3>
+          <p>We collaborate with vendors and culinary partners we know deliver consistently.</p>
+        </div>
+        <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+          <h3>Presence on the day</h3>
+          <p>We lead the production quietly behind the scenes so the experience feels effortless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[var(--emerald)] text-[var(--gold)]">
+    <div class="wrap px-4 py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold">Planning something special?</h2>
+      <p class="mt-2 opacity-90 max-w-2xl mx-auto">
+        Tell us your date, location, and the kind of experience you want to create. We’ll guide the next steps.
+      </p>
+
+      <div class="mt-7 flex justify-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-gold">Start a conversation</a>
+        <a href="faq.html" class="btn btn-outline-gold">Read FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="border-t border-neutral-200">
     <div class="wrap px-4 py-8 text-sm text-neutral-600">© <span id="y"></span> Hilda May Events.</div>
   </footer>
 
   <script>
     // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Mobile menu
     (function(){
-      const b = document.getElementById('menuBtn');
-      const m = document.getElementById('mnav');
-      if (!b || !m) return;
-
-      b.addEventListener('click', () => {
-        const isHidden = m.classList.toggle('hidden');
-        b.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
-      });
+      const y = document.getElementById('y');
+      if (y) y.textContent = String(new Date().getFullYear());
     })();
 
-    // Image fallback (single, consistent)
+    // Mobile menu toggle
     (function(){
-      const FB = 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop';
-      document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('error', () => {
-          if (img.src !== FB) img.src = FB;
-        }, { once: true });
+      const btn = document.getElementById('menuBtn');
+      const mnav = document.getElementById('mnav');
+      if(!btn || !mnav) return;
+
+      btn.addEventListener('click', () => {
+        const isHidden = mnav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
       });
     })();
   </script>
+
 </body>
 </html>
