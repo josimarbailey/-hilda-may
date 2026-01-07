@@ -7,8 +7,6 @@
 
   <meta name="description" content="Chef-driven catering for weddings, corporate events, and private dining. Seasonal menus, polished service, and precise execution across Toronto and North America." />
   <meta name="robots" content="index,follow" />
-
-  <!-- Canonical (OK for production domain even if GH Pages preview differs) -->
   <link rel="canonical" href="https://hildamay.com/catering.html" />
 
   <!-- Open Graph / Twitter -->
@@ -17,6 +15,8 @@
   <meta property="og:image" content="images/og-home.jpg" />
   <meta property="og:url" content="https://hildamay.com/catering.html" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0f766e" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -37,9 +37,8 @@
     h4{ color:var(--royal); }
     a{ color:var(--royal); }
     a:hover{ color:var(--royal-dark); }
-
-    section[id]{ scroll-margin-top:5.5rem; }
     header a{ color:inherit; }
+    section[id]{ scroll-margin-top:5.5rem; }
     .muted{opacity:.8}
 
     /* Buttons */
@@ -80,11 +79,9 @@
       border-color:var(--royal);
       color:var(--royal);
     }
-    .btn-outline:hover{
-      background:rgba(15,118,110,.10);
-    }
+    .btn-outline:hover{ background:rgba(15,118,110,.10); }
 
-    /* Active tab style (keep .btn too; this is just an override) */
+    /* Active tab */
     .btn-dark{
       background:#111;
       border-color:#111;
@@ -302,15 +299,102 @@
         <button type="button" class="px-4 py-2 text-sm btn" data-menu-tab="menu-tt" aria-controls="menu-tt" aria-selected="false">T&amp;T Elevated</button>
       </div>
 
+      <!-- Josie panel -->
       <div id="menu-josie" data-menu-panel class="mt-8">
-        <p class="muted text-sm">Paste your menu blocks here (unchanged) — layout is already set up.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Hors d’Oeuvres</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Tuna tartare cones</span><p class="muted">sesame, lime <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+              <li class="py-3"><span class="font-medium">Whipped goat cheese crostini</span><p class="muted">fig, pistachio</p></li>
+              <li class="py-3"><span class="font-medium">Smoked salmon blini</span><p class="muted">crème fraîche, dill</p></li>
+              <li class="py-3"><span class="font-medium">Charred corn arancini</span><p class="muted">basil pesto <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Roasted beet spoon</span><p class="muted">citrus, cashew ricotta <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Herb-crusted beef tenderloin</span><p class="muted">red wine jus, pomme purée</p></li>
+              <li class="py-3"><span class="font-medium">Seared sea bass</span><p class="muted">fennel, citrus beurre blanc</p></li>
+              <li class="py-3"><span class="font-medium">Sumac chicken</span><p class="muted">pomegranate glaze, herbed grains</p></li>
+              <li class="py-3"><span class="font-medium">Wild mushroom risotto</span><p class="muted">parmesan crisp <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Cauliflower steak</span><p class="muted">romesco, caper raisin <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan · gf</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Stations &amp; Buffets</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Live taco bar</span><p class="muted">adobo chicken, grilled veg, house salsas</p></li>
+              <li class="py-3"><span class="font-medium">Mediterranean mezze &amp; carving</span><p class="muted">shawarma, tabbouleh, dips</p></li>
+              <li class="py-3"><span class="font-medium">Pasta atelier</span><p class="muted">cacio e pepe, short rib ragù</p></li>
+              <li class="py-3"><span class="font-medium">Seafood raw bar</span><p class="muted">oysters, shrimp, mignonette <span class="muted">(market)</span></p></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
+      <!-- T&T panel -->
       <div id="menu-tt" data-menu-panel class="mt-8 hidden">
-        <p class="muted text-sm">Paste your T&amp;T menu blocks here (unchanged) — layout is already set up.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Canapés</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Caviar blini</span><p class="muted">crème fraîche, chive</p></li>
+              <li class="py-3"><span class="font-medium">Beef tartare toast</span><p class="muted">cornichon, dijon</p></li>
+              <li class="py-3"><span class="font-medium">Butter-poached lobster roll</span><p class="muted">brown butter brioche</p></li>
+              <li class="py-3"><span class="font-medium">Truffled arancini</span><p class="muted">pecorino <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Wagyu striploin</span><p class="muted">bordelaise, pommes Anna</p></li>
+              <li class="py-3"><span class="font-medium">Halibut</span><p class="muted">champagne beurre blanc, leek fondue</p></li>
+              <li class="py-3"><span class="font-medium">Duck breast</span><p class="muted">cherry jus, confit potato</p></li>
+              <li class="py-3"><span class="font-medium">Black truffle risotto</span><p class="muted">aged parmesan <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Elevated Stations</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Oyster &amp; crudo bar</span><p class="muted">mignonette, citrus, chili oils <span class="muted">(market)</span></p></li>
+              <li class="py-3"><span class="font-medium">Truffle pasta wheel</span><p class="muted">table-side finish</p></li>
+              <li class="py-3"><span class="font-medium">Japanese robata</span><p class="muted">skewers, tare glaze</p></li>
+              <li class="py-3"><span class="font-medium">Artisanal cheese &amp; charcuterie</span><p class="muted">condiments, breads</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Desserts</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Chocolate marquise</span><p class="muted">cocoa nib, chantilly</p></li>
+              <li class="py-3"><span class="font-medium">Vanilla mille-feuille</span><p class="muted">caramelized puff</p></li>
+              <li class="py-3"><span class="font-medium">Citrus pavlova</span><p class="muted">lemon curd, seasonal fruit <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Beverage Programs</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Sommelier pairings</span><p class="muted">Old World &amp; New World</p></li>
+              <li class="py-3"><span class="font-medium">Signature cocktails</span><p class="muted">house infusions, zero-proof</p></li>
+              <li class="py-3"><span class="font-medium">Champagne service</span><p class="muted">sabrage on request</p></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <p class="mt-6 text-sm muted">Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free.</p>
+      <p class="mt-6 text-sm muted">
+        Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free.
+        Final menus adjusted for allergies and preferences.
+      </p>
     </div>
   </section>
 
