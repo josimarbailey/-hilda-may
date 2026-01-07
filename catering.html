@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,225 +6,511 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catering — Hilda May Events</title>
 
-  <meta name="description" content="Chef-driven catering for weddings, corporate events, and private dining." />
+  <meta name="description" content="Chef-driven catering for weddings, corporate events, and private dining. Seasonal menus, polished service, and precise execution across Toronto and North America." />
   <meta name="robots" content="index,follow" />
-
   <link rel="canonical" href="https://hildamay.com/catering.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Catering — Hilda May Events" />
+  <meta property="og:description" content="Seasonal, chef-driven menus. Plated, stations, or elevated buffets. Inclusive options for all diets." />
+  <meta property="og:image" content="images/og-home.jpg" />
+  <meta property="og:url" content="https://hildamay.com/catering.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f766e" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    .wrap{max-width:1200px;margin-inline:auto}
+    .muted{opacity:.82}
+
     :root{
       --gold:#c7b277;
-      --green:#0f766e;
-      --green-dark:#0c5f59;
+      --royal:#0f766e;
+      --royal-dark:#0c5f59;
       --ink:#111827;
     }
 
-    body{
-      background:#fff;
-      color:var(--ink);
-    }
-
-    h1,h2,h3{
-      color:var(--gold);
-    }
-
+    body{ color:var(--ink); background:#fff; }
+    h1,h2,h3{ color:var(--gold); }
+    h4{ color:var(--royal); }
     a{ color:inherit; }
+    header a{ color:inherit; }
+    section[id]{ scroll-margin-top:5.5rem; }
 
-    .wrap{
-      max-width:1200px;
-      margin-inline:auto;
-    }
-
-    /* =====================
-       GOLD BUTTON SYSTEM
-       ===================== */
+    /* ====== GOLD BUTTON SYSTEM (ALL BUTTONS GOLD) ====== */
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:.75rem 1.4rem;
+      padding:.75rem 1.25rem;
       border-radius:9999px;
       font-weight:700;
       background:var(--gold);
-      color:var(--green-dark);
+      color:var(--royal-dark);
       border:1px solid var(--gold);
       transition:filter .2s ease, opacity .2s ease;
       text-decoration:none;
+      line-height:1;
+      white-space:nowrap;
     }
+    .btn:hover{ filter:brightness(.95); }
 
-    .btn:hover{
-      filter:brightness(.95);
-    }
-
-    /* Menu tab active state */
+    /* Tab active state */
     .btn-active{
-      outline:2px solid var(--green-dark);
+      outline:2px solid var(--royal-dark);
       outline-offset:2px;
     }
-
-    header a{ color:inherit; }
   </style>
 </head>
 
-<body>
+<body class="bg-white">
+  <!-- Header -->
+  <header id="siteHeader" class="sticky top-0 z-50 bg-[var(--royal)]/95 backdrop-blur border-b border-[var(--royal-dark)] text-[var(--gold)] transition-shadow">
+    <div class="wrap px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Hilda May Events Home">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--gold)] text-[var(--royal)] font-semibold">HM</span>
+        <span class="font-semibold tracking-wide">Hilda May Events</span>
+      </a>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-[var(--green)] text-[var(--gold)] border-b border-[var(--green-dark)]">
-  <div class="wrap px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3 font-semibold">
-      <span class="h-9 w-9 rounded-full bg-[var(--gold)] text-[var(--green)] flex items-center justify-center">HM</span>
-      Hilda May Events
-    </a>
+      <nav class="hidden md:flex gap-6 text-sm items-center" aria-label="Primary">
+        <a href="events.html" class="hover:text-white font-semibold">Event Planning</a>
+        <a href="catering.html" class="hover:text-white" aria-current="page">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html" class="btn">Book</a>
+      </nav>
 
-    <nav class="hidden md:flex gap-6 text-sm items-center">
-      <a href="events.html">Event Planning</a>
-      <a href="catering.html">Catering</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="btn">Book</a>
+      <button id="menuBtn"
+              class="md:hidden inline-flex items-center rounded-md border border-[var(--gold)]/30 px-3 py-2 text-sm text-[var(--gold)]"
+              aria-controls="mnav" aria-expanded="false">Menu</button>
+    </div>
+
+    <nav id="mnav" class="md:hidden hidden border-t border-[var(--royal-dark)] bg-[var(--royal)] text-[var(--gold)]" aria-label="Mobile">
+      <div class="wrap px-4 py-3 grid grid-cols-2 gap-3 text-sm items-center">
+        <a href="events.html" class="hover:text-white">Event Planning</a>
+        <a href="catering.html" class="hover:text-white" aria-current="page">Catering</a>
+        <a href="gallery.html" class="hover:text-white">Gallery</a>
+        <a href="testimonials.html" class="hover:text-white">Testimonials</a>
+        <a href="about.html" class="hover:text-white">About</a>
+        <a href="faq.html" class="hover:text-white">FAQ</a>
+        <a href="contact.html" class="col-span-2 btn">Book</a>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section>
-  <div class="wrap px-4 py-16 grid lg:grid-cols-2 gap-10 items-center">
-    <div>
-      <p class="text-sm uppercase font-semibold text-[var(--green)]">Chef-Driven · Detail-Obsessed</p>
-      <h1 class="mt-3 text-4xl md:text-5xl font-semibold">
-        Catering for weddings, corporate & private events
-      </h1>
-      <p class="mt-4 text-lg">
-        Thoughtful menus delivered with Josie’s Kitchen and Taste & Traditions.
+  <!-- Hero -->
+  <section class="relative">
+    <div class="wrap px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-wider font-semibold text-[var(--royal)]">Chef-Driven | Detail-Obsessed</p>
+        <h1 class="mt-3 text-4xl md:text-5xl font-semibold leading-tight">Catering for weddings, corporate, and private celebrations</h1>
+        <p class="mt-4 text-lg">
+          Conferences, galas, weddings, and private events. We plan the experience and deliver chef-driven menus with
+          <strong>Josie’s Kitchen</strong> and our elegant brand <strong>Taste &amp; Traditions (T&amp;T)</strong>—scaled to your brief and audience.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="contact.html" class="btn">Request a Proposal</a>
+          <a href="#menus" class="btn">View Menus</a>
+        </div>
+        <p class="mt-3 text-sm muted">Based in Toronto • Serving North America • Select destinations</p>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden ring-1 ring-neutral-200">
+        <picture>
+          <source type="image/webp" srcset="images/hero-catering.webp">
+          <img class="w-full h-full object-cover"
+               src="images/hero-catering.jpg"
+               width="1600" height="1067" decoding="async"
+               alt="Plated entrée with seasonal garnish and table styling">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner -->
+  <section>
+    <div class="wrap px-4 py-8">
+      <div class="rounded-xl ring-1 ring-neutral-200 p-5 grid md:grid-cols-3 gap-5 items-center">
+        <div class="md:col-span-2">
+          <p class="text-sm md:text-base">
+            Catering is fulfilled by <strong>Josie’s Kitchen</strong> and our elegant brand
+            <strong>Taste &amp; Traditions (T&amp;T)</strong>. Seasonal menus, responsible sourcing, and full dietary accommodations.
+          </p>
+
+          <div class="mt-4 grid sm:grid-cols-2 gap-3">
+            <a href="contact.html" class="btn">Ask about Josie’s Kitchen</a>
+            <a href="contact.html" class="btn">Ask about Taste &amp; Traditions</a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <img src="images/partner-josies.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Josie’s Kitchen">
+          <img src="images/partner-tt.jpg" class="w-full h-32 object-cover rounded-lg ring-1 ring-neutral-200" alt="Taste & Traditions">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service styles  -->
+  <section id="styles" class="bg-neutral-50">
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">Service styles</h2>
+      <p>Choose the format. We align menu, pacing, and staffing to your run-of-show.</p>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <article id="plated" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details open class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Plated service</h3>
+              <span class="muted text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p>Multi-course, synchronized service. Best for formal dinners, awards, and keynotes with timed speeches.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Tray pass canapés or reception</li>
+                    <li>First course plated</li>
+                    <li>Main course with sides</li>
+                    <li>Dessert plated or station</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 server / 10–12 guests</li>
+                    <li>1 busser / 2 servers</li>
+                    <li>1 captain / 3–4 servers</li>
+                    <li>BOH: 1 chef / 30–40 covers</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Rentals &amp; setup</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Charger, dinnerware, flatware</li>
+                    <li>Stemware, coffee service</li>
+                    <li>Linen, napkins, table numbers</li>
+                    <li>Back-of-house kitchen build</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Good to know</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Strong for speeches and reveals</li>
+                    <li>Clear dietary labeling on place cards</li>
+                    <li>Accurate counts due 10 days prior</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Wine pairings, bread service, plated dessert with coffee, late-night bite station.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article id="stations" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Chef stations</h3>
+              <span class="muted text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p>Interactive, high-flow service. Best for mingling, networking, and mixed seating.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>3–5 live stations (hot + cold)</li>
+                    <li>Circulating canapés to reduce lines</li>
+                    <li>Attendant-served allergen lanes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 station chef / station</li>
+                    <li>1 attendant / station</li>
+                    <li>1 floater / 75–100 guests</li>
+                    <li>BOH: 1 chef / 60–80 guests</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Rentals &amp; setup</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Themed station facades</li>
+                    <li>Smallwares, chafers, induction</li>
+                    <li>Signage and allergen labels</li>
+                    <li>Highboys and cruiser tables</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Good to know</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Best with staggered call times</li>
+                    <li>Line management improves experience</li>
+                    <li>Great for brand activations</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Action carving, pasta wheel, raw bar, dessert bar, espresso cart.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article id="buffet" class="rounded-2xl ring-1 ring-neutral-200 bg-white">
+          <details class="p-6">
+            <summary class="flex items-center justify-between cursor-pointer">
+              <h3 class="text-lg font-semibold">Elevated buffet</h3>
+              <span class="muted text-xs">tap to collapse/expand</span>
+            </summary>
+
+            <div class="mt-4 space-y-4">
+              <p>Efficient for large audiences. Designed for flow, variety, and clear labeling.</p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-medium">Typical flow</h4>
+                  <ul class="list-disc ml-5">
+                    <li>Multiple mirrored lines</li>
+                    <li>Dedicated allergen-safe lane</li>
+                    <li>Attended protein carving</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-medium">Staffing ratios</h4>
+                  <ul class="list-disc ml-5">
+                    <li>1 attendant / buffet line</li>
+                    <li>1 runner / 100 guests</li>
+                    <li>BOH: 1 chef / 80–100 guests</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-medium">Pairs well with</h4>
+                <p>Welcome canapé pass, dessert station, late-night snacks.</p>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn">Plan your format</a>
+        <a href="#menus" class="btn">See menus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menus (FULL) -->
+  <section id="menus">
+    <div class="wrap px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold">Menus</h2>
+      <p>Choose a direction. We tailor to your brief, season, and dietary needs.</p>
+
+      <!-- Tabs (GOLD) -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        <button type="button" class="btn btn-active" data-menu-tab="menu-josie" aria-controls="menu-josie" aria-selected="true">
+          Josie’s Kitchen
+        </button>
+        <button type="button" class="btn" data-menu-tab="menu-tt" aria-controls="menu-tt" aria-selected="false">
+          T&amp;T Elevated
+        </button>
+      </div>
+
+      <!-- Josie's Kitchen -->
+      <div id="menu-josie" data-menu-panel class="mt-8">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Hors d’Oeuvres</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Tuna tartare cones</span><p class="muted">sesame, lime <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+              <li class="py-3"><span class="font-medium">Whipped goat cheese crostini</span><p class="muted">fig, pistachio</p></li>
+              <li class="py-3"><span class="font-medium">Smoked salmon blini</span><p class="muted">crème fraîche, dill</p></li>
+              <li class="py-3"><span class="font-medium">Charred corn arancini</span><p class="muted">basil pesto <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Roasted beet spoon</span><p class="muted">citrus, cashew ricotta <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Herb-crusted beef tenderloin</span><p class="muted">red wine jus, pomme purée</p></li>
+              <li class="py-3"><span class="font-medium">Seared sea bass</span><p class="muted">fennel, citrus beurre blanc</p></li>
+              <li class="py-3"><span class="font-medium">Sumac chicken</span><p class="muted">pomegranate glaze, herbed grains</p></li>
+              <li class="py-3"><span class="font-medium">Wild mushroom risotto</span><p class="muted">parmesan crisp <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+              <li class="py-3"><span class="font-medium">Cauliflower steak</span><p class="muted">romesco, caper raisin <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">vegan · gf</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Stations &amp; Buffets</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Live taco bar</span><p class="muted">adobo chicken, grilled veg, house salsas</p></li>
+              <li class="py-3"><span class="font-medium">Mediterranean mezze &amp; carving</span><p class="muted">shawarma, tabbouleh, dips</p></li>
+              <li class="py-3"><span class="font-medium">Pasta atelier</span><p class="muted">cacio e pepe, short rib ragù</p></li>
+              <li class="py-3"><span class="font-medium">Seafood raw bar</span><p class="muted">oysters, shrimp, mignonette <span class="muted">(market)</span></p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Taste & Traditions -->
+      <div id="menu-tt" data-menu-panel class="mt-8 hidden">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Canapés</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Caviar blini</span><p class="muted">crème fraîche, chive</p></li>
+              <li class="py-3"><span class="font-medium">Beef tartare toast</span><p class="muted">cornichon, dijon</p></li>
+              <li class="py-3"><span class="font-medium">Butter-poached lobster roll</span><p class="muted">brown butter brioche</p></li>
+              <li class="py-3"><span class="font-medium">Truffled arancini</span><p class="muted">pecorino <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Plated Mains</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Wagyu striploin</span><p class="muted">bordelaise, pommes Anna</p></li>
+              <li class="py-3"><span class="font-medium">Halibut</span><p class="muted">champagne beurre blanc, leek fondue</p></li>
+              <li class="py-3"><span class="font-medium">Duck breast</span><p class="muted">cherry jus, confit potato</p></li>
+              <li class="py-3"><span class="font-medium">Black truffle risotto</span><p class="muted">aged parmesan <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">v</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Elevated Stations</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Oyster &amp; crudo bar</span><p class="muted">mignonette, citrus, chili oils <span class="muted">(market)</span></p></li>
+              <li class="py-3"><span class="font-medium">Truffle pasta wheel</span><p class="muted">table-side finish</p></li>
+              <li class="py-3"><span class="font-medium">Japanese robata</span><p class="muted">skewers, tare glaze</p></li>
+              <li class="py-3"><span class="font-medium">Artisanal cheese &amp; charcuterie</span><p class="muted">condiments, breads</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Desserts</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Chocolate marquise</span><p class="muted">cocoa nib, chantilly</p></li>
+              <li class="py-3"><span class="font-medium">Vanilla mille-feuille</span><p class="muted">caramelized puff</p></li>
+              <li class="py-3"><span class="font-medium">Citrus pavlova</span><p class="muted">lemon curd, seasonal fruit <span class="inline-block bg-neutral-100 px-2 py-0.5 text-xs rounded">gf</span></p></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl ring-1 ring-neutral-200 p-6">
+            <h3 class="text-lg font-semibold">Beverage Programs</h3>
+            <ul class="mt-4 divide-y divide-neutral-200 text-sm">
+              <li class="py-3"><span class="font-medium">Sommelier pairings</span><p class="muted">Old World &amp; New World</p></li>
+              <li class="py-3"><span class="font-medium">Signature cocktails</span><p class="muted">house infusions, zero-proof</p></li>
+              <li class="py-3"><span class="font-medium">Champagne service</span><p class="muted">sabrage on request</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm muted">
+        Labels: <span class="font-medium">v</span> vegetarian · <span class="font-medium">vegan</span> vegan · <span class="font-medium">gf</span> gluten-free.
+        Final menus adjusted for allergies and preferences.
       </p>
-
-      <div class="mt-6 flex gap-3 flex-wrap">
-        <a href="contact.html" class="btn">Request a Proposal</a>
-        <a href="#menus" class="btn">View Menus</a>
-      </div>
     </div>
+  </section>
 
-    <img src="images/hero-catering.jpg"
-         alt="Catering presentation"
-         class="rounded-2xl ring-1 ring-neutral-200 w-full object-cover">
-  </div>
-</section>
-
-<!-- SERVICE STYLES -->
-<section class="bg-neutral-50">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-3xl font-semibold">Service styles</h2>
-
-    <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
-      <div class="bg-white rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3 class="font-semibold text-lg">Plated Service</h3>
-        <p class="mt-2">Formal, synchronized, speech-friendly.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3 class="font-semibold text-lg">Chef Stations</h3>
-        <p class="mt-2">Interactive, high-flow, social.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl ring-1 ring-neutral-200 p-6">
-        <h3 class="font-semibold text-lg">Elevated Buffet</h3>
-        <p class="mt-2">Efficient, elegant, scalable.</p>
-      </div>
+  <!-- Gallery strip -->
+  <section class="wrap px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-semibold">Recent dishes</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" src="images/IMG_0401.jpg" alt="Canapés">
+      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" src="images/IMG_0610.jpg" alt="Buffet">
+      <img class="rounded-xl ring-1 ring-neutral-200 object-cover w-full h-60" loading="lazy" src="images/IMG_0525.jpg" alt="Entrée">
     </div>
-  </div>
-</section>
-
-<!-- MENUS -->
-<section id="menus">
-  <div class="wrap px-4 py-14">
-    <h2 class="text-3xl font-semibold">Menus</h2>
-    <p class="mt-2">Choose a culinary direction.</p>
-
-    <!-- Tabs -->
-    <div class="mt-6 flex gap-3">
-      <button class="btn btn-active" data-tab="josie">Josie’s Kitchen</button>
-      <button class="btn" data-tab="tt">Taste & Traditions</button>
+    <div class="mt-6">
+      <a href="gallery.html" class="btn">See Full Gallery</a>
     </div>
+  </section>
 
-    <!-- Panels -->
-    <div id="josie" class="menu-panel mt-8">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 ring-1 ring-neutral-200 rounded-2xl">
-          <h3 class="font-semibold">Canapés</h3>
-          <ul class="mt-3 list-disc ml-5 text-sm">
-            <li>Tuna tartare cones</li>
-            <li>Goat cheese crostini</li>
-            <li>Beet & citrus spoon</li>
-          </ul>
-        </div>
-
-        <div class="p-6 ring-1 ring-neutral-200 rounded-2xl">
-          <h3 class="font-semibold">Mains</h3>
-          <ul class="mt-3 list-disc ml-5 text-sm">
-            <li>Herb-crusted beef</li>
-            <li>Seared sea bass</li>
-            <li>Wild mushroom risotto</li>
-          </ul>
-        </div>
-
-        <div class="p-6 ring-1 ring-neutral-200 rounded-2xl">
-          <h3 class="font-semibold">Stations</h3>
-          <ul class="mt-3 list-disc ml-5 text-sm">
-            <li>Pasta atelier</li>
-            <li>Mediterranean mezze</li>
-            <li>Seafood raw bar</li>
-          </ul>
-        </div>
+  <!-- CTA -->
+  <section class="bg-neutral-900 text-white">
+    <div class="wrap px-4 py-14 flex items-center justify-between gap-4 flex-col md:flex-row">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-semibold text-[var(--gold)]">Ready to design your menu?</h2>
+        <p class="text-neutral-300 mt-1">Tell us your date, format, and guest count.</p>
       </div>
+      <a href="contact.html" class="btn">Start Your Inquiry</a>
     </div>
+  </section>
 
-    <div id="tt" class="menu-panel mt-8 hidden">
-      <div class="p-6 ring-1 ring-neutral-200 rounded-2xl">
-        <h3 class="font-semibold">Elevated Fine Dining Menus</h3>
-        <p class="mt-2 text-sm">Luxury formats, tasting menus, and premium stations.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer class="border-t border-neutral-200">
+    <div class="wrap px-4 py-8 text-sm muted">© <span id="y"></span> Hilda May Events.</div>
+  </footer>
 
-<!-- CTA -->
-<section class="bg-neutral-900 text-white">
-  <div class="wrap px-4 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div>
-      <h2 class="text-3xl font-semibold text-[var(--gold)]">Ready to design your menu?</h2>
-      <p class="text-neutral-300 mt-2">Tell us about your event.</p>
-    </div>
-    <a href="contact.html" class="btn">Start Your Inquiry</a>
-  </div>
-</section>
+  <script>
+    // Header shadow on scroll
+    addEventListener('scroll', () => {
+      const h = document.getElementById('siteHeader');
+      if (h) h.classList.toggle('shadow-md', scrollY > 4);
+    }, { passive:true });
 
-<!-- FOOTER -->
-<footer class="border-t border-neutral-200">
-  <div class="wrap px-4 py-8 text-sm text-neutral-600">
-    © <span id="year"></span> Hilda May Events
-  </div>
-</footer>
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const mnav = document.getElementById('mnav');
+      if(!btn || !mnav) return;
+      btn.addEventListener('click', ()=>{
+        const open = !mnav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    })();
 
-<script>
-  // Footer year
-  document.getElementById('year').textContent = new Date().getFullYear();
+    // Tabs (gold buttons + active outline)
+    (function(){
+      const tabs = document.querySelectorAll('[data-menu-tab]');
+      const panels = document.querySelectorAll('[data-menu-panel]');
 
-  // Menu tabs
-  const tabs = document.querySelectorAll('[data-tab]');
-  const panels = document.querySelectorAll('.menu-panel');
+      function activate(id, btn){
+        panels.forEach(p => p.classList.add('hidden'));
+        const active = document.getElementById(id);
+        if (active) active.classList.remove('hidden');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('btn-active'));
-      panels.forEach(p => p.classList.add('hidden'));
+        tabs.forEach(b => {
+          b.classList.remove('btn-active');
+          b.setAttribute('aria-selected','false');
+        });
 
-      tab.classList.add('btn-active');
-      document.getElementById(tab.dataset.tab).classList.remove('hidden');
-    });
-  });
-</script>
+        btn.classList.add('btn-active');
+        btn.setAttribute('aria-selected','true');
+      }
 
+      tabs.forEach(btn => btn.addEventListener('click', () => activate(btn.getAttribute('data-menu-tab'), btn)));
+    })();
+
+    // Footer year
+    (function(){
+      const y = document.getElementById('y');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>
